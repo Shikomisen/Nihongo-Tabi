@@ -242,6 +242,79 @@ body.onboarding .tabbar { display: none; }
   border: 1px solid var(--line); border-radius: 8px; padding: 8px; font: inherit; text-align: center;
 }
 
+/* ---------- inline toggles ---------- */
+
+.toggle-strip { display: flex; gap: 6px; margin: 12px 0; }
+.chip {
+  font: inherit; font-size: 0.78rem; padding: 6px 14px; border-radius: 99px;
+  background: var(--bg-raised); color: var(--fg-muted);
+  border: 1px solid var(--line); cursor: pointer; min-height: 34px;
+}
+.chip-on { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+
+/* ---------- forecast ---------- */
+
+.forecast { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; align-items: end; margin-top: 4px; }
+.forecast-day { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.forecast-bar {
+  width: 100%; height: 64px; background: var(--bg-sunk); border-radius: 6px;
+  display: flex; align-items: flex-end; overflow: hidden;
+}
+.forecast-fill { width: 100%; background: var(--accent); border-radius: 6px; min-height: 2px; }
+.forecast-count { font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+.forecast-label { font-size: 0.68rem; }
+.queue-breakdown { text-align: center; margin: 8px 0 0; }
+
+/* ---------- scenarios ---------- */
+
+.scenario-teaser { margin-bottom: 16px; }
+
+.transcript { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+.transcript:empty { display: none; }
+
+.dialogue {
+  background: var(--bg-raised); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 14px 16px;
+}
+.dialogue.past { opacity: 0.62; }
+.dialogue.npc { border-left: 3px solid var(--info); }
+.dialogue.you { border-left: 3px solid var(--ok); background: var(--bg-sunk); }
+.dialogue .jp { font-size: 1.35rem; line-height: 1.85; }
+.dialogue-who {
+  font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--fg-muted); margin-bottom: 4px;
+}
+.dialogue.quality-awkward { border-left-color: var(--warn); }
+.dialogue.quality-wrong { border-left-color: var(--accent); }
+
+.narration {
+  color: var(--fg-muted); font-style: italic; text-align: center;
+  padding: 14px 16px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+
+.feedback { margin-top: 10px; font-size: 0.84rem; color: var(--fg-muted); }
+.feedback-tag {
+  display: inline-block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em;
+  padding: 2px 8px; border-radius: 99px; margin-right: 8px; background: var(--bg-raised);
+}
+.feedback-good .feedback-tag { color: var(--ok); }
+.feedback-awkward .feedback-tag { color: var(--warn); }
+.feedback-wrong .feedback-tag { color: var(--accent); }
+
+.scenario-options { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+.options-label { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.7rem; }
+.btn-option {
+  flex-direction: column; align-items: flex-start; gap: 3px;
+  text-align: left; padding: 14px 16px; width: 100%;
+}
+.btn-option .jp { font-size: 1.25rem; line-height: 1.8; }
+.btn-option .english { font-size: 0.88rem; color: var(--fg-muted); margin: 0; }
+.btn-option .romaji { font-size: 0.8rem; }
+.from-deck { font-size: 0.66rem; color: var(--fg-muted); opacity: 0.7; margin-top: 2px; }
+
+.scenario-end { margin-top: 16px; }
+.scenario-end .action-row { margin-top: 16px; }
+
 /* ---------- tab bar ---------- */
 
 .tabbar {

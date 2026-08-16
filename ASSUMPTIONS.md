@@ -110,3 +110,58 @@ covers the §8 accessibility requirement alongside the furigana/romaji toggles.
 changing behaviour, the app flips the default once, 7 days after first launch,
 and shows a toast explaining it. It can be turned straight back on in Settings
 and won't auto-flip again.
+---
+
+## Day 2
+
+### A14 — Scenario trees are branching, with a "best" path
+§2 asks for branching dialogue trees and §3a requires them to reference phrase
+IDs rather than duplicate text. Each node holds an NPC line plus 2-3 player
+options; options carry an optional `phraseId` that links back into the category
+content, and a `quality` marker (`good` / `awkward` / `wrong`). Picking an
+awkward option doesn't dead-end the scenario — it continues and explains what
+landed oddly, since the register mismatch *is* the lesson (§6).
+
+Scenario NPC lines are content in their own right and are not all present in
+the category files, so they carry their own inline text. Only **player** lines
+reference phrase IDs. The self-test verifies every `phraseId` resolves and
+every `next` target exists.
+
+### A15 — Scenario audio reuses phrase clips
+Player options that reference a phrase ID play that phrase's existing bundled
+clip. NPC lines got their own generated clips under `audio/ja/scenario/`, so a
+scenario can be listened through end to end.
+
+### A16 — "Due today" home screen ordering
+The home screen shows due cards first, then new ones capped by the
+new-cards-per-day setting (default 10). Due cards are ordered by how overdue
+they are, not by category, so nothing is starved. Categories can still be
+studied individually from Browse, which ignores the daily cap — deliberate, so
+cramming a specific category before you need it is possible.
+
+### A17 — No analytics, no network calls at runtime
+§8 says no data leaves the device. There is no telemetry, no CDN, no external
+font, and no runtime fetch to any origin other than the app's own. The only
+network access in the whole project is the build-time audio script, which runs
+on your machine and not the user's.
+
+### A18 — jsdom is a test-only, non-installed dependency
+`tools/render-test.mjs` renders every screen in a real DOM and asserts the
+output. It needs jsdom, but the app itself has **zero dependencies** and that
+was worth keeping — so jsdom is not in `package.json`. Install it only when you
+want to run that suite:
+
+```bash
+npm install --no-save jsdom
+npm run test:render
+```
+
+The script exits 0 with a note if jsdom isn't present, so it never breaks a
+clean checkout.
+
+### A19 — Scenario choices nudge the SRS, they don't grade it
+Picking a phrase inside a scenario updates its `lastReview` but does not
+advance its interval. Choosing from a list of three is much weaker evidence of
+recall than producing an answer to a flashcard, so treating it as a real
+review would inflate intervals and quietly damage retention. Flashcards remain
+the only thing that moves the schedule.

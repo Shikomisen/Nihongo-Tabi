@@ -52,6 +52,78 @@
       "audioHint": "みちにまよいました",
       "tags": ["problem", "survival"],
       "difficulty": 4
+    },
+    {
+      "id": "dir-05",
+      "japanese": "左に曲がってください",
+      "furigana": [{ "b": "左", "r": "ひだり" }, { "b": "に" }, { "b": "曲", "r": "ま" }, { "b": "がってください" }],
+      "romaji": "hidari ni magatte kudasai",
+      "english": "Turn left.",
+      "registerNotes": "The mirror of dir-03. Drill them together until neither needs a pause.",
+      "audio": "audio/ja/dir-05.mp3",
+      "audioHint": "ひだりにまがってください",
+      "tags": ["listening", "essential"],
+      "difficulty": 3
+    },
+    {
+      "id": "dir-06",
+      "japanese": "あそこです",
+      "furigana": [{ "b": "あそこです" }],
+      "romaji": "asoko desu",
+      "english": "It's over there.",
+      "registerNotes": "ここ (here) / そこ (there, near you) / あそこ (over there). Usually delivered with a point.",
+      "audio": "audio/ja/dir-06.mp3",
+      "audioHint": "あそこです",
+      "tags": ["listening", "essential"],
+      "difficulty": 1
+    },
+    {
+      "id": "dir-07",
+      "japanese": "この近くにコンビニはありますか",
+      "furigana": [{ "b": "この" }, { "b": "近", "r": "ちか" }, { "b": "くにコンビニはありますか" }],
+      "romaji": "kono chikaku ni konbini wa arimasu ka",
+      "english": "Is there a convenience store near here?",
+      "registerNotes": "この近くに〜はありますか is the pattern — swap in 駅, ATM, 薬局, トイレ.",
+      "audio": "audio/ja/dir-07.mp3",
+      "audioHint": "このちかくにコンビニはありますか",
+      "tags": ["question", "essential", "survival"],
+      "difficulty": 4
+    },
+    {
+      "id": "dir-08",
+      "japanese": "歩いてどのくらいですか",
+      "furigana": [{ "b": "歩", "r": "ある" }, { "b": "いてどのくらいですか" }],
+      "romaji": "aruite dono kurai desu ka",
+      "english": "How long does it take on foot?",
+      "registerNotes": "Expect 十分ぐらい back. どのくらい asks about duration or distance.",
+      "audio": "audio/ja/dir-08.mp3",
+      "audioHint": "あるいてどのくらいですか",
+      "tags": ["question", "time"],
+      "difficulty": 4
+    },
+    {
+      "id": "dir-09",
+      "japanese": "次の信号を右です",
+      "furigana": [{ "b": "次", "r": "つぎ" }, { "b": "の" }, { "b": "信号", "r": "しんごう" }, { "b": "を" }, { "b": "右", "r": "みぎ" }, { "b": "です" }],
+      "romaji": "tsugi no shingō o migi desu",
+      "english": "Right at the next traffic light.",
+      "registerNotes": "Listening target. 信号 (traffic light) and 交差点 (intersection) are the two landmarks directions hang off.",
+      "audio": "audio/ja/dir-09.mp3",
+      "audioHint": "つぎのしんごうをみぎです",
+      "tags": ["listening"],
+      "difficulty": 4
+    },
+    {
+      "id": "dir-10",
+      "japanese": "地図を見せてもらえますか",
+      "furigana": [{ "b": "地図", "r": "ちず" }, { "b": "を" }, { "b": "見", "r": "み" }, { "b": "せてもらえますか" }],
+      "romaji": "chizu o misete moraemasu ka",
+      "english": "Could you show me on a map?",
+      "registerNotes": "The escape hatch when a spoken answer outruns you. Hold your phone out as you say it.",
+      "audio": "audio/ja/dir-10.mp3",
+      "audioHint": "ちずをみせてもらえますか",
+      "tags": ["request", "survival"],
+      "difficulty": 5
     }
   ]
 }

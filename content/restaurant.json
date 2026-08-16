@@ -53,6 +53,78 @@
       "audioHint": "たまごがたべられません",
       "tags": ["restaurant", "allergy", "survival"],
       "difficulty": 4
+    },
+    {
+      "id": "res-05",
+      "japanese": "ごちそうさまでした",
+      "furigana": [{ "b": "ごちそうさまでした" }],
+      "romaji": "gochisōsama deshita",
+      "english": "(set phrase said after eating)",
+      "registerNotes": "The bookend to いただきます. Say it to staff on the way out and it lands as a genuine thank-you.",
+      "audio": "audio/ja/res-05.mp3",
+      "audioHint": "ごちそうさまでした",
+      "tags": ["restaurant", "essential"],
+      "difficulty": 1
+    },
+    {
+      "id": "res-06",
+      "japanese": "おすすめは何ですか",
+      "furigana": [{ "b": "おすすめは" }, { "b": "何", "r": "なん" }, { "b": "ですか" }],
+      "romaji": "osusume wa nan desu ka",
+      "english": "What do you recommend?",
+      "registerNotes": "Reliably gets you the good thing, and reads as interest rather than helplessness.",
+      "audio": "audio/ja/res-06.mp3",
+      "audioHint": "おすすめはなんですか",
+      "tags": ["restaurant", "question"],
+      "difficulty": 2
+    },
+    {
+      "id": "res-07",
+      "japanese": "お水をください",
+      "furigana": [{ "b": "お" }, { "b": "水", "r": "みず" }, { "b": "をください" }],
+      "romaji": "o-mizu o kudasai",
+      "english": "Water, please.",
+      "registerNotes": "Water and tea are free and automatic at most restaurants — this is for a refill.",
+      "audio": "audio/ja/res-07.mp3",
+      "audioHint": "おみずをください",
+      "tags": ["restaurant", "request"],
+      "difficulty": 2
+    },
+    {
+      "id": "res-08",
+      "japanese": "豚肉は食べられません",
+      "furigana": [{ "b": "豚肉", "r": "ぶたにく" }, { "b": "は" }, { "b": "食", "r": "た" }, { "b": "べられません" }],
+      "romaji": "butaniku wa taberaremasen",
+      "english": "I can't eat pork.",
+      "registerNotes": "Useful vocabulary to pair with it: 牛肉 (beef), 鶏肉 (chicken), 魚 (fish), 乳製品 (dairy), 小麦 (wheat), 落花生 (peanuts).",
+      "audio": "audio/ja/res-08.mp3",
+      "audioHint": "ぶたにくはたべられません",
+      "tags": ["restaurant", "allergy", "survival"],
+      "difficulty": 4
+    },
+    {
+      "id": "res-09",
+      "japanese": "これは何が入っていますか",
+      "furigana": [{ "b": "これは" }, { "b": "何", "r": "なに" }, { "b": "が" }, { "b": "入", "r": "はい" }, { "b": "っていますか" }],
+      "romaji": "kore wa nani ga haitte imasu ka",
+      "english": "What's in this?",
+      "registerNotes": "The follow-up to an allergy declaration. Dashi (fish stock) hides in a lot of apparently vegetarian food.",
+      "audio": "audio/ja/res-09.mp3",
+      "audioHint": "これはなにがはいっていますか",
+      "tags": ["restaurant", "allergy", "question", "survival"],
+      "difficulty": 5
+    },
+    {
+      "id": "res-10",
+      "japanese": "お会計をお願いします",
+      "furigana": [{ "b": "お" }, { "b": "会計", "r": "かいけい" }, { "b": "をお" }, { "b": "願", "r": "ねが" }, { "b": "いします" }],
+      "romaji": "o-kaikei o onegai shimasu",
+      "english": "The bill, please.",
+      "registerNotes": "In many places you take the slip to the till rather than paying at the table.",
+      "audio": "audio/ja/res-10.mp3",
+      "audioHint": "おかいけいをおねがいします",
+      "tags": ["restaurant", "money", "essential"],
+      "difficulty": 3
     }
   ]
 }

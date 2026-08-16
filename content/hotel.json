@@ -52,6 +52,78 @@
       "audioHint": "にもつをあずかってもらえますか",
       "tags": ["hotel", "request"],
       "difficulty": 4
+    },
+    {
+      "id": "hot-05",
+      "japanese": "チェックアウトお願いします",
+      "furigana": [{ "b": "チェックアウトお" }, { "b": "願", "r": "ねが" }, { "b": "いします" }],
+      "romaji": "chekkuauto onegai shimasu",
+      "english": "Check-out, please.",
+      "registerNotes": "Hand the key over as you say it. Often that alone is enough.",
+      "audio": "audio/ja/hot-05.mp3",
+      "audioHint": "チェックアウトおねがいします",
+      "tags": ["hotel", "essential"],
+      "difficulty": 1
+    },
+    {
+      "id": "hot-06",
+      "japanese": "朝食は何時からですか",
+      "furigana": [{ "b": "朝食", "r": "ちょうしょく" }, { "b": "は" }, { "b": "何時", "r": "なんじ" }, { "b": "からですか" }],
+      "romaji": "chōshoku wa nanji kara desu ka",
+      "english": "What time does breakfast start?",
+      "registerNotes": "Reuses 何時からですか from the numbers category. 朝食 on a sign, 朝ごはん in speech.",
+      "audio": "audio/ja/hot-06.mp3",
+      "audioHint": "ちょうしょくはなんじからですか",
+      "tags": ["hotel", "time", "question"],
+      "difficulty": 3
+    },
+    {
+      "id": "hot-07",
+      "japanese": "Wi-Fiのパスワードを教えてください",
+      "furigana": [{ "b": "Wi-Fiのパスワードを" }, { "b": "教", "r": "おし" }, { "b": "えてください" }],
+      "romaji": "waifai no pasuwādo o oshiete kudasai",
+      "english": "Could you tell me the Wi-Fi password?",
+      "registerNotes": "教えてください = 'please tell me', reusable for any piece of information.",
+      "audio": "audio/ja/hot-07.mp3",
+      "audioHint": "ワイファイのパスワードをおしえてください",
+      "tags": ["hotel", "request"],
+      "difficulty": 3
+    },
+    {
+      "id": "hot-08",
+      "japanese": "部屋の鍵をなくしました",
+      "furigana": [{ "b": "部屋", "r": "へや" }, { "b": "の" }, { "b": "鍵", "r": "かぎ" }, { "b": "をなくしました" }],
+      "romaji": "heya no kagi o nakushimashita",
+      "english": "I've lost my room key.",
+      "registerNotes": "なくしました = 'I lost it', works for anything. Pairs with the emergency category.",
+      "audio": "audio/ja/hot-08.mp3",
+      "audioHint": "へやのかぎをなくしました",
+      "tags": ["hotel", "problem"],
+      "difficulty": 4
+    },
+    {
+      "id": "hot-09",
+      "japanese": "もう一泊できますか",
+      "furigana": [{ "b": "もう" }, { "b": "一泊", "r": "いっぱく" }, { "b": "できますか" }],
+      "romaji": "mō ippaku dekimasu ka",
+      "english": "Could I stay one more night?",
+      "registerNotes": "泊 is the counter for nights of accommodation: 一泊, 二泊 (にはく), 三泊 (さんぱく).",
+      "audio": "audio/ja/hot-09.mp3",
+      "audioHint": "もういっぱくできますか",
+      "tags": ["hotel", "question"],
+      "difficulty": 4
+    },
+    {
+      "id": "hot-10",
+      "japanese": "タオルをもう一枚もらえますか",
+      "furigana": [{ "b": "タオルをもう" }, { "b": "一枚", "r": "いちまい" }, { "b": "もらえますか" }],
+      "romaji": "taoru o mō ichimai moraemasu ka",
+      "english": "Could I have one more towel?",
+      "registerNotes": "枚 counts flat things — towels, tickets, sheets of paper. もう一枚 = 'one more'.",
+      "audio": "audio/ja/hot-10.mp3",
+      "audioHint": "タオルをもういちまいもらえますか",
+      "tags": ["hotel", "request", "counters"],
+      "difficulty": 4
     }
   ]
 }

@@ -245,3 +245,31 @@ Don't front-load all 10 categories into the SRS deck at once — introduce
 
 - App name/branding — still a placeholder, purely cosmetic, doesn't
   block building anything.
+
+---
+
+## 11. Running It (added during build)
+
+Zero dependencies, no build step. Node 18+ only.
+
+```bash
+npm start                 # dev server on :5173, also prints your LAN URL for phone testing
+npm test                  # content validation + SRS + end-to-end logic (2797 checks)
+npm run test:render       # renders every screen in jsdom (needs: npm install --no-save jsdom)
+npm run audio             # generate any missing TTS clips
+npm run audio:check       # report audio coverage without generating
+npm run icons             # regenerate the PWA icons
+npm run deploy            # publish to the gh-pages branch
+```
+
+**On your phone:** run `npm start`, then open the `Network:` URL it prints
+(same Wi-Fi). Chrome → menu → *Add to Home screen* installs it as a PWA.
+iOS requires HTTPS for service workers, so offline install on iPhone needs the
+deployed GitHub Pages URL rather than the LAN one.
+
+Content lives in `content/` — adding a category is one JSON file plus one line
+in `content/manifest.json`, with no app-code changes (§3a). Run
+`npm run audio` afterwards to synthesise its clips.
+
+See `ASSUMPTIONS.md` for decisions made during the build that this spec
+didn't cover.

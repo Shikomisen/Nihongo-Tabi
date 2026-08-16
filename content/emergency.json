@@ -52,6 +52,78 @@
       "audioHint": "きゅうきゅうしゃをよんでください",
       "tags": ["emergency", "survival"],
       "difficulty": 4
+    },
+    {
+      "id": "eme-05",
+      "japanese": "警察を呼んでください",
+      "furigana": [{ "b": "警察", "r": "けいさつ" }, { "b": "を" }, { "b": "呼", "r": "よ" }, { "b": "んでください" }],
+      "romaji": "keisatsu o yonde kudasai",
+      "english": "Please call the police.",
+      "registerNotes": "110 for police. 交番 (こうばん) is the neighbourhood police box — there's one near most stations.",
+      "audio": "audio/ja/eme-05.mp3",
+      "audioHint": "けいさつをよんでください",
+      "tags": ["emergency", "survival"],
+      "difficulty": 3
+    },
+    {
+      "id": "eme-06",
+      "japanese": "ここが痛いです",
+      "furigana": [{ "b": "ここが" }, { "b": "痛", "r": "いた" }, { "b": "いです" }],
+      "romaji": "koko ga itai desu",
+      "english": "It hurts here.",
+      "registerNotes": "Point as you say it. Solves the entire vocabulary problem of body parts in one phrase.",
+      "audio": "audio/ja/eme-06.mp3",
+      "audioHint": "ここがいたいです",
+      "tags": ["health", "essential", "survival"],
+      "difficulty": 2
+    },
+    {
+      "id": "eme-07",
+      "japanese": "薬をください",
+      "furigana": [{ "b": "薬", "r": "くすり" }, { "b": "をください" }],
+      "romaji": "kusuri o kudasai",
+      "english": "I need medicine.",
+      "registerNotes": "At a 薬局 (pharmacy) or ドラッグストア. Painkillers and cold medicine are over the counter.",
+      "audio": "audio/ja/eme-07.mp3",
+      "audioHint": "くすりをください",
+      "tags": ["health", "request"],
+      "difficulty": 2
+    },
+    {
+      "id": "eme-08",
+      "japanese": "財布をなくしました",
+      "furigana": [{ "b": "財布", "r": "さいふ" }, { "b": "をなくしました" }],
+      "romaji": "saifu o nakushimashita",
+      "english": "I've lost my wallet.",
+      "registerNotes": "Report it at a 交番. Japan's lost-property rate is genuinely remarkable — it is often worth reporting.",
+      "audio": "audio/ja/eme-08.mp3",
+      "audioHint": "さいふをなくしました",
+      "tags": ["problem", "survival"],
+      "difficulty": 3
+    },
+    {
+      "id": "eme-09",
+      "japanese": "英語を話せる人はいますか",
+      "furigana": [{ "b": "英語", "r": "えいご" }, { "b": "を" }, { "b": "話", "r": "はな" }, { "b": "せる" }, { "b": "人", "r": "ひと" }, { "b": "はいますか" }],
+      "romaji": "eigo o hanaseru hito wa imasu ka",
+      "english": "Is there anyone who speaks English?",
+      "registerNotes": "Better than asking one person directly in a hospital or police station — it escalates to whoever can actually help.",
+      "audio": "audio/ja/eme-09.mp3",
+      "audioHint": "えいごをはなせるひとはいますか",
+      "tags": ["emergency", "survival", "question"],
+      "difficulty": 5
+    },
+    {
+      "id": "eme-10",
+      "japanese": "アレルギーがあります。これを見てください",
+      "furigana": [{ "b": "アレルギーがあります。これを" }, { "b": "見", "r": "み" }, { "b": "てください" }],
+      "romaji": "arerugī ga arimasu. kore o mite kudasai",
+      "english": "I have an allergy. Please look at this.",
+      "registerNotes": "Pair with an allergy card written in Japanese on your phone. In a medical emergency this is the sentence that matters.",
+      "audio": "audio/ja/eme-10.mp3",
+      "audioHint": "アレルギーがあります。これをみてください",
+      "tags": ["emergency", "allergy", "survival"],
+      "difficulty": 4
     }
   ]
 }

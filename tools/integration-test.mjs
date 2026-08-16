@@ -178,11 +178,50 @@ check('deck summary is scoped to active categories only',
 check('cards for not-yet-rolled-out categories are parked, not queued',
   (await deck.queue()).every((c) => active.has(c.categoryId)));
 
+/* ---------- 7. scenario trees ---------- */
+
+console.log('\n7. Scenario dialogue trees');
+
+const { loadScenario, scenariosFor } = await import('../js/content.js');
+
+check('scenarios are listed in the manifest', (content.manifest.scenarios || []).length === 6,
+  `${(content.manifest.scenarios || []).length} scenarios`);
+
+for (const entry of content.manifest.scenarios || []) {
+  const sc = await loadScenario(entry.id);
+
+  // Walk the tree picking the first "good" option at every node, which is
+  // the path a competent speaker would take. It must reach a terminal node.
+  let node = sc.nodes[sc.start];
+  let steps = 0;
+  let usedPhrases = 0;
+  while (node && !node.end && steps < 25) {
+    const opt = node.options.find((o) => o.quality === 'good') || node.options[0];
+    if (opt.phraseId) {
+      if (content.phrases.has(opt.phraseId)) usedPhrases++;
+      else { check(`${entry.id}: option references a real phrase`, false, opt.phraseId); }
+    }
+    node = sc.nodes[opt.next];
+    steps++;
+  }
+  check(`${entry.id}: the natural path reaches an ending`, Boolean(node?.end), `${steps} turns`);
+  check(`${entry.id}: reuses phrases from the deck rather than duplicating text`, usedPhrases > 0,
+    `${usedPhrases} phrase references on that path`);
+
+  // Every branch, including the awkward and wrong ones, must lead somewhere.
+  const dangling = Object.entries(sc.nodes).flatMap(([id, n]) =>
+    (n.options || []).filter((o) => !sc.nodes[o.next]).map((o) => `${id}→${o.next}`));
+  check(`${entry.id}: no dangling branches`, dangling.length === 0, dangling.join(', '));
+}
+
+const shoppingScenarios = await scenariosFor('shopping');
+check('scenarios resolve by category', shoppingScenarios.length === 1 && shoppingScenarios[0].id === 'conbini');
+
 /* ---------- result ---------- */
 
 console.log(
   failures
     ? `\n✗ ${failures} of ${checks} integration checks failed\n`
-    : `\n✓ all ${checks} integration checks passed — browse → quiz → study → review loop is intact\n`
+    : `\n✓ all ${checks} integration checks passed — browse → quiz → study → review → scenarios loop is intact\n`
 );
 process.exit(failures ? 1 : 0);

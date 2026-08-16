@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "id": "conbini",
+  "title": "Convenience store checkout",
+  "category": "shopping",
+  "setting": "You've picked up a bento and a drink at a Lawson. You're at the till.",
+  "start": "n1",
+  "nodes": {
+    "n1": {
+      "speaker": "staff",
+      "japanese": "いらっしゃいませ。",
+      "furigana": [{ "b": "いらっしゃいませ。" }],
+      "romaji": "Irasshaimase.",
+      "english": "Welcome.",
+      "audio": "audio/ja/scenario/conbini-n1.mp3",
+      "audioHint": "いらっしゃいませ",
+      "options": [
+        {
+          "quality": "good",
+          "japanese": "（軽く会釈する）",
+          "romaji": "(a small nod)",
+          "english": "(Nod slightly and put your items on the counter.)",
+          "feedback": "Correct. いらっしゃいませ is a greeting *to* a customer and expects no verbal reply at all.",
+          "next": "n2"
+        },
+        {
+          "phraseId": "gre-02",
+          "quality": "good",
+          "feedback": "Perfectly fine — a little more than needed, and never unwelcome.",
+          "next": "n2"
+        },
+        {
+          "quality": "wrong",
+          "japanese": "いらっしゃいませ。",
+          "romaji": "Irasshaimase.",
+          "english": "Welcome. (said back to the staff)",
+          "feedback": "This is the giveaway. You've just welcomed the shop assistant into their own shop. It's only ever said staff-to-customer.",
+          "next": "n2"
+        }
+      ]
+    },
+
+    "n2": {
+      "speaker": "staff",
+      "japanese": "お弁当、温めますか。",
+      "furigana": [{ "b": "お" }, { "b": "弁当", "r": "べんとう" }, { "b": "、" }, { "b": "温", "r": "あたた" }, { "b": "めますか。" }],
+      "romaji": "O-bentō, atatamemasu ka.",
+      "english": "Shall I heat up the bento?",
+      "audio": "audio/ja/scenario/conbini-n2.mp3",
+      "audioHint": "おべんとう、あたためますか",
+      "options": [
+        {
+          "phraseId": "gre-07",
+          "quality": "good",
+          "feedback": "Yes please. お願いします on its own is a complete, polite answer to any offer.",
+          "next": "n3"
+        },
+        {
+          "phraseId": "gre-10",
+          "quality": "good",
+          "feedback": "A soft no. 大丈夫です declines without a blunt いいえ.",
+          "next": "n3"
+        },
+        {
+          "phraseId": "gre-14",
+          "quality": "awkward",
+          "feedback": "Honest and it works — they'll mime the microwave. But 温めますか is one of the five sentences you'll hear most in Japan, so it's worth over-learning.",
+          "next": "n3"
+        }
+      ]
+    },
+
+    "n3": {
+      "speaker": "staff",
+      "japanese": "袋はご利用ですか。",
+      "furigana": [{ "b": "袋", "r": "ふくろ" }, { "b": "はご" }, { "b": "利用", "r": "りよう" }, { "b": "ですか。" }],
+      "romaji": "Fukuro wa go-riyō desu ka.",
+      "english": "Would you like a bag?",
+      "audio": "audio/ja/scenario/conbini-n3.mp3",
+      "audioHint": "ふくろはごりようですか",
+      "options": [
+        {
+          "phraseId": "sho-02",
+          "quality": "good",
+          "feedback": "Clear and complete. Bags are chargeable, so this question is now unavoidable.",
+          "next": "n4"
+        },
+        {
+          "phraseId": "gre-07",
+          "quality": "good",
+          "feedback": "Yes to a bag, and you'll be charged a few yen for it.",
+          "next": "n4"
+        },
+        {
+          "phraseId": "gre-08",
+          "quality": "awkward",
+          "feedback": "はい is understood as 'yes, a bag please' — but bare はい to an either/or question is a common way to accidentally agree to the wrong thing.",
+          "next": "n4"
+        }
+      ]
+    },
+
+    "n4": {
+      "speaker": "staff",
+      "japanese": "五百八十円になります。",
+      "furigana": [{ "b": "五百八十円", "r": "ごひゃくはちじゅうえん" }, { "b": "になります。" }],
+      "romaji": "Gohyaku hachijū en ni narimasu.",
+      "english": "That'll be ¥580.",
+      "audio": "audio/ja/scenario/conbini-n4.mp3",
+      "audioHint": "ごひゃくはちじゅうえんになります",
+      "options": [
+        {
+          "phraseId": "num-08",
+          "quality": "good",
+          "feedback": "Card works at every convenience store in the country. Tap it on the reader yourself when prompted.",
+          "next": "n5"
+        },
+        {
+          "phraseId": "num-22",
+          "quality": "good",
+          "feedback": "Exact change, handed to the tray rather than the hand. There's usually a small tray on the counter for this.",
+          "next": "n5"
+        },
+        {
+          "phraseId": "num-05",
+          "quality": "wrong",
+          "feedback": "They just told you the price. Asking again reads as 'I didn't catch that' — which is fine, but もう一度お願いします says it far more clearly.",
+          "next": "n5"
+        }
+      ]
+    },
+
+    "n5": {
+      "speaker": "staff",
+      "japanese": "ありがとうございました。またお越しくださいませ。",
+      "furigana": [{ "b": "ありがとうございました。またお" }, { "b": "越", "r": "こ" }, { "b": "しくださいませ。" }],
+      "romaji": "Arigatō gozaimashita. Mata o-koshi kudasaimase.",
+      "english": "Thank you. Please come again.",
+      "audio": "audio/ja/scenario/conbini-n5.mp3",
+      "audioHint": "ありがとうございました。またおこしくださいませ",
+      "options": [
+        {
+          "phraseId": "gre-06",
+          "quality": "good",
+          "feedback": "The transaction is finished, so the past form is exactly right.",
+          "next": "end"
+        },
+        {
+          "phraseId": "gre-20",
+          "quality": "awkward",
+          "feedback": "'You're welcome' to the person who just served you inverts the roles. A simple thanks, or nothing at all, is what's expected.",
+          "next": "end"
+        }
+      ]
+    },
+
+    "end": {
+      "speaker": "narration",
+      "japanese": "",
+      "romaji": "",
+      "english": "Done. That exchange is near-identical at every convenience store in Japan — get it fluent once and it's solved for the whole trip.",
+      "end": true,
+      "options": []
+    }
+  }
+}

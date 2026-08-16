@@ -16,5 +16,12 @@
     { "id": "emergency",      "order": 9,  "file": "content/emergency.json",      "title": "Emergencies & Health",   "icon": "🏥", "week": 4, "tier": "core" },
     { "id": "smalltalk",      "order": 10, "file": "content/smalltalk.json",      "title": "Small Talk",             "icon": "💬", "week": 4, "tier": "core" }
   ],
-  "scenarios": []
+  "scenarios": [
+    { "id": "conbini",     "file": "content/scenarios/conbini.json",     "title": "Convenience store checkout", "icon": "🏪", "category": "shopping"   },
+    { "id": "ticket",      "file": "content/scenarios/ticket.json",      "title": "Buying a train ticket",      "icon": "🎫", "category": "transport"  },
+    { "id": "immigration", "file": "content/scenarios/immigration.json", "title": "Immigration desk",           "icon": "🛂", "category": "airport"    },
+    { "id": "checkin",     "file": "content/scenarios/checkin.json",     "title": "Hotel check-in",             "icon": "🏨", "category": "hotel"      },
+    { "id": "izakaya",     "file": "content/scenarios/izakaya.json",     "title": "Ordering at a restaurant",   "icon": "🍜", "category": "restaurant" },
+    { "id": "lost",        "file": "content/scenarios/lost.json",        "title": "Asking the way when lost",   "icon": "🧭", "category": "directions" }
+  ]
 }

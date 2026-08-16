@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "id": "immigration",
+  "title": "Immigration desk",
+  "category": "airport",
+  "setting": "You've landed at Narita. You're at the front of the foreign passport queue.",
+  "start": "n1",
+  "nodes": {
+    "n1": {
+      "speaker": "officer",
+      "japanese": "パスポートをお願いします。",
+      "furigana": [{ "b": "パスポートをお" }, { "b": "願", "r": "ねが" }, { "b": "いします。" }],
+      "romaji": "Pasupōto o onegai shimasu.",
+      "english": "Passport, please.",
+      "audio": "audio/ja/scenario/immigration-n1.mp3",
+      "audioHint": "パスポートをおねがいします",
+      "options": [
+        {
+          "phraseId": "air-01",
+          "quality": "good",
+          "feedback": "Hand it over open at the photo page. That's it.",
+          "next": "n2"
+        },
+        {
+          "quality": "good",
+          "japanese": "どうぞ。",
+          "romaji": "Dōzo.",
+          "english": "Here you are.",
+          "feedback": "どうぞ is the all-purpose 'here you go' when handing something over. Compact and natural.",
+          "next": "n2"
+        }
+      ]
+    },
+
+    "n2": {
+      "speaker": "officer",
+      "japanese": "旅行の目的は何ですか。",
+      "furigana": [{ "b": "旅行", "r": "りょこう" }, { "b": "の" }, { "b": "目的", "r": "もくてき" }, { "b": "は" }, { "b": "何", "r": "なん" }, { "b": "ですか。" }],
+      "romaji": "Ryokō no mokuteki wa nan desu ka.",
+      "english": "What's the purpose of your visit?",
+      "audio": "audio/ja/scenario/immigration-n2.mp3",
+      "audioHint": "りょこうのもくてきはなんですか",
+      "options": [
+        {
+          "phraseId": "air-02",
+          "quality": "good",
+          "feedback": "One word, exactly what's wanted. Immigration is not the place to be expansive.",
+          "next": "n3"
+        },
+        {
+          "phraseId": "gre-22",
+          "quality": "good",
+          "feedback": "Also correct, slightly fuller. Both land the same.",
+          "next": "n3"
+        },
+        {
+          "phraseId": "gre-14",
+          "quality": "awkward",
+          "feedback": "It'll be repeated in English and you'll be fine — but 目的 (purpose) is the one word worth knowing before you land.",
+          "next": "n2b"
+        }
+      ]
+    },
+
+    "n2b": {
+      "speaker": "officer",
+      "japanese": "Sightseeing? Business?",
+      "furigana": [{ "b": "Sightseeing? Business?" }],
+      "romaji": "(in English)",
+      "english": "Sightseeing? Business?",
+      "audio": null,
+      "options": [
+        {
+          "phraseId": "air-02",
+          "quality": "good",
+          "feedback": "Back on track, and answering in Japanese after a stumble reads well.",
+          "next": "n3"
+        }
+      ]
+    },
+
+    "n3": {
+      "speaker": "officer",
+      "japanese": "何日間滞在しますか。",
+      "furigana": [{ "b": "何日間", "r": "なんにちかん" }, { "b": "滞在", "r": "たいざい" }, { "b": "しますか。" }],
+      "romaji": "Nannichikan taizai shimasu ka.",
+      "english": "How many days are you staying?",
+      "audio": "audio/ja/scenario/immigration-n3.mp3",
+      "audioHint": "なんにちかんたいざいしますか",
+      "options": [
+        {
+          "phraseId": "air-03",
+          "quality": "good",
+          "feedback": "Ten days. Note 十日 is the irregular とおか, not じゅうにち.",
+          "next": "n4"
+        },
+        {
+          "quality": "good",
+          "japanese": "二週間です。",
+          "romaji": "Nishūkan desu.",
+          "english": "Two weeks.",
+          "feedback": "週間 counts weeks. Often easier to say than the day count.",
+          "next": "n4"
+        }
+      ]
+    },
+
+    "n4": {
+      "speaker": "officer",
+      "japanese": "どこに泊まりますか。",
+      "furigana": [{ "b": "どこに" }, { "b": "泊", "r": "と" }, { "b": "まりますか。" }],
+      "romaji": "Doko ni tomarimasu ka.",
+      "english": "Where are you staying?",
+      "audio": "audio/ja/scenario/immigration-n4.mp3",
+      "audioHint": "どこにとまりますか",
+      "options": [
+        {
+          "phraseId": "air-05",
+          "quality": "good",
+          "feedback": "Best answer — show the booking on your phone as you say it. Place names are hard to pronounce and easy to show.",
+          "next": "n5"
+        },
+        {
+          "phraseId": "air-04",
+          "quality": "good",
+          "feedback": "True but vague. Expect a follow-up asking which hotel, so have the address ready anyway.",
+          "next": "n5"
+        },
+        {
+          "phraseId": "gre-13",
+          "quality": "wrong",
+          "feedback": "'I understand' isn't an answer to 'where'. Under pressure it's easy to reach for a phrase you're confident in rather than the one that fits — worth noticing that reflex now.",
+          "next": "n4"
+        }
+      ]
+    },
+
+    "n5": {
+      "speaker": "officer",
+      "japanese": "はい、結構です。指紋と写真をお願いします。",
+      "furigana": [{ "b": "はい、" }, { "b": "結構", "r": "けっこう" }, { "b": "です。" }, { "b": "指紋", "r": "しもん" }, { "b": "と" }, { "b": "写真", "r": "しゃしん" }, { "b": "をお" }, { "b": "願", "r": "ねが" }, { "b": "いします。" }],
+      "romaji": "Hai, kekkō desu. Shimon to shashin o onegai shimasu.",
+      "english": "That's fine. Fingerprints and photo, please.",
+      "audio": "audio/ja/scenario/immigration-n5.mp3",
+      "audioHint": "はい、けっこうです。しもんとしゃしんをおねがいします",
+      "options": [
+        {
+          "phraseId": "gre-13",
+          "quality": "good",
+          "feedback": "Now it fits — index fingers on the scanner, look at the small camera.",
+          "next": "end"
+        },
+        {
+          "phraseId": "gre-05",
+          "quality": "good",
+          "feedback": "Also fine. 結構です here means 'that's sufficient', not 'no thank you' — context does the work.",
+          "next": "end"
+        }
+      ]
+    },
+
+    "end": {
+      "speaker": "narration",
+      "japanese": "",
+      "romaji": "",
+      "english": "Stamped and through. Four questions, always the same four: purpose, length, where, and the biometrics.",
+      "end": true,
+      "options": []
+    }
+  }
+}

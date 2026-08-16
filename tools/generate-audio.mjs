@@ -102,6 +102,25 @@ for (const entry of manifest.categories) {
   }
 }
 
+// Scenario NPC lines are content in their own right and aren't present in
+// the category files, so they get their own clips (ASSUMPTIONS A15).
+// Player options reuse the referenced phrase's existing clip.
+for (const entry of manifest.scenarios || []) {
+  if (ONLY && !ONLY.has(entry.id)) continue;
+  const path = resolve(ROOT, entry.file);
+  if (!existsSync(path)) {
+    problems.push(`missing scenario file: ${entry.file}`);
+    continue;
+  }
+  const scenario = JSON.parse(readFileSync(path, 'utf8'));
+  for (const [nodeId, node] of Object.entries(scenario.nodes || {})) {
+    if (!node.audio) continue; // narration and English-language nodes have none
+    const text = node.audioHint || node.japanese;
+    if (!text) { problems.push(`${entry.id}/${nodeId}: audio declared but no text`); continue; }
+    jobs.push({ id: `${entry.id}/${nodeId}`, category: entry.id, text, out: resolve(ROOT, node.audio) });
+  }
+}
+
 const existing = jobs.filter((j) => existsSync(j.out) && statSync(j.out).size >= MIN_VALID_BYTES);
 const todo = FORCE ? jobs : jobs.filter((j) => !existing.includes(j));
 

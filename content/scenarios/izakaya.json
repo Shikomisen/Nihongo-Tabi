@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "id": "izakaya",
+  "title": "Ordering at a restaurant",
+  "category": "restaurant",
+  "setting": "A small neighbourhood restaurant, no English menu. You're on your own and you can't eat eggs.",
+  "start": "n1",
+  "nodes": {
+    "n1": {
+      "speaker": "staff",
+      "japanese": "いらっしゃいませ。何名様ですか。",
+      "furigana": [{ "b": "いらっしゃいませ。" }, { "b": "何名様", "r": "なんめいさま" }, { "b": "ですか。" }],
+      "romaji": "Irasshaimase. Nanmeisama desu ka.",
+      "english": "Welcome. How many in your party?",
+      "audio": "audio/ja/scenario/izakaya-n1.mp3",
+      "audioHint": "いらっしゃいませ。なんめいさまですか",
+      "options": [
+        {
+          "phraseId": "num-15",
+          "quality": "good",
+          "feedback": "Holding up one finger alongside is completely normal and not childish here.",
+          "next": "n2"
+        },
+        {
+          "phraseId": "num-16",
+          "quality": "good",
+          "feedback": "For two. Remember 一人 and 二人 are irregular — ひとり and ふたり, not いちにん/ににん.",
+          "next": "n2"
+        }
+      ]
+    },
+
+    "n2": {
+      "speaker": "staff",
+      "japanese": "カウンター席へどうぞ。お飲み物は何になさいますか。",
+      "furigana": [{ "b": "カウンター" }, { "b": "席", "r": "せき" }, { "b": "へどうぞ。お" }, { "b": "飲", "r": "の" }, { "b": "み" }, { "b": "物", "r": "もの" }, { "b": "は" }, { "b": "何", "r": "なに" }, { "b": "になさいますか。" }],
+      "romaji": "Kauntā seki e dōzo. O-nomimono wa nani ni nasaimasu ka.",
+      "english": "Counter seat, this way. What would you like to drink?",
+      "audio": "audio/ja/scenario/izakaya-n2.mp3",
+      "audioHint": "カウンターせきへどうぞ。おのみものはなにになさいますか",
+      "options": [
+        {
+          "quality": "good",
+          "japanese": "ビールをお願いします。",
+          "romaji": "Bīru o onegai shimasu.",
+          "english": "A beer, please.",
+          "feedback": "生 (nama, draft) is what you'll usually get if you just say 生ビール.",
+          "next": "n3"
+        },
+        {
+          "phraseId": "res-07",
+          "quality": "good",
+          "feedback": "Water is free everywhere and nobody will think anything of it.",
+          "next": "n3"
+        },
+        {
+          "phraseId": "res-02",
+          "quality": "awkward",
+          "feedback": "They asked about drinks specifically. You'll get the menu, but answering the question asked keeps the rhythm.",
+          "next": "n3"
+        }
+      ]
+    },
+
+    "n3": {
+      "speaker": "staff",
+      "japanese": "ご注文はお決まりですか。",
+      "furigana": [{ "b": "ご" }, { "b": "注文", "r": "ちゅうもん" }, { "b": "はお" }, { "b": "決", "r": "き" }, { "b": "まりですか。" }],
+      "romaji": "Go-chūmon wa o-kimari desu ka.",
+      "english": "Are you ready to order?",
+      "audio": "audio/ja/scenario/izakaya-n3.mp3",
+      "audioHint": "ごちゅうもんはおきまりですか",
+      "options": [
+        {
+          "phraseId": "res-03",
+          "quality": "good",
+          "feedback": "Lead with the allergy before ordering, not after. This is the right moment.",
+          "next": "n4"
+        },
+        {
+          "phraseId": "res-06",
+          "quality": "good",
+          "feedback": "Asking for a recommendation is a good move in a small place — but flag the allergy first.",
+          "next": "n4"
+        },
+        {
+          "quality": "wrong",
+          "japanese": "これをください。",
+          "romaji": "Kore o kudasai.",
+          "english": "This one, please. (pointing at the menu)",
+          "feedback": "You've ordered without mentioning the eggs. Fine for a preference, genuinely risky for an allergy — say it before you order, every time.",
+          "next": "n3b"
+        }
+      ]
+    },
+
+    "n3b": {
+      "speaker": "staff",
+      "japanese": "かしこまりました。親子丼ですね。",
+      "furigana": [{ "b": "かしこまりました。" }, { "b": "親子丼", "r": "おやこどん" }, { "b": "ですね。" }],
+      "romaji": "Kashikomarimashita. Oyakodon desu ne.",
+      "english": "Certainly. The oyakodon, then.",
+      "audio": "audio/ja/scenario/izakaya-n3b.mp3",
+      "audioHint": "かしこまりました。おやこどんですね",
+      "options": [
+        {
+          "phraseId": "res-04",
+          "quality": "good",
+          "feedback": "Caught it in time. 親子丼 is chicken *and egg* — the name literally means 'parent and child'. Exactly the trap that flagging the allergy first avoids.",
+          "next": "n4"
+        },
+        {
+          "phraseId": "res-09",
+          "quality": "good",
+          "feedback": "Good instinct. Asking what's in a dish catches hidden ingredients — dashi, egg, wheat — that the name doesn't advertise.",
+          "next": "n4"
+        }
+      ]
+    },
+
+    "n4": {
+      "speaker": "staff",
+      "japanese": "卵ですね。承知しました。こちらは大丈夫です。",
+      "furigana": [{ "b": "卵", "r": "たまご" }, { "b": "ですね。" }, { "b": "承知", "r": "しょうち" }, { "b": "しました。こちらは" }, { "b": "大丈夫", "r": "だいじょうぶ" }, { "b": "です。" }],
+      "romaji": "Tamago desu ne. Shōchi shimashita. Kochira wa daijōbu desu.",
+      "english": "Eggs, understood. This one here is fine.",
+      "audio": "audio/ja/scenario/izakaya-n4.mp3",
+      "audioHint": "たまごですね。しょうちしました。こちらはだいじょうぶです",
+      "options": [
+        {
+          "quality": "good",
+          "japanese": "じゃあ、それをお願いします。",
+          "romaji": "Jā, sore o onegai shimasu.",
+          "english": "That one, then, please.",
+          "feedback": "じゃあ = 'in that case'. A small word that makes you sound much more fluent than it costs.",
+          "next": "n5"
+        },
+        {
+          "phraseId": "gre-05",
+          "quality": "good",
+          "feedback": "Warranted — they checked the dish for you rather than shrugging.",
+          "next": "n5"
+        }
+      ]
+    },
+
+    "n5": {
+      "speaker": "staff",
+      "japanese": "お待たせしました。どうぞ。",
+      "furigana": [{ "b": "お" }, { "b": "待", "r": "ま" }, { "b": "たせしました。どうぞ。" }],
+      "romaji": "O-matase shimashita. Dōzo.",
+      "english": "Sorry to keep you waiting. Here you are.",
+      "audio": "audio/ja/scenario/izakaya-n5.mp3",
+      "audioHint": "おまたせしました。どうぞ",
+      "options": [
+        {
+          "phraseId": "res-01",
+          "quality": "good",
+          "feedback": "Said to nobody in particular before you start. Skipping it is the noticeable thing.",
+          "next": "n6"
+        },
+        {
+          "phraseId": "gre-05",
+          "quality": "good",
+          "feedback": "Fine, though いただきます is what a Japanese diner would say at this exact moment.",
+          "next": "n6"
+        }
+      ]
+    },
+
+    "n6": {
+      "speaker": "staff",
+      "japanese": "お会計はレジでお願いします。",
+      "furigana": [{ "b": "お" }, { "b": "会計", "r": "かいけい" }, { "b": "はレジでお" }, { "b": "願", "r": "ねが" }, { "b": "いします。" }],
+      "romaji": "O-kaikei wa reji de onegai shimasu.",
+      "english": "Please pay at the register.",
+      "audio": "audio/ja/scenario/izakaya-n6.mp3",
+      "audioHint": "おかいけいはレジでおねがいします",
+      "options": [
+        {
+          "phraseId": "res-05",
+          "quality": "good",
+          "feedback": "The bookend to いただきます, said on the way out. It lands as genuine thanks and staff notice it.",
+          "next": "end"
+        },
+        {
+          "phraseId": "num-08",
+          "quality": "good",
+          "feedback": "Worth asking at a small independent place — plenty are still cash-only.",
+          "next": "end"
+        }
+      ]
+    },
+
+    "end": {
+      "speaker": "narration",
+      "japanese": "",
+      "romaji": "",
+      "english": "Fed, and no eggs. The lesson worth keeping: state a dietary restriction *before* ordering, not after the dish is named.",
+      "end": true,
+      "options": []
+    }
+  }
+}

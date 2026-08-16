@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "id": "lost",
+  "title": "Asking the way when lost",
+  "category": "directions",
+  "setting": "You came out of the wrong station exit. Your phone is at 4%. There's a woman waiting at a crossing.",
+  "start": "n1",
+  "nodes": {
+    "n1": {
+      "speaker": "narration",
+      "japanese": "",
+      "romaji": "",
+      "english": "You need to open the conversation. How?",
+      "options": [
+        {
+          "phraseId": "gre-04",
+          "quality": "good",
+          "feedback": "Always open with すみません. It signals 'I'm about to ask you something' and gives the other person a beat to turn toward you.",
+          "next": "n2"
+        },
+        {
+          "phraseId": "gre-02",
+          "quality": "awkward",
+          "feedback": "Greeting a stranger on the street with こんにちは before a request is a little odd — it reads as social rather than practical. すみません is the tool for this.",
+          "next": "n2"
+        },
+        {
+          "quality": "wrong",
+          "japanese": "ちょっと、あの",
+          "romaji": "Chotto, ano—",
+          "english": "Hey, um—",
+          "feedback": "ちょっと to get a stranger's attention is brusque, and can read as a complaint incoming. Anime uses it freely between characters who already know each other.",
+          "next": "n2"
+        }
+      ]
+    },
+
+    "n2": {
+      "speaker": "passerby",
+      "japanese": "はい、何でしょうか。",
+      "furigana": [{ "b": "はい、" }, { "b": "何", "r": "なん" }, { "b": "でしょうか。" }],
+      "romaji": "Hai, nan deshō ka.",
+      "english": "Yes, what is it?",
+      "audio": "audio/ja/scenario/lost-n2.mp3",
+      "audioHint": "はい、なんでしょうか",
+      "options": [
+        {
+          "phraseId": "dir-04",
+          "quality": "good",
+          "feedback": "States the problem before the question. People respond to this very warmly in Japan.",
+          "next": "n3"
+        },
+        {
+          "phraseId": "dir-01",
+          "quality": "good",
+          "feedback": "Direct and effective, especially with a map held out.",
+          "next": "n3"
+        },
+        {
+          "phraseId": "gre-15",
+          "quality": "good",
+          "feedback": "Smart opener — it makes the other person slow down before they've said anything complicated.",
+          "next": "n3"
+        }
+      ]
+    },
+
+    "n3": {
+      "speaker": "passerby",
+      "japanese": "どちらへ行きたいんですか。",
+      "furigana": [{ "b": "どちらへ" }, { "b": "行", "r": "い" }, { "b": "きたいんですか。" }],
+      "romaji": "Dochira e ikitai n desu ka.",
+      "english": "Where do you want to go?",
+      "audio": "audio/ja/scenario/lost-n3.mp3",
+      "audioHint": "どちらへいきたいんですか",
+      "options": [
+        {
+          "quality": "good",
+          "japanese": "この住所に行きたいです。",
+          "romaji": "Kono jūsho ni ikitai desu.",
+          "english": "I want to go to this address. (showing phone)",
+          "feedback": "Showing beats pronouncing. Address readings are genuinely hard even for Japanese speakers.",
+          "next": "n4"
+        },
+        {
+          "phraseId": "dir-07",
+          "quality": "good",
+          "feedback": "If you just need a landmark to reorient from, this is the faster question.",
+          "next": "n4"
+        }
+      ]
+    },
+
+    "n4": {
+      "speaker": "passerby",
+      "japanese": "ああ、それなら次の信号を右に曲がって、まっすぐ行くと左側にありますよ。歩いて五分ぐらいです。",
+      "furigana": [{ "b": "ああ、それなら" }, { "b": "次", "r": "つぎ" }, { "b": "の" }, { "b": "信号", "r": "しんごう" }, { "b": "を" }, { "b": "右", "r": "みぎ" }, { "b": "に" }, { "b": "曲", "r": "ま" }, { "b": "がって、まっすぐ" }, { "b": "行", "r": "い" }, { "b": "くと" }, { "b": "左側", "r": "ひだりがわ" }, { "b": "にありますよ。" }, { "b": "歩", "r": "ある" }, { "b": "いて" }, { "b": "五分", "r": "ごふん" }, { "b": "ぐらいです。" }],
+      "romaji": "Ā, sore nara tsugi no shingō o migi ni magatte, massugu iku to hidarigawa ni arimasu yo. Aruite gofun gurai desu.",
+      "english": "Ah, in that case turn right at the next light, go straight, and it's on the left. About five minutes on foot.",
+      "audio": "audio/ja/scenario/lost-n4.mp3",
+      "audioHint": "ああ、それならつぎのしんごうをみぎにまがって、まっすぐいくとひだりがわにありますよ。あるいてごふんぐらいです",
+      "options": [
+        {
+          "phraseId": "gre-17",
+          "quality": "good",
+          "feedback": "The right call — that was fast and dense. Asking for it slower gets you the whole thing again, not a shortened version.",
+          "next": "n5"
+        },
+        {
+          "phraseId": "dir-10",
+          "quality": "good",
+          "feedback": "Even better. A spoken route evaporates; a finger on a map doesn't.",
+          "next": "n5"
+        },
+        {
+          "phraseId": "gre-13",
+          "quality": "awkward",
+          "feedback": "Be careful with わかりました here. Saying you understood when you caught maybe half of it ends the conversation and leaves you no better off — this is the most common politeness trap for learners.",
+          "next": "n5"
+        }
+      ]
+    },
+
+    "n5": {
+      "speaker": "passerby",
+      "japanese": "ここです。この道をまっすぐ。すぐ分かりますよ。",
+      "furigana": [{ "b": "ここです。この" }, { "b": "道", "r": "みち" }, { "b": "をまっすぐ。すぐ" }, { "b": "分", "r": "わ" }, { "b": "かりますよ。" }],
+      "romaji": "Koko desu. Kono michi o massugu. Sugu wakarimasu yo.",
+      "english": "It's here. Straight along this road. You'll spot it easily.",
+      "audio": "audio/ja/scenario/lost-n5.mp3",
+      "audioHint": "ここです。このみちをまっすぐ。すぐわかりますよ",
+      "options": [
+        {
+          "phraseId": "gre-05",
+          "quality": "good",
+          "feedback": "Done. A small bow along with it is natural and costs nothing.",
+          "next": "end"
+        },
+        {
+          "phraseId": "gre-06",
+          "quality": "good",
+          "feedback": "Past form, because the help is complete. Both work here.",
+          "next": "end"
+        },
+        {
+          "phraseId": "gre-20",
+          "quality": "wrong",
+          "feedback": "'You're welcome' — but they helped you. Under pressure it's easy to grab the wrong half of a thanks/reply pair.",
+          "next": "end"
+        }
+      ]
+    },
+
+    "end": {
+      "speaker": "narration",
+      "japanese": "",
+      "romaji": "",
+      "english": "Back on course. The real skill in this scenario isn't asking — it's admitting you didn't catch the answer. ゆっくりお願いします is worth more than any vocabulary here.",
+      "end": true,
+      "options": []
+    }
+  }
+}

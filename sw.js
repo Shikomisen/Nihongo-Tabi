@@ -12,7 +12,7 @@
  *                         under a given cache version)
  */
 
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v2';
 const CACHE = `nihongo-tabi-${CACHE_VERSION}`;
 
 const SHELL = [
@@ -26,6 +26,7 @@ const SHELL = [
   './js/deck.js',
   './js/quiz.js',
   './js/render.js',
+  './js/scenario.js',
   './js/srs.js',
   './js/store.js',
   './icons/icon-192.png',
@@ -41,17 +42,23 @@ async function contentAssets() {
     const res = await fetch('./content/manifest.json', { cache: 'no-cache' });
     const manifest = await res.json();
 
-    for (const s of manifest.scenarios || []) assets.push(`./${s.file}`);
-
     const categoryFiles = (manifest.categories || []).map((c) => c.file);
-    assets.push(...categoryFiles.map((f) => `./${f}`));
+    const scenarioFiles = (manifest.scenarios || []).map((s) => s.file);
+    assets.push(...categoryFiles.map((f) => `./${f}`), ...scenarioFiles.map((f) => `./${f}`));
 
-    // Audio clips are listed inside each category file.
-    const loaded = await Promise.all(
-      categoryFiles.map((f) => fetch(`./${f}`).then((r) => (r.ok ? r.json() : null)).catch(() => null))
-    );
-    for (const cat of loaded) {
+    const fetchJSON = (f) =>
+      fetch(`./${f}`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+
+    // Phrase clips live inside each category file...
+    for (const cat of await Promise.all(categoryFiles.map(fetchJSON))) {
       for (const p of cat?.phrases || []) if (p.audio) assets.push(`./${p.audio}`);
+    }
+
+    // ...and NPC-line clips inside each scenario file.
+    for (const sc of await Promise.all(scenarioFiles.map(fetchJSON))) {
+      for (const node of Object.values(sc?.nodes || {})) {
+        if (node.audio) assets.push(`./${node.audio}`);
+      }
     }
   } catch (err) {
     // Offline on first install, or a malformed manifest. The shell still

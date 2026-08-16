@@ -1,13 +1,16 @@
 {
   "name": "nihongo-tabi",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Survival-level conversational Japanese — an offline PWA with SRS flashcards, scenario dialogues and bundled pre-generated audio.",
   "type": "module",
   "scripts": {
     "start": "node tools/serve.mjs",
     "dev": "node tools/serve.mjs",
-    "test": "node tools/selftest.mjs",
+    "test": "node tools/selftest.mjs && node tools/integration-test.mjs",
+    "test:content": "node tools/selftest.mjs",
+    "test:integration": "node tools/integration-test.mjs",
+    "test:render": "node tools/render-test.mjs",
     "audio": "node tools/generate-audio.mjs",
     "audio:check": "node tools/generate-audio.mjs --check",
     "audio:force": "node tools/generate-audio.mjs --force",

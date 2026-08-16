@@ -52,6 +52,79 @@
       "audioHint": "めんぜいできますか",
       "tags": ["shopping", "money", "signage"],
       "difficulty": 4
+    },
+    {
+      "id": "sho-05",
+      "japanese": "見ているだけです",
+      "furigana": [{ "b": "見", "r": "み" }, { "b": "ているだけです" }],
+      "romaji": "mite iru dake desu",
+      "english": "I'm just looking.",
+      "registerNotes": "Polite way to decline help without ending the interaction. Staff will leave you be.",
+      "audio": "audio/ja/sho-05.mp3",
+      "audioHint": "みているだけです",
+      "tags": ["shopping"],
+      "difficulty": 2
+    },
+    {
+      "id": "sho-06",
+      "japanese": "いらっしゃいませ",
+      "furigana": [{ "b": "いらっしゃいませ" }],
+      "romaji": "irasshaimase",
+      "english": "Welcome. (staff to customer)",
+      "registerNotes": "Recognition only — you never say this, you only ever receive it. No reply is expected; a nod is plenty.",
+      "animeNote": "Anime uses it accurately, but tends to skip that it needs no response. Answering it is the giveaway.",
+      "audio": "audio/ja/sho-06.mp3",
+      "audioHint": "いらっしゃいませ",
+      "tags": ["shopping", "listening", "recognition-only"],
+      "difficulty": 2
+    },
+    {
+      "id": "sho-07",
+      "japanese": "もう少し安いのはありますか",
+      "furigana": [{ "b": "もう" }, { "b": "少", "r": "すこ" }, { "b": "し" }, { "b": "安", "r": "やす" }, { "b": "いのはありますか" }],
+      "romaji": "mō sukoshi yasui no wa arimasu ka",
+      "english": "Is there anything a bit cheaper?",
+      "registerNotes": "Asking for a cheaper option is fine. Haggling on price is not — prices are fixed almost everywhere.",
+      "audio": "audio/ja/sho-07.mp3",
+      "audioHint": "もうすこしやすいのはありますか",
+      "tags": ["shopping", "money", "question"],
+      "difficulty": 4
+    },
+    {
+      "id": "sho-08",
+      "japanese": "他のサイズはありますか",
+      "furigana": [{ "b": "他", "r": "ほか" }, { "b": "のサイズはありますか" }],
+      "romaji": "hoka no saizu wa arimasu ka",
+      "english": "Do you have another size?",
+      "registerNotes": "Japanese sizing runs small by Western standards — expect to go up one or two.",
+      "audio": "audio/ja/sho-08.mp3",
+      "audioHint": "ほかのサイズはありますか",
+      "tags": ["shopping", "question"],
+      "difficulty": 3
+    },
+    {
+      "id": "sho-09",
+      "japanese": "ポイントカードはお持ちですか",
+      "furigana": [{ "b": "ポイントカードはお" }, { "b": "持", "r": "も" }, { "b": "ちですか" }],
+      "romaji": "pointo kādo wa o-mochi desu ka",
+      "english": "Do you have a point card?",
+      "registerNotes": "Recognition only, but you will be asked this at literally every till. Answer いいえ、大丈夫です.",
+      "audio": "audio/ja/sho-09.mp3",
+      "audioHint": "ポイントカードはおもちですか",
+      "tags": ["shopping", "listening", "recognition-only"],
+      "difficulty": 4
+    },
+    {
+      "id": "sho-10",
+      "japanese": "温めますか",
+      "furigana": [{ "b": "温", "r": "あたた" }, { "b": "めますか" }],
+      "romaji": "atatamemasu ka",
+      "english": "Shall I heat it up?",
+      "registerNotes": "Recognition only — asked at every convenience store when you buy a bento or bun. はい、お願いします or 大丈夫です.",
+      "audio": "audio/ja/sho-10.mp3",
+      "audioHint": "あたためますか",
+      "tags": ["shopping", "listening", "recognition-only", "essential"],
+      "difficulty": 3
     }
   ]
 }

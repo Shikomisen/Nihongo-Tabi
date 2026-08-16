@@ -6,13 +6,14 @@
  * at this scale and removes a whole class of stale-state bugs.
  */
 
-import { loadContent, getCategory } from './content.js';
+import { loadContent, getCategory, scenariosFor } from './content.js';
 import * as deck from './deck.js';
 import * as srs from './srs.js';
 import * as audio from './audio.js';
 import * as store from './store.js';
 import { el, clear, phraseBlock, japaneseNode, notesBlock, tagRow, audioButton, toast } from './render.js';
 import { renderPlacement } from './quiz.js';
+import { renderScenarioList, renderScenario } from './scenario.js';
 
 const app = () => document.getElementById('app');
 
@@ -24,6 +25,8 @@ const routes = [
   [/^\/category\/([\w-]+)$/, category],
   [/^\/study\/([\w-]+)$/, studyCategory],
   [/^\/review$/, review],
+  [/^\/scenarios$/, (root) => renderScenarioList(root)],
+  [/^\/scenario\/([\w-]+)$/, (root, id) => renderScenario(root, id)],
   [/^\/settings$/, settings],
 ];
 
@@ -91,6 +94,35 @@ async function playPhrase(phrase) {
   return result;
 }
 
+/**
+ * Inline furigana/romaji toggles (README §6, Day 2).
+ *
+ * Deliberately duplicated next to the content rather than buried in
+ * Settings: deciding whether you need the reading is a per-card judgement
+ * made mid-study, and a trip to Settings to check yourself is a trip you
+ * won't make.
+ */
+function toggleStrip(onChange) {
+  const make = async (key, label) => {
+    const s = await deck.getSettings();
+    return el('button', {
+      class: `chip ${s[key] ? 'chip-on' : ''}`,
+      type: 'button',
+      'aria-pressed': s[key] ? 'true' : 'false',
+      onclick: async () => {
+        const cur = await deck.getSettings();
+        await deck.saveSettings({ [key]: !cur[key] });
+        onChange();
+      },
+    }, label);
+  };
+
+  const strip = el('div', { class: 'toggle-strip' });
+  Promise.all([make('furigana', 'ふりがな'), make('romaji', 'romaji')])
+    .then((chips) => chips.forEach((c) => strip.append(c)));
+  return strip;
+}
+
 /* ---------- home / due today ---------- */
 
 async function home(root) {
@@ -112,8 +144,10 @@ async function home(root) {
         stat(streakDays, streakDays === 1 ? 'day streak' : 'day streak')),
 
       q.length
-        ? el('button', { class: 'btn btn-primary btn-lg full', onclick: () => go('/review') },
-            `Start review · ${q.length} card${q.length === 1 ? '' : 's'}`)
+        ? el('div', {},
+            el('button', { class: 'btn btn-primary btn-lg full', onclick: () => go('/review') },
+              `Start review · ${q.length} card${q.length === 1 ? '' : 's'}`),
+            queueBreakdown(q))
         : el('div', { class: 'empty-state' },
             el('p', {}, '✅ Nothing due right now.'),
             el('p', { class: 'muted' }, 'Add a category or study ahead from the browse screen.'),
@@ -125,9 +159,59 @@ async function home(root) {
           ? await Promise.all(activeCats.map(categoryRow))
           : el('p', { class: 'muted' }, 'No categories active yet.')),
 
+      await forecastBlock(),
+
       el('button', { class: 'btn btn-ghost full', onclick: () => go('/browse') }, 'Add more categories →')
     )
   );
+}
+
+/** What's actually in today's queue, split by why it's there. */
+function queueBreakdown(queue) {
+  const fresh = queue.filter((c) => c.state === 'new').length;
+  const relearn = queue.filter((c) => c.state === 'learning').length;
+  const due = queue.length - fresh - relearn;
+  const parts = [
+    due && `${due} to review`,
+    relearn && `${relearn} relearning`,
+    fresh && `${fresh} new`,
+  ].filter(Boolean);
+  return el('p', { class: 'muted small queue-breakdown' }, parts.join(' · '));
+}
+
+/**
+ * Seven-day forecast straight off the SRS due dates — the thing that makes
+ * the scheduler legible rather than a black box, and shows why adding six
+ * categories at once is a bad idea.
+ */
+async function forecastBlock() {
+  const s = await deck.getSettings();
+  const active = new Set(s.activeCategories);
+  const cards = (await deck.getDeck()).filter((c) => active.has(c.categoryId) && c.state !== 'new');
+
+  const days = Array.from({ length: 7 }, (_, i) => {
+    const start = new Date();
+    start.setHours(0, 0, 0, 0);
+    start.setDate(start.getDate() + i);
+    const end = new Date(start);
+    end.setDate(end.getDate() + 1);
+    const count = cards.filter((c) =>
+      i === 0 ? c.due < end.getTime() : c.due >= start.getTime() && c.due < end.getTime()
+    ).length;
+    return { label: i === 0 ? 'today' : start.toLocaleDateString(undefined, { weekday: 'short' }), count };
+  });
+
+  const peak = Math.max(1, ...days.map((d) => d.count));
+
+  return el('section', {},
+    el('h2', { class: 'section-title' }, 'Next 7 days'),
+    el('div', { class: 'forecast' },
+      days.map((d) =>
+        el('div', { class: 'forecast-day' },
+          el('div', { class: 'forecast-bar' },
+            el('div', { class: 'forecast-fill', style: `height:${(d.count / peak) * 100}%` })),
+          el('div', { class: 'forecast-count' }, String(d.count)),
+          el('div', { class: 'forecast-label muted small' }, d.label)))));
 }
 
 function dueLine(queueLength, summary) {
@@ -210,11 +294,25 @@ async function category(root, id) {
   const s = await deck.getSettings();
   const active = s.activeCategories.includes(id);
   const progress = await deck.categoryProgress(id);
+  const scenarios = await scenariosFor(id);
 
   root.append(
     el('div', { class: 'screen' },
       el('a', { class: 'back-link', href: '#/browse' }, '← Browse'),
       header(`${cat.icon || ''} ${cat.title}`, cat.description),
+
+      scenarios.length
+        ? el('div', { class: 'card-list scenario-teaser' },
+            scenarios.map((sc) =>
+              el('a', { class: 'row-card', href: `#/scenario/${sc.id}` },
+                el('span', { class: 'row-icon' }, sc.icon || '🗣️'),
+                el('span', { class: 'row-body' },
+                  el('span', { class: 'row-title' }, sc.title),
+                  el('span', { class: 'row-sub' }, 'Practise the full exchange')),
+                el('span', { class: 'row-chev' }, '›'))))
+        : null,
+
+      toggleStrip(router),
 
       el('div', { class: 'action-row' },
         active
@@ -299,6 +397,9 @@ async function runSession(root, queue, { title, exitTo }) {
     if (!phrase) { cards.shift(); return draw(); } // content removed under us
     clear(view);
 
+    // Re-read settings each draw so the inline toggles take effect immediately.
+    Object.assign(s, await deck.getSettings());
+
     const previews = srs.gradePreviews(card);
 
     view.append(
@@ -322,6 +423,8 @@ async function runSession(root, queue, { title, exitTo }) {
               notesBlock(phrase),
               tagRow(phrase))
           : el('p', { class: 'muted tap-hint' }, 'Tap to reveal')),
+
+      toggleStrip(draw),
 
       flipped
         ? el('div', { class: 'grade-row' },

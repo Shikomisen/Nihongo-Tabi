@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "id": "ticket",
+  "title": "Buying a train ticket",
+  "category": "transport",
+  "setting": "You're at the staffed ticket window (みどりの窓口) at a JR station, heading to Kyoto.",
+  "start": "n1",
+  "nodes": {
+    "n1": {
+      "speaker": "staff",
+      "japanese": "次の方、どうぞ。",
+      "furigana": [{ "b": "次", "r": "つぎ" }, { "b": "の" }, { "b": "方", "r": "かた" }, { "b": "、どうぞ。" }],
+      "romaji": "Tsugi no kata, dōzo.",
+      "english": "Next, please.",
+      "audio": "audio/ja/scenario/ticket-n1.mp3",
+      "audioHint": "つぎのかた、どうぞ",
+      "options": [
+        {
+          "quality": "good",
+          "japanese": "京都までお願いします。",
+          "romaji": "Kyōto made onegai shimasu.",
+          "english": "To Kyoto, please.",
+          "feedback": "Destination + までお願いします. This opens the whole transaction in four words.",
+          "next": "n2"
+        },
+        {
+          "phraseId": "gre-04",
+          "quality": "good",
+          "feedback": "Fine as an opener, though they've already invited you forward — you can go straight to the destination.",
+          "next": "n2"
+        },
+        {
+          "phraseId": "gre-18",
+          "quality": "awkward",
+          "feedback": "Not wrong, but you have the Japanese for this. Leading with the English question skips the part you can actually do.",
+          "next": "n2"
+        }
+      ]
+    },
+
+    "n2": {
+      "speaker": "staff",
+      "japanese": "片道ですか、往復ですか。",
+      "furigana": [{ "b": "片道", "r": "かたみち" }, { "b": "ですか、" }, { "b": "往復", "r": "おうふく" }, { "b": "ですか。" }],
+      "romaji": "Katamichi desu ka, ōfuku desu ka.",
+      "english": "One way or return?",
+      "audio": "audio/ja/scenario/ticket-n2.mp3",
+      "audioHint": "かたみちですか、おうふくですか",
+      "options": [
+        {
+          "quality": "good",
+          "japanese": "片道でお願いします。",
+          "romaji": "Katamichi de onegai shimasu.",
+          "english": "One way, please.",
+          "feedback": "Repeating the half of the question you want is the cleanest way to answer an either/or in Japanese.",
+          "next": "n3"
+        },
+        {
+          "quality": "good",
+          "japanese": "往復でお願いします。",
+          "romaji": "Ōfuku de onegai shimasu.",
+          "english": "Return, please.",
+          "feedback": "Same pattern. 往復 is usually cheaper than two singles.",
+          "next": "n3"
+        },
+        {
+          "phraseId": "gre-08",
+          "quality": "wrong",
+          "feedback": "はい can't answer an either/or question — there's nothing to say yes to. This is the single most common mistake with this question shape.",
+          "next": "n2b"
+        }
+      ]
+    },
+
+    "n2b": {
+      "speaker": "staff",
+      "japanese": "えっと…片道ですか？往復ですか？",
+      "furigana": [{ "b": "えっと…" }, { "b": "片道", "r": "かたみち" }, { "b": "ですか？" }, { "b": "往復", "r": "おうふく" }, { "b": "ですか？" }],
+      "romaji": "Etto… katamichi desu ka? Ōfuku desu ka?",
+      "english": "Err… one way? Or return?",
+      "audio": "audio/ja/scenario/ticket-n2b.mp3",
+      "audioHint": "えっと、かたみちですか、おうふくですか",
+      "options": [
+        {
+          "quality": "good",
+          "japanese": "片道でお願いします。",
+          "romaji": "Katamichi de onegai shimasu.",
+          "english": "One way, please.",
+          "feedback": "Recovered. Naming the option you want is always unambiguous.",
+          "next": "n3"
+        },
+        {
+          "phraseId": "gre-16",
+          "quality": "good",
+          "feedback": "Also a fine recovery — buying yourself a repeat is never a wrong move.",
+          "next": "n3"
+        }
+      ]
+    },
+
+    "n3": {
+      "speaker": "staff",
+      "japanese": "指定席と自由席、どちらになさいますか。",
+      "furigana": [{ "b": "指定席", "r": "していせき" }, { "b": "と" }, { "b": "自由席", "r": "じゆうせき" }, { "b": "、どちらになさいますか。" }],
+      "romaji": "Shiteiseki to jiyūseki, dochira ni nasaimasu ka.",
+      "english": "Reserved or unreserved seat, which would you like?",
+      "audio": "audio/ja/scenario/ticket-n3.mp3",
+      "audioHint": "していせきとじゆうせき、どちらになさいますか",
+      "options": [
+        {
+          "phraseId": "tra-09",
+          "quality": "good",
+          "feedback": "Reserved. Worth it on a holiday weekend or with luggage — you're guaranteed a seat.",
+          "next": "n4"
+        },
+        {
+          "phraseId": "tra-10",
+          "quality": "good",
+          "feedback": "Unreserved, cheaper, and usually fine off-peak. 〜でいいです is a useful 'that one's fine' for any offered choice.",
+          "next": "n4"
+        },
+        {
+          "phraseId": "num-05",
+          "quality": "awkward",
+          "feedback": "Reasonable instinct — reserved costs more — but it stalls the transaction. Ask おすすめは？ or just pick one and ask the price at the end.",
+          "next": "n4"
+        }
+      ]
+    },
+
+    "n4": {
+      "speaker": "staff",
+      "japanese": "一万三千八百二十円です。",
+      "furigana": [{ "b": "一万三千八百二十円", "r": "いちまんさんぜんはっぴゃくにじゅうえん" }, { "b": "です。" }],
+      "romaji": "Ichiman sanzen happyaku nijū en desu.",
+      "english": "That's ¥13,820.",
+      "audio": "audio/ja/scenario/ticket-n4.mp3",
+      "audioHint": "いちまんさんぜんはっぴゃくにじゅうえんです",
+      "options": [
+        {
+          "phraseId": "num-08",
+          "quality": "good",
+          "feedback": "JR ticket windows all take cards. Note the 一万 — Japanese counts in units of 10,000, so this is 'one man, three thousand…'.",
+          "next": "n5"
+        },
+        {
+          "phraseId": "gre-17",
+          "quality": "good",
+          "feedback": "No shame in it. Long prices come fast, and they'll also point at the display showing the figure.",
+          "next": "n5"
+        }
+      ]
+    },
+
+    "n5": {
+      "speaker": "staff",
+      "japanese": "はい、切符です。三番線から発車します。",
+      "furigana": [{ "b": "はい、" }, { "b": "切符", "r": "きっぷ" }, { "b": "です。" }, { "b": "三番線", "r": "さんばんせん" }, { "b": "から" }, { "b": "発車", "r": "はっしゃ" }, { "b": "します。" }],
+      "romaji": "Hai, kippu desu. Sanbansen kara hassha shimasu.",
+      "english": "Here's your ticket. It departs from platform 3.",
+      "audio": "audio/ja/scenario/ticket-n5.mp3",
+      "audioHint": "はい、きっぷです。さんばんせんからはっしゃします",
+      "options": [
+        {
+          "phraseId": "gre-05",
+          "quality": "good",
+          "feedback": "Caught the platform number. 三番線 — the 番線 counter is worth recognising instantly.",
+          "next": "end"
+        },
+        {
+          "phraseId": "tra-05",
+          "quality": "good",
+          "feedback": "They already said it, but confirming a platform number is never a bad idea when a train costs ¥13,820.",
+          "next": "end"
+        }
+      ]
+    },
+
+    "end": {
+      "speaker": "narration",
+      "japanese": "",
+      "romaji": "",
+      "english": "Ticket in hand, platform known. The either/or question at n2 is the one to drill — はい genuinely doesn't answer it.",
+      "end": true,
+      "options": []
+    }
+  }
+}

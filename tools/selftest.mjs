@@ -87,13 +87,37 @@ for (const s of manifest.scenarios || []) {
   check(`${s.id}: has a start node`, Boolean(sc.start));
   check(`${s.id}: has nodes`, sc.nodes && Object.keys(sc.nodes).length > 0);
 
+  check(`${s.id}: start node resolves`, Boolean(sc.nodes?.[sc.start]), sc.start);
+
+  const QUALITIES = ['good', 'awkward', 'wrong'];
+  const reachable = new Set([sc.start]);
+
   for (const [nodeId, node] of Object.entries(sc.nodes || {})) {
+    const terminal = node.end === true;
+    check(`${s.id}/${nodeId}: has options or is terminal`,
+      terminal || (node.options || []).length > 0);
+
+    if (node.audio) {
+      const clip = resolve(ROOT, node.audio);
+      check(`${s.id}/${nodeId}: audio clip exists`, existsSync(clip), node.audio);
+      if (existsSync(clip)) check(`${s.id}/${nodeId}: audio clip is non-trivial`, statSync(clip).size > 800);
+      check(`${s.id}/${nodeId}: audio has a kana hint`, Boolean(node.audioHint || node.japanese));
+    }
+
     for (const opt of node.options || []) {
       const target = opt.next;
       check(
         `${s.id}/${nodeId}: option target "${target}" exists`,
         target === null || target === undefined || target === 'END' || Boolean(sc.nodes[target])
       );
+      if (sc.nodes[target]) reachable.add(target);
+
+      check(`${s.id}/${nodeId}: option quality is valid`,
+        !opt.quality || QUALITIES.includes(opt.quality), opt.quality);
+      check(`${s.id}/${nodeId}: option has feedback`, Boolean(opt.feedback));
+      check(`${s.id}/${nodeId}: option has text or a phraseId`,
+        Boolean(opt.phraseId || opt.japanese || opt.english));
+
       if (opt.phraseId) {
         check(`${s.id}/${nodeId}: phrase ${opt.phraseId} exists in content`, seenIds.has(opt.phraseId));
       }
@@ -102,6 +126,21 @@ for (const s of manifest.scenarios || []) {
       check(`${s.id}/${nodeId}: phrase ${node.phraseId} exists in content`, seenIds.has(node.phraseId));
     }
   }
+
+  // Walk from the start so an orphaned node can't hide a broken branch.
+  for (let grew = true; grew; ) {
+    grew = false;
+    for (const id of [...reachable]) {
+      for (const opt of sc.nodes[id]?.options || []) {
+        if (sc.nodes[opt.next] && !reachable.has(opt.next)) { reachable.add(opt.next); grew = true; }
+      }
+    }
+  }
+  for (const nodeId of Object.keys(sc.nodes || {})) {
+    check(`${s.id}/${nodeId}: reachable from start`, reachable.has(nodeId));
+  }
+  check(`${s.id}: every path can terminate`,
+    [...reachable].some((id) => sc.nodes[id].end === true));
 }
 
 console.log(`  ${phraseCount} phrases, ${audioPresent} with generated audio (${phraseCount - audioPresent} pending)`);

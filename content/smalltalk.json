@@ -52,6 +52,79 @@
       "audioHint": "にほんのたべものがだいすきです",
       "tags": ["smalltalk"],
       "difficulty": 4
+    },
+    {
+      "id": "sma-05",
+      "japanese": "オーストラリアから来ました",
+      "furigana": [{ "b": "オーストラリアから" }, { "b": "来", "r": "き" }, { "b": "ました" }],
+      "romaji": "Ōsutoraria kara kimashita",
+      "english": "I'm from Australia.",
+      "registerNotes": "Swap the country: イギリス, アメリカ, カナダ, ドイツ, ニュージーランド.",
+      "audio": "audio/ja/sma-05.mp3",
+      "audioHint": "オーストラリアからきました",
+      "tags": ["smalltalk", "introduction"],
+      "difficulty": 2
+    },
+    {
+      "id": "sma-06",
+      "japanese": "日本語を勉強しています",
+      "furigana": [{ "b": "日本語", "r": "にほんご" }, { "b": "を" }, { "b": "勉強", "r": "べんきょう" }, { "b": "しています" }],
+      "romaji": "nihongo o benkyō shite imasu",
+      "english": "I'm studying Japanese.",
+      "registerNotes": "Explains your halting Japanese as effort rather than confusion, and people invariably become more patient.",
+      "audio": "audio/ja/sma-06.mp3",
+      "audioHint": "にほんごをべんきょうしています",
+      "tags": ["smalltalk", "survival"],
+      "difficulty": 3
+    },
+    {
+      "id": "sma-07",
+      "japanese": "写真を撮ってもいいですか",
+      "furigana": [{ "b": "写真", "r": "しゃしん" }, { "b": "を" }, { "b": "撮", "r": "と" }, { "b": "ってもいいですか" }],
+      "romaji": "shashin o totte mo ii desu ka",
+      "english": "May I take a photo?",
+      "registerNotes": "〜てもいいですか = 'may I…'. Worth asking in shops, temples and anywhere with people in frame.",
+      "audio": "audio/ja/sma-07.mp3",
+      "audioHint": "しゃしんをとってもいいですか",
+      "tags": ["smalltalk", "question", "essential"],
+      "difficulty": 4
+    },
+    {
+      "id": "sma-08",
+      "japanese": "日本語が上手ですね",
+      "furigana": [{ "b": "日本語", "r": "にほんご" }, { "b": "が" }, { "b": "上手", "r": "じょうず" }, { "b": "ですね" }],
+      "romaji": "nihongo ga jōzu desu ne",
+      "english": "Your Japanese is good, isn't it.",
+      "registerNotes": "Recognition only — you'll hear this constantly after saying almost nothing. It's politeness, not assessment. Deflect with いえいえ、まだまだです.",
+      "audio": "audio/ja/sma-08.mp3",
+      "audioHint": "にほんごがじょうずですね",
+      "tags": ["smalltalk", "listening", "recognition-only"],
+      "difficulty": 3
+    },
+    {
+      "id": "sma-09",
+      "japanese": "まだまだです",
+      "furigana": [{ "b": "まだまだです" }],
+      "romaji": "mada mada desu",
+      "english": "I've still got a long way to go.",
+      "registerNotes": "The standard modest deflection of a compliment. Accepting praise directly reads as immodest, so this is the expected move.",
+      "animeNote": "Anime characters accept compliments far more directly than real speakers do. This deflection is the actual convention.",
+      "audio": "audio/ja/sma-09.mp3",
+      "audioHint": "まだまだです",
+      "tags": ["smalltalk", "politeness"],
+      "difficulty": 3
+    },
+    {
+      "id": "sma-10",
+      "japanese": "楽しかったです",
+      "furigana": [{ "b": "楽", "r": "たの" }, { "b": "しかったです" }],
+      "romaji": "tanoshikatta desu",
+      "english": "That was fun.",
+      "registerNotes": "Warm way to close an interaction or a day out. Past tense of 楽しい.",
+      "audio": "audio/ja/sma-10.mp3",
+      "audioHint": "たのしかったです",
+      "tags": ["smalltalk", "farewell"],
+      "difficulty": 3
     }
   ]
 }
