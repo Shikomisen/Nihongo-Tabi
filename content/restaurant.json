@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "restaurant",
+  "title": "Restaurants & Ordering",
+  "order": 7,
+  "description": "Ordering, allergies and dietary restrictions. The allergy phrases are the ones worth being able to say without hesitating.",
+  "phrases": [
+    {
+      "id": "res-01",
+      "japanese": "いただきます",
+      "furigana": [{ "b": "いただきます" }],
+      "romaji": "itadakimasu",
+      "english": "(set phrase said before eating)",
+      "registerNotes": "Said before every meal, alone or in company. Not saying it is the noticeable thing, not saying it.",
+      "animeNote": "Anime gets this one right — it's used exactly as often in real life.",
+      "audio": "audio/ja/res-01.mp3",
+      "audioHint": "いただきます",
+      "tags": ["restaurant", "essential"],
+      "difficulty": 1
+    },
+    {
+      "id": "res-02",
+      "japanese": "メニューをお願いします",
+      "furigana": [{ "b": "メニューをお" }, { "b": "願", "r": "ねが" }, { "b": "いします" }],
+      "romaji": "menyū o onegai shimasu",
+      "english": "The menu, please.",
+      "registerNotes": "英語のメニューはありますか asks for an English one.",
+      "audio": "audio/ja/res-02.mp3",
+      "audioHint": "メニューをおねがいします",
+      "tags": ["restaurant", "request"],
+      "difficulty": 2
+    },
+    {
+      "id": "res-03",
+      "japanese": "アレルギーがあります",
+      "furigana": [{ "b": "アレルギーがあります" }],
+      "romaji": "arerugī ga arimasu",
+      "english": "I have an allergy.",
+      "registerNotes": "Lead with this, then name the item. Worth having written on your phone in Japanese as well as spoken.",
+      "audio": "audio/ja/res-03.mp3",
+      "audioHint": "アレルギーがあります",
+      "tags": ["restaurant", "allergy", "survival"],
+      "difficulty": 3
+    },
+    {
+      "id": "res-04",
+      "japanese": "卵が食べられません",
+      "furigana": [{ "b": "卵", "r": "たまご" }, { "b": "が" }, { "b": "食", "r": "た" }, { "b": "べられません" }],
+      "romaji": "tamago ga taberaremasen",
+      "english": "I can't eat eggs.",
+      "registerNotes": "〜が食べられません is the pattern — swap the food. Stronger and clearer than saying you don't like it.",
+      "audio": "audio/ja/res-04.mp3",
+      "audioHint": "たまごがたべられません",
+      "tags": ["restaurant", "allergy", "survival"],
+      "difficulty": 4
+    }
+  ]
+}

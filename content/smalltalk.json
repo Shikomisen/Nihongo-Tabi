@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "smalltalk",
+  "title": "Small Talk",
+  "order": 10,
+  "description": "The short exchanges that turn a transaction into a conversation. Low stakes, high payoff.",
+  "phrases": [
+    {
+      "id": "sma-01",
+      "japanese": "いい天気ですね",
+      "furigana": [{ "b": "いい" }, { "b": "天気", "r": "てんき" }, { "b": "ですね" }],
+      "romaji": "ii tenki desu ne",
+      "english": "Nice weather, isn't it.",
+      "registerNotes": "The universal opener. ね invites agreement and is what makes it sound friendly rather than declarative.",
+      "audio": "audio/ja/sma-01.mp3",
+      "audioHint": "いいてんきですね",
+      "tags": ["smalltalk", "essential"],
+      "difficulty": 1
+    },
+    {
+      "id": "sma-02",
+      "japanese": "日本は初めてです",
+      "furigana": [{ "b": "日本", "r": "にほん" }, { "b": "は" }, { "b": "初", "r": "はじ" }, { "b": "めてです" }],
+      "romaji": "Nihon wa hajimete desu",
+      "english": "It's my first time in Japan.",
+      "registerNotes": "Reliably produces a warm reaction and a follow-up question. A good conversation to be pulled into.",
+      "audio": "audio/ja/sma-02.mp3",
+      "audioHint": "にほんははじめてです",
+      "tags": ["smalltalk"],
+      "difficulty": 2
+    },
+    {
+      "id": "sma-03",
+      "japanese": "ご出身はどこですか",
+      "furigana": [{ "b": "ご" }, { "b": "出身", "r": "しゅっしん" }, { "b": "はどこですか" }],
+      "romaji": "go-shusshin wa doko desu ka",
+      "english": "Where are you from?",
+      "registerNotes": "The ご prefix is honorific — you attach it when asking about the other person, never about yourself.",
+      "audio": "audio/ja/sma-03.mp3",
+      "audioHint": "ごしゅっしんはどこですか",
+      "tags": ["smalltalk", "question"],
+      "difficulty": 3
+    },
+    {
+      "id": "sma-04",
+      "japanese": "日本の食べ物が大好きです",
+      "furigana": [{ "b": "日本", "r": "にほん" }, { "b": "の" }, { "b": "食", "r": "た" }, { "b": "べ" }, { "b": "物", "r": "もの" }, { "b": "が" }, { "b": "大好", "r": "だいす" }, { "b": "きです" }],
+      "romaji": "Nihon no tabemono ga daisuki desu",
+      "english": "I love Japanese food.",
+      "registerNotes": "大好き is strong and warm without being awkward. Safe to use enthusiastically with strangers.",
+      "audio": "audio/ja/sma-04.mp3",
+      "audioHint": "にほんのたべものがだいすきです",
+      "tags": ["smalltalk"],
+      "difficulty": 4
+    }
+  ]
+}

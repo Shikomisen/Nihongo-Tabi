@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "shopping",
+  "title": "Shopping & Payments",
+  "order": 8,
+  "description": "Convenience stores, shops and the checkout script you'll hear a hundred times.",
+  "phrases": [
+    {
+      "id": "sho-01",
+      "japanese": "これをください",
+      "furigana": [{ "b": "これをください" }],
+      "romaji": "kore o kudasai",
+      "english": "This one, please.",
+      "registerNotes": "Point and say it. Covers most of shopping on its own.",
+      "audio": "audio/ja/sho-01.mp3",
+      "audioHint": "これをください",
+      "tags": ["shopping", "essential"],
+      "difficulty": 1
+    },
+    {
+      "id": "sho-02",
+      "japanese": "袋はいりません",
+      "furigana": [{ "b": "袋", "r": "ふくろ" }, { "b": "はいりません" }],
+      "romaji": "fukuro wa irimasen",
+      "english": "I don't need a bag.",
+      "registerNotes": "Bags are chargeable everywhere now, so you'll be asked every single time.",
+      "audio": "audio/ja/sho-02.mp3",
+      "audioHint": "ふくろはいりません",
+      "tags": ["shopping", "essential"],
+      "difficulty": 2
+    },
+    {
+      "id": "sho-03",
+      "japanese": "試着できますか",
+      "furigana": [{ "b": "試着", "r": "しちゃく" }, { "b": "できますか" }],
+      "romaji": "shichaku dekimasu ka",
+      "english": "Can I try this on?",
+      "registerNotes": "You may be given a face cover to put on first — that's standard, not a comment on you.",
+      "audio": "audio/ja/sho-03.mp3",
+      "audioHint": "しちゃくできますか",
+      "tags": ["shopping", "question"],
+      "difficulty": 3
+    },
+    {
+      "id": "sho-04",
+      "japanese": "免税できますか",
+      "furigana": [{ "b": "免税", "r": "めんぜい" }, { "b": "できますか" }],
+      "romaji": "menzei dekimasu ka",
+      "english": "Is tax-free shopping available?",
+      "registerNotes": "Needs your passport and a minimum spend. 免税 on a shop window means they do it.",
+      "audio": "audio/ja/sho-04.mp3",
+      "audioHint": "めんぜいできますか",
+      "tags": ["shopping", "money", "signage"],
+      "difficulty": 4
+    }
+  ]
+}

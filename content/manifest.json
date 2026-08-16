@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "language": "ja",
+  "register": "polite",
+  "generatedFor": "Nihongo Tabi MVP",
+  "notes": "Adding a category = add a file to content/ + one entry here. No app code changes. Order is trip-relevance priority (README §6), not alphabetical.",
+  "categories": [
+    { "id": "greetings",      "order": 1,  "file": "content/greetings.json",      "title": "Greetings & Politeness", "icon": "🙏", "week": 1, "tier": "core" },
+    { "id": "numbers",        "order": 2,  "file": "content/numbers.json",        "title": "Numbers, Time & Money",  "icon": "🔢", "week": 1, "tier": "core" },
+    { "id": "airport",        "order": 3,  "file": "content/airport.json",        "title": "Airport & Immigration",  "icon": "✈️", "week": 1, "tier": "core" },
+    { "id": "transport",      "order": 4,  "file": "content/transport.json",      "title": "Transportation",         "icon": "🚆", "week": 1, "tier": "core" },
+    { "id": "directions",     "order": 5,  "file": "content/directions.json",     "title": "Directions & Getting Lost", "icon": "🧭", "week": 2, "tier": "core" },
+    { "id": "hotel",          "order": 6,  "file": "content/hotel.json",          "title": "Hotel Check-in / out",   "icon": "🏨", "week": 2, "tier": "core" },
+    { "id": "restaurant",     "order": 7,  "file": "content/restaurant.json",     "title": "Restaurants & Ordering", "icon": "🍜", "week": 3, "tier": "core" },
+    { "id": "shopping",       "order": 8,  "file": "content/shopping.json",       "title": "Shopping & Payments",    "icon": "🛍️", "week": 3, "tier": "core" },
+    { "id": "emergency",      "order": 9,  "file": "content/emergency.json",      "title": "Emergencies & Health",   "icon": "🏥", "week": 4, "tier": "core" },
+    { "id": "smalltalk",      "order": 10, "file": "content/smalltalk.json",      "title": "Small Talk",             "icon": "💬", "week": 4, "tier": "core" }
+  ],
+  "scenarios": []
+}

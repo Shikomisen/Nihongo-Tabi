@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "emergency",
+  "title": "Emergencies & Health",
+  "order": 9,
+  "description": "Low probability, high cost. These are worth over-learning precisely because you'd be using them under stress.",
+  "phrases": [
+    {
+      "id": "eme-01",
+      "japanese": "助けてください",
+      "furigana": [{ "b": "助", "r": "たす" }, { "b": "けてください" }],
+      "romaji": "tasukete kudasai",
+      "english": "Please help me.",
+      "registerNotes": "Unambiguous, and understood instantly. 助けて alone is fine in a genuine emergency — politeness stops mattering.",
+      "audio": "audio/ja/eme-01.mp3",
+      "audioHint": "たすけてください",
+      "tags": ["emergency", "essential", "survival"],
+      "difficulty": 1
+    },
+    {
+      "id": "eme-02",
+      "japanese": "病院はどこですか",
+      "furigana": [{ "b": "病院", "r": "びょういん" }, { "b": "はどこですか" }],
+      "romaji": "byōin wa doko desu ka",
+      "english": "Where is the hospital?",
+      "registerNotes": "薬局 (やっきょく) is a pharmacy, for anything less urgent.",
+      "audio": "audio/ja/eme-02.mp3",
+      "audioHint": "びょういんはどこですか",
+      "tags": ["emergency", "health", "question"],
+      "difficulty": 2
+    },
+    {
+      "id": "eme-03",
+      "japanese": "気分が悪いです",
+      "furigana": [{ "b": "気分", "r": "きぶん" }, { "b": "が" }, { "b": "悪", "r": "わる" }, { "b": "いです" }],
+      "romaji": "kibun ga warui desu",
+      "english": "I feel unwell.",
+      "registerNotes": "General-purpose 'something is wrong with me'. Follow by pointing at where it hurts.",
+      "audio": "audio/ja/eme-03.mp3",
+      "audioHint": "きぶんがわるいです",
+      "tags": ["health", "survival"],
+      "difficulty": 3
+    },
+    {
+      "id": "eme-04",
+      "japanese": "救急車を呼んでください",
+      "furigana": [{ "b": "救急車", "r": "きゅうきゅうしゃ" }, { "b": "を" }, { "b": "呼", "r": "よ" }, { "b": "んでください" }],
+      "romaji": "kyūkyūsha o yonde kudasai",
+      "english": "Please call an ambulance.",
+      "registerNotes": "Emergency numbers: 119 for ambulance and fire, 110 for police. Ambulances are free to call in Japan.",
+      "audio": "audio/ja/eme-04.mp3",
+      "audioHint": "きゅうきゅうしゃをよんでください",
+      "tags": ["emergency", "survival"],
+      "difficulty": 4
+    }
+  ]
+}

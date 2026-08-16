@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "hotel",
+  "title": "Hotel Check-in / out",
+  "order": 6,
+  "description": "Check-in, luggage, and the handful of requests worth being able to make.",
+  "phrases": [
+    {
+      "id": "hot-01",
+      "japanese": "チェックインお願いします",
+      "furigana": [{ "b": "チェックインお" }, { "b": "願", "r": "ねが" }, { "b": "いします" }],
+      "romaji": "chekkuin onegai shimasu",
+      "english": "Check-in, please.",
+      "registerNotes": "Loanword + お願いします. Opens the entire transaction.",
+      "audio": "audio/ja/hot-01.mp3",
+      "audioHint": "チェックインおねがいします",
+      "tags": ["hotel", "essential"],
+      "difficulty": 1
+    },
+    {
+      "id": "hot-02",
+      "japanese": "予約しています",
+      "furigana": [{ "b": "予約", "r": "よやく" }, { "b": "しています" }],
+      "romaji": "yoyaku shite imasu",
+      "english": "I have a reservation.",
+      "registerNotes": "Follow with your name. Showing the booking email does the rest.",
+      "audio": "audio/ja/hot-02.mp3",
+      "audioHint": "よやくしています",
+      "tags": ["hotel", "essential"],
+      "difficulty": 2
+    },
+    {
+      "id": "hot-03",
+      "japanese": "何時にチェックアウトですか",
+      "furigana": [{ "b": "何時", "r": "なんじ" }, { "b": "にチェックアウトですか" }],
+      "romaji": "nanji ni chekkuauto desu ka",
+      "english": "What time is check-out?",
+      "registerNotes": "Usually 10:00 or 11:00 — earlier than most travellers expect.",
+      "audio": "audio/ja/hot-03.mp3",
+      "audioHint": "なんじにチェックアウトですか",
+      "tags": ["hotel", "time", "question"],
+      "difficulty": 3
+    },
+    {
+      "id": "hot-04",
+      "japanese": "荷物を預かってもらえますか",
+      "furigana": [{ "b": "荷物", "r": "にもつ" }, { "b": "を" }, { "b": "預", "r": "あず" }, { "b": "かってもらえますか" }],
+      "romaji": "nimotsu o azukatte moraemasu ka",
+      "english": "Could you hold my luggage?",
+      "registerNotes": "〜てもらえますか is the polite 'could you…' pattern. Nearly every hotel will hold bags before check-in and after check-out.",
+      "audio": "audio/ja/hot-04.mp3",
+      "audioHint": "にもつをあずかってもらえますか",
+      "tags": ["hotel", "request"],
+      "difficulty": 4
+    }
+  ]
+}

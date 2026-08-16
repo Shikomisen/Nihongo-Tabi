@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "directions",
+  "title": "Directions & Getting Lost",
+  "order": 5,
+  "description": "Asking the way, and understanding the answer — which is the harder half.",
+  "phrases": [
+    {
+      "id": "dir-01",
+      "japanese": "ここはどこですか",
+      "furigana": [{ "b": "ここはどこですか" }],
+      "romaji": "koko wa doko desu ka",
+      "english": "Where am I?",
+      "registerNotes": "Blunt in English, completely normal in Japanese. Show a map alongside it.",
+      "audio": "audio/ja/dir-01.mp3",
+      "audioHint": "ここはどこですか",
+      "tags": ["question", "essential", "survival"],
+      "difficulty": 1
+    },
+    {
+      "id": "dir-02",
+      "japanese": "まっすぐです",
+      "furigana": [{ "b": "まっすぐです" }],
+      "romaji": "massugu desu",
+      "english": "Straight ahead.",
+      "registerNotes": "Listening target — one of the three answers you'll actually get back.",
+      "audio": "audio/ja/dir-02.mp3",
+      "audioHint": "まっすぐです",
+      "tags": ["listening", "essential"],
+      "difficulty": 2
+    },
+    {
+      "id": "dir-03",
+      "japanese": "右に曲がってください",
+      "furigana": [{ "b": "右", "r": "みぎ" }, { "b": "に" }, { "b": "曲", "r": "ま" }, { "b": "がってください" }],
+      "romaji": "migi ni magatte kudasai",
+      "english": "Turn right.",
+      "registerNotes": "右 = right, 左 (ひだり) = left. Learn them as a pair — mixing them up is the classic failure.",
+      "audio": "audio/ja/dir-03.mp3",
+      "audioHint": "みぎにまがってください",
+      "tags": ["listening", "essential"],
+      "difficulty": 3
+    },
+    {
+      "id": "dir-04",
+      "japanese": "道に迷いました",
+      "furigana": [{ "b": "道", "r": "みち" }, { "b": "に" }, { "b": "迷", "r": "まよ" }, { "b": "いました" }],
+      "romaji": "michi ni mayoimashita",
+      "english": "I'm lost.",
+      "registerNotes": "Opens the whole interaction. Japanese strangers will often walk you there rather than explain.",
+      "audio": "audio/ja/dir-04.mp3",
+      "audioHint": "みちにまよいました",
+      "tags": ["problem", "survival"],
+      "difficulty": 4
+    }
+  ]
+}
