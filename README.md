@@ -331,29 +331,31 @@ offline mode and *Add to Home screen* need either `http://localhost` or an
 HTTPS deployment. The app now logs exactly this to the console rather than
 skipping silently. This applies to Android and iOS alike.
 
-### Deploying (not yet done)
+### Deployed
 
-GitHub Pages is **not set up** — there is no remote on this repo. Creating a
-repository and enabling Pages both need authenticated GitHub access, so they
-have to be done by hand once:
+**Live: https://shikomisen.github.io/Nihongo-Tabi/**
+
+Served by GitHub Pages straight from **`main` / `root`** — no build step, no
+`gh-pages` branch, because the build output (audio, content JSON, icons) is
+committed. `.nojekyll` at the repo root keeps Jekyll's hands off it.
+
+**Deploying a change is just:**
 
 ```bash
-# 1. create an empty repo at https://github.com/new  (do not add a README)
-git remote add origin https://github.com/<you>/nihongo-tabi.git
-git push -u origin main
-
-# 2. either — simplest, no extra branch:
-#    Settings → Pages → Source: Deploy from a branch → main / (root)
-#
-#    or — keeps the served site separate from source:
-npm run deploy
-#    Settings → Pages → Source: Deploy from a branch → gh-pages / (root)
+git push origin main       # Pages rebuilds automatically, live in a minute
 ```
 
-Either way the site lands at `https://<you>.github.io/nihongo-tabi/`. The
-service worker registers correctly from that subpath — `register('sw.js')` is
-document-relative and takes `/nihongo-tabi/` as its scope, which is asserted in
-`npm run test:sw`. Don't make that path absolute.
+Install it on a phone by opening that URL in Chrome or Safari → *Add to Home
+screen*. Because it's HTTPS, the service worker registers and the app is fully
+offline-capable once loaded — unlike the `http://` LAN address that `npm start`
+prints.
+
+The service worker registers correctly from the project subpath —
+`register('sw.js')` is document-relative and takes `/Nihongo-Tabi/` as its
+scope, which is asserted in `npm run test:sw`. Don't make that path absolute.
+
+`npm run deploy` (the `gh-pages` branch route) is **not used** by this setup,
+but still works if the served site should ever be split from source.
 
 `npm run deploy` has been verified end to end against a local bare repository:
 523 files, all 482 audio clips, all three character sets, `.nojekyll` included

@@ -258,7 +258,7 @@ Re-run `npm run crossref` after adding phrase content to refresh the links.
 
 ## Deployment & service worker verification
 
-### A28 — GitHub Pages is still NOT set up, and cannot be from here
+### A28 — GitHub Pages was not set up at the time of writing — RESOLVED, see A31
 Re-checked on 2026-08-18: no git remote, no `gh-pages` branch, `gh` still not
 installed, no `GITHUB_TOKEN`/`GH_TOKEN` in the environment. Pages was never
 configured — this is unchanged from A1, not a regression.
@@ -330,3 +330,36 @@ The script also used to write a stray untracked `.nojekyll` into the working
 directory on every run; it now writes it only into the deploy worktree. The
 existing root `.nojekyll` is kept and tracked, because it is also what makes
 the simpler "serve from `main` / root" Pages option work.
+
+### A31 — GitHub Pages is live (resolves A1 and A28)
+**Site: https://shikomisen.github.io/Nihongo-Tabi/** — served from `main` / `root`.
+
+Enabled via `POST /repos/Shikomisen/Nihongo-Tabi/pages` (201), build completed,
+and every path verified by actually fetching the live origin rather than
+trusting the API response: `index.html`, `sw.js`, `app.webmanifest`,
+`css/styles.css`, `js/app.js`, `js/characters.js`, all three character-set JSON
+files, sample audio clips and an icon — 15/15 returned 200. The served content
+parses to 10 categories, 3 character sets (104 / 116 / 82 with 38 kanji
+cross-references) and 6 scenarios, and the deployed `js/app.js` contains the
+A29 registration fix.
+
+Two things blocked this for three attempts, both worth recording:
+
+1. **Wrong identity.** Git Credential Manager's `git:https://github.com` entry
+   was bound to `ShikoMDS`, which has `push` but not `admin` on the repo. Pages
+   administration requires admin, and GitHub returns **404** (not 403) for
+   permission failures on write endpoints, which reads like a missing route
+   rather than a permissions problem. The `fork:...Shikomisen.oauth_token`
+   entry visible in Credential Manager is Fork.app's own store and is not a
+   namespace git reads.
+2. **A public repo hides the auth step.** After the credential was cleared,
+   `git fetch origin` succeeded anonymously — public repos need no auth to
+   read — so GCM was never invoked and nothing was stored. Forcing the sign-in
+   needs an operation that actually authenticates; a no-op `git push` does it
+   safely when local and remote are identical.
+
+`npm run deploy` and the `gh-pages` branch are therefore **not used** by this
+setup. That script still works (verified in A30) and remains available if the
+served site should ever be split from source, but serving `main` at root needs
+no build step and no second branch, which suits a project with committed
+build output.
