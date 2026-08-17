@@ -19,6 +19,9 @@ import { fileURLToPath } from 'node:url';
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const BRANCH = 'gh-pages';
 
+/** Tracked paths that are build tooling, not part of the served site. */
+const EXCLUDED = ['tools', '.gitignore', 'package.json'];
+
 const git = (...args) =>
   execFileSync('git', args, { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
 
@@ -52,10 +55,6 @@ if (status) {
   console.log(status.split('\n').map((l) => `    ${l}`).join('\n'));
 }
 
-// GitHub Pages runs Jekyll by default, which ignores files it doesn't like.
-const nojekyll = resolve(ROOT, '.nojekyll');
-if (!existsSync(nojekyll)) writeFileSync(nojekyll, '');
-
 /* ---------- deploy ---------- */
 
 const tmp = resolve(ROOT, '.deploy-worktree');
@@ -69,14 +68,23 @@ try {
   try { git('worktree', 'add', '--detach', tmp); }
   catch (e) { fail('Could not create the deploy worktree.', e.stderr || e.message); }
 
-  execFileSync('git', ['checkout', '--orphan', BRANCH], { cwd: tmp, stdio: 'inherit' });
-  execFileSync('git', ['rm', '-rf', '--cached', '.'], { cwd: tmp, stdio: ['ignore', 'ignore', 'ignore'] });
+  // `worktree add --detach` has already checked out every tracked file, so
+  // the site is on disk before we touch branches. --orphan then makes HEAD
+  // unborn while leaving that working tree in place.
+  //
+  // Do NOT reach for `git checkout HEAD -- <paths>` here: on an orphan
+  // branch HEAD does not resolve to a commit, and git fails the whole
+  // deploy with "fatal: invalid reference: HEAD". The files are already
+  // present; there is nothing to check out.
+  execFileSync('git', ['checkout', '--orphan', BRANCH], { cwd: tmp, stdio: ['ignore', 'ignore', 'pipe'] });
 
-  // Copy the site (everything git tracks, minus tooling) into the worktree.
-  const tracked = git('ls-files').split('\n').filter(Boolean);
-  const shipped = tracked.filter((f) => !f.startsWith('tools/') && f !== '.gitignore');
+  // Strip what shouldn't ship. Everything else in the worktree is the site.
+  for (const junk of EXCLUDED) {
+    rmSync(resolve(tmp, junk), { recursive: true, force: true });
+  }
 
-  execFileSync('git', ['checkout', 'HEAD', '--', ...shipped], { cwd: tmp, stdio: 'inherit' });
+  // GitHub Pages runs Jekyll by default, which ignores paths beginning with
+  // an underscore and can mangle others. This opts the whole site out.
   writeFileSync(resolve(tmp, '.nojekyll'), '');
 
   execFileSync('git', ['add', '-A'], { cwd: tmp, stdio: 'inherit' });

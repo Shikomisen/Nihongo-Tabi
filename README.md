@@ -314,7 +314,8 @@ Zero dependencies, no build step. Node 18+ only.
 ```bash
 npm start                 # dev server on :5173, also prints your LAN URL for phone testing
 npm test                  # content validation + SRS + end-to-end logic (8054 checks)
-npm run test:render       # renders every screen in jsdom (needs: npm install --no-save jsdom)
+npm run test:render       # renders every screen + service worker checks (needs: npm install --no-save jsdom)
+npm run test:sw           # service worker registration regression tests
 npm run audio             # generate any missing TTS clips
 npm run audio:check       # report audio coverage without generating
 npm run kana              # regenerate the hiragana/katakana content files
@@ -324,9 +325,39 @@ npm run deploy            # publish to the gh-pages branch
 ```
 
 **On your phone:** run `npm start`, then open the `Network:` URL it prints
-(same Wi-Fi). Chrome → menu → *Add to Home screen* installs it as a PWA.
-iOS requires HTTPS for service workers, so offline install on iPhone needs the
-deployed GitHub Pages URL rather than the LAN one.
+(same Wi-Fi). The app works, but **the service worker will not register over a
+plain `http://` LAN address** — service workers require a secure context, so
+offline mode and *Add to Home screen* need either `http://localhost` or an
+HTTPS deployment. The app now logs exactly this to the console rather than
+skipping silently. This applies to Android and iOS alike.
+
+### Deploying (not yet done)
+
+GitHub Pages is **not set up** — there is no remote on this repo. Creating a
+repository and enabling Pages both need authenticated GitHub access, so they
+have to be done by hand once:
+
+```bash
+# 1. create an empty repo at https://github.com/new  (do not add a README)
+git remote add origin https://github.com/<you>/nihongo-tabi.git
+git push -u origin main
+
+# 2. either — simplest, no extra branch:
+#    Settings → Pages → Source: Deploy from a branch → main / (root)
+#
+#    or — keeps the served site separate from source:
+npm run deploy
+#    Settings → Pages → Source: Deploy from a branch → gh-pages / (root)
+```
+
+Either way the site lands at `https://<you>.github.io/nihongo-tabi/`. The
+service worker registers correctly from that subpath — `register('sw.js')` is
+document-relative and takes `/nihongo-tabi/` as its scope, which is asserted in
+`npm run test:sw`. Don't make that path absolute.
+
+`npm run deploy` has been verified end to end against a local bare repository:
+523 files, all 482 audio clips, all three character sets, `.nojekyll` included
+and `tools/` excluded.
 
 Content lives in `content/` — adding a category is one JSON file plus one line
 in `content/manifest.json`, with no app-code changes (§3a). Run

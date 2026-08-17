@@ -253,3 +253,80 @@ the word, so the fallback was removed. The 44 unmatched entries are genuinely
 signage-only (押, 引, 危険, 準備中) and are simply shown without cross-references.
 
 Re-run `npm run crossref` after adding phrase content to refresh the links.
+
+---
+
+## Deployment & service worker verification
+
+### A28 — GitHub Pages is still NOT set up, and cannot be from here
+Re-checked on 2026-08-18: no git remote, no `gh-pages` branch, `gh` still not
+installed, no `GITHUB_TOKEN`/`GH_TOKEN` in the environment. Pages was never
+configured — this is unchanged from A1, not a regression.
+
+It cannot be completed autonomously. Two of the three required steps need
+authenticated access to the GitHub account:
+
+1. **Create the remote repo** — needs `gh` or the web UI. Git alone cannot
+   create a repository.
+2. **Push** — Git Credential Manager is configured as the credential helper, so
+   this step might succeed interactively, but it has nothing to push *to* until
+   step 1 exists.
+3. **Enable Pages** — a repository setting. Reachable only through the GitHub
+   web UI or the REST API with a token. There is no git-only path to it.
+
+Extracting a token from the credential store to do this unattended would mean
+taking a stored secret and using it against an external service without being
+asked to, so that was not attempted.
+
+What *was* done instead: the deploy path is now verified end to end against a
+local bare repository standing in for `origin` (nothing left the machine), so
+`npm run deploy` is known to work the moment a real remote exists. See A30.
+
+### A29 — Real bug found and fixed: service worker registration was skippable
+`boot()` ended with:
+
+```js
+await router();
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js')…
+```
+
+Registration was the **last statement after several `await`s that can reject**.
+`router()`'s try/catch does not cover the onboarding branch — it does
+`return renderPlacement(...)` before the loop — so a content fetch failure
+propagates out of `router()`, out of `boot()`, and registration never runs.
+
+The failure mode is self-reinforcing and silent: a flaky or offline first load
+means no service worker, which means no cache, which means the next load fails
+the same way. Confirmed by booting the real app with content fetches rejecting —
+`register()` was called 0 times.
+
+Fixed by chaining registration off `.finally()` so it runs regardless of
+boot's outcome, while still running *after* first paint so the ~7 MB precache
+doesn't compete with initial render. A failed boot now also shows an error
+screen instead of a blank page. `tools/sw-test.mjs` locks all of this in.
+
+The `'serviceWorker' in navigator` guard was **kept** — it is required feature
+detection, and removing it would throw instead of skipping. It now logs *why*
+it skipped, because over plain `http://` on a LAN IP the API is absent
+entirely and that is indistinguishable from an unsupported browser otherwise.
+The caching logic in `sw.js` was reviewed and left alone; no bug was found in it.
+
+### A30 — Real bug found and fixed: `npm run deploy` was broken
+The deploy script created an orphan branch in a temporary worktree and then ran
+`git checkout HEAD -- <files>`. On an orphan branch HEAD does not resolve to a
+commit, so git aborts with `fatal: invalid reference: HEAD`. The first real
+deploy would have failed.
+
+The checkout was also unnecessary: `git worktree add --detach` has already
+placed every tracked file on disk, and `--orphan` leaves the working tree
+intact. The fix drops the checkout and instead deletes the paths that shouldn't
+ship (`tools/`, `.gitignore`, `package.json`) before committing.
+
+Verified by deploying to a local bare repo: 523 files on `gh-pages`, including
+all 482 audio clips, all three character sets and `.nojekyll`, with tooling
+correctly excluded. The resulting tree was then served and checked to load.
+
+The script also used to write a stray untracked `.nojekyll` into the working
+directory on every run; it now writes it only into the deploy worktree. The
+existing root `.nojekyll` is kept and tracked, because it is also what makes
+the simpler "serve from `main` / root" Pages option work.

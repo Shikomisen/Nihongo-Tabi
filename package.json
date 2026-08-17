@@ -10,7 +10,7 @@
     "test": "node tools/selftest.mjs && node tools/integration-test.mjs",
     "test:content": "node tools/selftest.mjs",
     "test:integration": "node tools/integration-test.mjs",
-    "test:render": "node tools/render-test.mjs",
+    "test:render": "node tools/render-test.mjs && node tools/sw-test.mjs",
     "audio": "node tools/generate-audio.mjs",
     "audio:check": "node tools/generate-audio.mjs --check",
     "audio:force": "node tools/generate-audio.mjs --force",
@@ -18,7 +18,8 @@
     "kana": "node tools/make-kana.mjs",
     "crossref": "node tools/crossref-kanji.mjs",
     "crossref:check": "node tools/crossref-kanji.mjs --check",
-    "deploy": "node tools/deploy.mjs"
+    "deploy": "node tools/deploy.mjs",
+    "test:sw": "node tools/sw-test.mjs"
   },
   "engines": {
     "node": ">=18"

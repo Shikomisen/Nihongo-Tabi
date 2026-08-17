@@ -633,6 +633,56 @@ export async function applyTextSettings() {
   document.documentElement.style.setProperty('--text-scale', String(s.textScale));
 }
 
+/**
+ * Service workers are only exposed in a secure context. Over plain http://
+ * on a LAN IP — how the app gets opened on a phone during development —
+ * `navigator.serviceWorker` is not merely restricted, it is absent, so
+ * feature detection alone can't tell "old browser" from "wrong protocol".
+ */
+function secureContextState() {
+  if (typeof window.isSecureContext === 'boolean') return window.isSecureContext;
+  // jsdom and some embedded webviews don't implement it — fall back to the
+  // same rule the browsers apply.
+  const local = ['localhost', '127.0.0.1', '::1', ''].includes(location.hostname);
+  return location.protocol === 'https:' || local;
+}
+
+/**
+ * Register the service worker (README §5 — offline-first).
+ *
+ * `register('sw.js')` is relative to the document, which is what makes the
+ * GitHub Pages subpath work: from /nihongo-tabi/ it resolves to
+ * /nihongo-tabi/sw.js and takes /nihongo-tabi/ as its scope. Do not make
+ * this path absolute.
+ */
+function registerServiceWorker() {
+  if (!('serviceWorker' in navigator)) {
+    // The guard has to stay — without it this throws on any browser or
+    // context lacking the API. But it must not fail *silently*, because the
+    // usual cause is the page being served over http:// rather than an old
+    // browser, and that looks identical from the app's side.
+    console.warn(
+      secureContextState()
+        ? '[nihongo-tabi] Service workers are not supported by this browser. ' +
+          'The app still works; offline mode and install do not.'
+        : `[nihongo-tabi] No service worker: ${location.origin} is not a secure context. ` +
+          'Offline mode and install require https:// or http://localhost — a plain ' +
+          'http:// LAN address will never register one. Deploy, or use localhost.'
+    );
+    return Promise.resolve(null);
+  }
+
+  return navigator.serviceWorker.register('sw.js')
+    .then((reg) => {
+      console.info(`[nihongo-tabi] Service worker registered, scope: ${reg.scope}`);
+      return reg;
+    })
+    .catch((err) => {
+      console.warn('[nihongo-tabi] Service worker registration failed', err);
+      return null;
+    });
+}
+
 async function boot() {
   audio.primeOnFirstGesture();
   await applyTextSettings();
@@ -643,10 +693,33 @@ async function boot() {
 
   window.addEventListener('hashchange', router);
   await router();
-
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js').catch((e) => console.warn('SW registration failed', e));
-  }
 }
 
-boot();
+/** Last-resort surface so a failed boot isn't an unexplained blank page. */
+function showBootError(err) {
+  const root = app();
+  if (!root) return;
+  clear(root).append(
+    el('div', { class: 'screen' },
+      el('h1', {}, 'Something went wrong'),
+      el('p', { class: 'lede' }, 'The app could not finish starting up.'),
+      el('p', { class: 'error' }, String((err && err.message) || err)),
+      el('p', { class: 'muted small' },
+        'If this was a connection problem, reloading once more usually fixes it — ' +
+        'the offline cache installs in the background.'),
+      el('button', { class: 'btn btn-primary', onclick: () => location.reload() }, 'Reload'))
+  );
+}
+
+// Registration is deliberately chained off .finally() rather than sitting at
+// the end of boot(): it used to be boot()'s last statement, which meant any
+// rejection while loading content or rendering the first screen skipped it
+// entirely — precisely the failed or offline first load where installing the
+// cache matters most, and the failure was silent. Keeping it after boot (not
+// before) still avoids competing with first paint for bandwidth.
+boot()
+  .catch((err) => {
+    console.error('[nihongo-tabi] Boot failed', err);
+    showBootError(err);
+  })
+  .finally(registerServiceWorker);
