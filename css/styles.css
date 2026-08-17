@@ -315,6 +315,78 @@ body.onboarding .tabbar { display: none; }
 .scenario-end { margin-top: 16px; }
 .scenario-end .action-row { margin-top: 16px; }
 
+/* ---------- characters ---------- */
+
+.char-icon { font-family: var(--font-jp); font-size: 1.5rem; line-height: 1; }
+.char-groups { display: flex; flex-direction: column; gap: 26px; margin-top: 8px; }
+.char-group > .section-title { margin-bottom: 4px; }
+.chart-hint { margin: 4px 0 14px; }
+
+.kana-grid { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+.kana-row { display: grid; grid-template-columns: 22px repeat(5, 1fr); gap: 6px; align-items: stretch; }
+.kana-grid-wide .kana-row { grid-template-columns: 22px repeat(3, 1fr); }
+
+.kana-row-label {
+  font-family: var(--font-jp); font-size: 0.8rem;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.kana-cell {
+  font: inherit; color: inherit; cursor: pointer;
+  background: var(--bg-raised); border: 1px solid var(--line); border-radius: 10px;
+  padding: 8px 2px 6px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 1px; min-height: 54px;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
+}
+.kana-cell:active { transform: scale(0.94); }
+.kana-cell.just-played { border-color: var(--accent); background: var(--accent-soft); }
+.kana-empty { background: transparent; border-color: transparent; pointer-events: none; }
+
+.kana-char { font-family: var(--font-jp); font-size: 1.5rem; line-height: 1.1; }
+.kana-romaji { font-size: 0.62rem; color: var(--fg-muted); letter-spacing: 0.02em; }
+
+.kanji-list { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+
+.kanji-row {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: var(--bg-raised); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 12px 14px;
+}
+
+.kanji-glyph {
+  font-family: var(--font-jp); font-size: 2rem; line-height: 1.15;
+  background: var(--bg-sunk); border: 1px solid var(--line); border-radius: 10px;
+  color: inherit; cursor: pointer; padding: 6px 10px; flex: none;
+  min-width: 62px; text-align: center;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
+}
+.kanji-glyph:active { transform: scale(0.95); }
+.kanji-glyph.just-played { border-color: var(--accent); background: var(--accent-soft); }
+
+.kanji-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.kanji-meaning { font-weight: 600; }
+.kanji-reading { font-family: var(--font-jp); font-size: 0.9rem; color: var(--fg-muted); }
+.kanji-reading .romaji { font-family: var(--font); font-size: 0.82rem; }
+.kanji-row .note { margin-top: 6px; }
+
+.kanji-refs { margin-top: 8px; }
+.ref-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.ref-chip {
+  font-family: var(--font-jp); font-size: 0.85rem;
+  background: var(--bg-sunk); border: 1px solid var(--line);
+  border-radius: 99px; padding: 3px 10px; color: var(--fg-muted);
+}
+.ref-chip .jp { font-size: 0.85rem; line-height: 1.5; display: inline; }
+.ref-chip:hover { border-color: var(--accent); color: var(--fg); }
+
+.footnote { margin-top: 28px; padding-top: 14px; border-top: 1px solid var(--line); }
+
+@media (max-width: 380px) {
+  .kana-cell { min-height: 48px; }
+  .kana-char { font-size: 1.3rem; }
+  .kanji-glyph { font-size: 1.7rem; min-width: 54px; }
+}
+
 /* ---------- tab bar ---------- */
 
 .tabbar {
@@ -332,6 +404,8 @@ body.onboarding .tabbar { display: none; }
 }
 .tabbar a span { font-size: 1.25rem; }
 .tabbar a.active { color: var(--accent); }
+/* Five tabs need slightly tighter labels than four did. */
+.tabbar a { font-size: 0.64rem; padding: 0 2px; }
 
 /* ---------- toast ---------- */
 

@@ -27,20 +27,31 @@ const WEIGHT = { known: 1, seen: 0.5, unknown: 0 };
  * Two per category: the easiest available and the hardest available.
  * Anime-derived knowledge is lopsided — sampling both ends of each
  * category is what exposes the lopsidedness.
+ *
+ * Character sets are sampled the same way, two each. Reading ability is
+ * exactly the kind of prior exposure that deserves credit rather than
+ * being re-taught from あ: someone who already reads kana should not
+ * spend week one on it.
  */
 export async function buildPlacementSet() {
-  const { categories } = await loadContent();
+  const { categories, characterSets } = await loadContent();
   const picked = [];
 
+  const twoEnds = (pool, meta) => {
+    if (!pool.length) return;
+    const sorted = [...pool].sort((a, b) => (a.difficulty ?? 3) - (b.difficulty ?? 3));
+    const easy = sorted[0];
+    const hard = sorted[sorted.length - 1];
+    picked.push({ ...easy, ...meta });
+    if (hard.id !== easy.id) picked.push({ ...hard, ...meta });
+  };
+
   for (const cat of categories) {
-    const pool = [...cat.phrases].sort((a, b) => (a.difficulty ?? 3) - (b.difficulty ?? 3));
-    if (!pool.length) continue;
-    const easy = pool[0];
-    const hard = pool[pool.length - 1];
-    picked.push({ ...easy, categoryId: cat.id, categoryTitle: cat.title });
-    if (hard.id !== easy.id) {
-      picked.push({ ...hard, categoryId: cat.id, categoryTitle: cat.title });
-    }
+    twoEnds(cat.phrases, { categoryId: cat.id, categoryTitle: cat.title, kind: 'phrase' });
+  }
+
+  for (const set of characterSets) {
+    twoEnds(set.characters, { categoryId: set.id, categoryTitle: set.title, kind: 'character' });
   }
 
   return picked;
@@ -84,9 +95,13 @@ export async function applyPlacement(items, answers) {
   const now = Date.now();
   for (const item of items) {
     const a = answers[item.id] ?? ANSWERS.UNKNOWN;
+    const opts = {
+      kind: item.kind === 'character' ? srs.KIND.CHARACTER : srs.KIND.PHRASE,
+      difficulty: item.difficulty ?? 3,
+    };
     const card = a === ANSWERS.KNOWN
-      ? srs.seedKnown(item.id, item.categoryId, 6, 2.6, now)
-      : srs.newCard(item.id, item.categoryId, now);
+      ? srs.seedKnown(item.id, item.categoryId, 6, 2.6, now, opts)
+      : srs.newCard(item.id, item.categoryId, now, opts);
     await deck.putCard(card);
   }
 
@@ -122,9 +137,10 @@ export async function renderPlacement(root, { onDone }) {
       el('div', { class: 'placement-intro' },
         el('h1', {}, 'Where are you starting from?'),
         el('p', { class: 'lede' },
-          `${items.length} quick cards across all ten categories. For each one, ` +
-          'say whether you already have it. Nothing is typed and nothing is scored ' +
-          'against you — it only decides where each card enters your review deck.'),
+          `${items.length} quick cards — all ten phrase categories, plus a few kana and kanji ` +
+          'to check what you can already read. For each one, say whether you already have it. ' +
+          'Nothing is typed and nothing is scored against you — it only decides where each card ' +
+          'enters your review deck.'),
         el('p', { class: 'muted' },
           'Anime-derived Japanese is usually real but lopsided: strong passive vocabulary, ' +
           'casual register, gaps in the functional phrases nobody says on screen. ' +
@@ -190,8 +206,21 @@ export async function renderPlacement(root, { onDone }) {
     view.append(el('div', { class: 'loading' }, 'Building your deck…'));
 
     const result = await applyPlacement(items, answers);
-    const { categories } = await loadContent();
+    const { categories, characterSets } = await loadContent();
     const summary = await deck.deckSummary();
+
+    const resultRow = (entry) => {
+      const b = result.perCategory[entry.id];
+      const pct = b ? Math.round(b.score * 100) : 0;
+      return el('div', { class: 'result-row' },
+        el('span', { class: 'result-name' }, `${entry.icon || ''} ${entry.title}`),
+        el('span', { class: 'bar' }, el('span', { class: 'bar-fill', style: `width:${pct}%` })),
+        el('span', { class: 'result-pct' }, `${pct}%`));
+    };
+
+    const readingScore = characterSets.length
+      ? characterSets.reduce((acc, s) => acc + (result.perCategory[s.id]?.score ?? 0), 0) / characterSets.length
+      : 0;
 
     clear(view);
     view.append(
@@ -199,20 +228,32 @@ export async function renderPlacement(root, { onDone }) {
         el('h1', {}, 'Deck built'),
         el('p', { class: 'lede' },
           `${levelLabel(result.overall)} — ${Math.round(result.overall * 100)}% of the sample already familiar.`),
-        el('div', { class: 'result-grid' },
-          categories.map((cat) => {
-            const b = result.perCategory[cat.id];
-            const pct = b ? Math.round(b.score * 100) : 0;
-            return el('div', { class: 'result-row' },
-              el('span', { class: 'result-name' }, `${cat.icon || ''} ${cat.title}`),
-              el('span', { class: 'bar' }, el('span', { class: 'bar-fill', style: `width:${pct}%` })),
-              el('span', { class: 'result-pct' }, `${pct}%`));
-          })),
+
+        el('h2', { class: 'section-title' }, 'Phrases'),
+        el('div', { class: 'result-grid' }, categories.map(resultRow)),
+
+        characterSets.length
+          ? el('div', {},
+              el('h2', { class: 'section-title' }, 'Reading'),
+              el('div', { class: 'result-grid' }, characterSets.map(resultRow)),
+              el('p', { class: 'muted small' },
+                readingScore >= 0.75
+                  ? 'You can already read — those sets will be seeded well forward if you add them, ' +
+                    'rather than starting you at あ.'
+                  : 'Reading is the highest-leverage thing you can add. Hiragana first: it unlocks ' +
+                    'the furigana readings used everywhere else in the app.'))
+          : null,
+
         el('p', { class: 'muted' },
           `Categories 1-4 are loaded and ready (${summary.total} cards, ${summary.review} seeded forward ` +
-          'because you already had them). The remaining categories unlock from the browse screen ' +
-          'as the weeks go on — loading all ten at once would bury you in reviews.'),
-        el('button', { class: 'btn btn-primary btn-lg', onclick: onDone }, 'Start studying')
+          'because you already had them). The remaining categories, and the character sets, are added ' +
+          'from Browse and Characters when you want them — loading everything at once would bury you in reviews.'),
+        el('div', { class: 'action-row' },
+          el('button', { class: 'btn btn-primary btn-lg', onclick: onDone }, 'Start studying'),
+          el('button', {
+            class: 'btn btn-ghost',
+            onclick: () => { location.hash = '/characters'; onDone(); },
+          }, 'Set up reading first'))
       )
     );
   }

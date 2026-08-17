@@ -1,0 +1,2963 @@
+{
+  "schemaVersion": 1,
+  "id": "katakana",
+  "kind": "characters",
+  "title": "Katakana",
+  "script": "katakana",
+  "description": "Loanwords, foreign names and menus. Often more immediately useful to a traveller than hiragana, because so much of it is English you can already understand once you can read it.",
+  "groups": [
+    {
+      "id": "base",
+      "title": "Base",
+      "description": "The 46 core characters."
+    },
+    {
+      "id": "dakuten",
+      "title": "Dakuten ゛",
+      "description": "Voiced: k→g, s→z, t→d, h→b."
+    },
+    {
+      "id": "handakuten",
+      "title": "Handakuten ゜",
+      "description": "h→p."
+    },
+    {
+      "id": "yoon",
+      "title": "Yōon",
+      "description": "Contracted sounds — consonant + small ya/yu/yo, one beat."
+    },
+    {
+      "id": "extended",
+      "title": "Extended",
+      "description": "Foreign-sound combinations, katakana only."
+    }
+  ],
+  "characters": [
+    {
+      "id": "kata-a",
+      "character": "ア",
+      "japanese": "ア",
+      "furigana": [
+        {
+          "b": "ア"
+        }
+      ],
+      "readings": [
+        "ア"
+      ],
+      "romaji": "a",
+      "english": null,
+      "audio": "audio/ja/chars/kata-a.mp3",
+      "audioHint": "ア",
+      "row": "a",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1,
+      "note": "Katakana is for loanwords, foreign names, onomatopoeia and emphasis — menus and product packaging are full of it."
+    },
+    {
+      "id": "kata-i",
+      "character": "イ",
+      "japanese": "イ",
+      "furigana": [
+        {
+          "b": "イ"
+        }
+      ],
+      "readings": [
+        "イ"
+      ],
+      "romaji": "i",
+      "english": null,
+      "audio": "audio/ja/chars/kata-i.mp3",
+      "audioHint": "イ",
+      "row": "a",
+      "column": "i",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-u",
+      "character": "ウ",
+      "japanese": "ウ",
+      "furigana": [
+        {
+          "b": "ウ"
+        }
+      ],
+      "readings": [
+        "ウ"
+      ],
+      "romaji": "u",
+      "english": null,
+      "audio": "audio/ja/chars/kata-u.mp3",
+      "audioHint": "ウ",
+      "row": "a",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-e",
+      "character": "エ",
+      "japanese": "エ",
+      "furigana": [
+        {
+          "b": "エ"
+        }
+      ],
+      "readings": [
+        "エ"
+      ],
+      "romaji": "e",
+      "english": null,
+      "audio": "audio/ja/chars/kata-e.mp3",
+      "audioHint": "エ",
+      "row": "a",
+      "column": "e",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-o",
+      "character": "オ",
+      "japanese": "オ",
+      "furigana": [
+        {
+          "b": "オ"
+        }
+      ],
+      "readings": [
+        "オ"
+      ],
+      "romaji": "o",
+      "english": null,
+      "audio": "audio/ja/chars/kata-o.mp3",
+      "audioHint": "オ",
+      "row": "a",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-ka",
+      "character": "カ",
+      "japanese": "カ",
+      "furigana": [
+        {
+          "b": "カ"
+        }
+      ],
+      "readings": [
+        "カ"
+      ],
+      "romaji": "ka",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ka.mp3",
+      "audioHint": "カ",
+      "row": "ka",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-ki",
+      "character": "キ",
+      "japanese": "キ",
+      "furigana": [
+        {
+          "b": "キ"
+        }
+      ],
+      "readings": [
+        "キ"
+      ],
+      "romaji": "ki",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ki.mp3",
+      "audioHint": "キ",
+      "row": "ka",
+      "column": "i",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-ku",
+      "character": "ク",
+      "japanese": "ク",
+      "furigana": [
+        {
+          "b": "ク"
+        }
+      ],
+      "readings": [
+        "ク"
+      ],
+      "romaji": "ku",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ku.mp3",
+      "audioHint": "ク",
+      "row": "ka",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-ke",
+      "character": "ケ",
+      "japanese": "ケ",
+      "furigana": [
+        {
+          "b": "ケ"
+        }
+      ],
+      "readings": [
+        "ケ"
+      ],
+      "romaji": "ke",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ke.mp3",
+      "audioHint": "ケ",
+      "row": "ka",
+      "column": "e",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-ko",
+      "character": "コ",
+      "japanese": "コ",
+      "furigana": [
+        {
+          "b": "コ"
+        }
+      ],
+      "readings": [
+        "コ"
+      ],
+      "romaji": "ko",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ko.mp3",
+      "audioHint": "コ",
+      "row": "ka",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-sa",
+      "character": "サ",
+      "japanese": "サ",
+      "furigana": [
+        {
+          "b": "サ"
+        }
+      ],
+      "readings": [
+        "サ"
+      ],
+      "romaji": "sa",
+      "english": null,
+      "audio": "audio/ja/chars/kata-sa.mp3",
+      "audioHint": "サ",
+      "row": "sa",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-shi",
+      "character": "シ",
+      "japanese": "シ",
+      "furigana": [
+        {
+          "b": "シ"
+        }
+      ],
+      "readings": [
+        "シ"
+      ],
+      "romaji": "shi",
+      "english": null,
+      "audio": "audio/ja/chars/kata-shi.mp3",
+      "audioHint": "シ",
+      "row": "sa",
+      "column": "i",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1,
+      "note": "シ (shi) vs ツ (tsu) is the classic katakana trap. シ strokes come in low and flat; ツ strokes come down from the top."
+    },
+    {
+      "id": "kata-su",
+      "character": "ス",
+      "japanese": "ス",
+      "furigana": [
+        {
+          "b": "ス"
+        }
+      ],
+      "readings": [
+        "ス"
+      ],
+      "romaji": "su",
+      "english": null,
+      "audio": "audio/ja/chars/kata-su.mp3",
+      "audioHint": "ス",
+      "row": "sa",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-se",
+      "character": "セ",
+      "japanese": "セ",
+      "furigana": [
+        {
+          "b": "セ"
+        }
+      ],
+      "readings": [
+        "セ"
+      ],
+      "romaji": "se",
+      "english": null,
+      "audio": "audio/ja/chars/kata-se.mp3",
+      "audioHint": "セ",
+      "row": "sa",
+      "column": "e",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-so",
+      "character": "ソ",
+      "japanese": "ソ",
+      "furigana": [
+        {
+          "b": "ソ"
+        }
+      ],
+      "readings": [
+        "ソ"
+      ],
+      "romaji": "so",
+      "english": null,
+      "audio": "audio/ja/chars/kata-so.mp3",
+      "audioHint": "ソ",
+      "row": "sa",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1,
+      "note": "ソ (so) vs ン (n). Learn this pair together with シ/ツ."
+    },
+    {
+      "id": "kata-ta",
+      "character": "タ",
+      "japanese": "タ",
+      "furigana": [
+        {
+          "b": "タ"
+        }
+      ],
+      "readings": [
+        "タ"
+      ],
+      "romaji": "ta",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ta.mp3",
+      "audioHint": "タ",
+      "row": "ta",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-chi",
+      "character": "チ",
+      "japanese": "チ",
+      "furigana": [
+        {
+          "b": "チ"
+        }
+      ],
+      "readings": [
+        "チ"
+      ],
+      "romaji": "chi",
+      "english": null,
+      "audio": "audio/ja/chars/kata-chi.mp3",
+      "audioHint": "チ",
+      "row": "ta",
+      "column": "i",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-tsu",
+      "character": "ツ",
+      "japanese": "ツ",
+      "furigana": [
+        {
+          "b": "ツ"
+        }
+      ],
+      "readings": [
+        "ツ"
+      ],
+      "romaji": "tsu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-tsu.mp3",
+      "audioHint": "ツ",
+      "row": "ta",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1,
+      "note": "ツ (tsu) vs シ (shi) — compare them side by side and learn them as a pair, not separately."
+    },
+    {
+      "id": "kata-te",
+      "character": "テ",
+      "japanese": "テ",
+      "furigana": [
+        {
+          "b": "テ"
+        }
+      ],
+      "readings": [
+        "テ"
+      ],
+      "romaji": "te",
+      "english": null,
+      "audio": "audio/ja/chars/kata-te.mp3",
+      "audioHint": "テ",
+      "row": "ta",
+      "column": "e",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-to",
+      "character": "ト",
+      "japanese": "ト",
+      "furigana": [
+        {
+          "b": "ト"
+        }
+      ],
+      "readings": [
+        "ト"
+      ],
+      "romaji": "to",
+      "english": null,
+      "audio": "audio/ja/chars/kata-to.mp3",
+      "audioHint": "ト",
+      "row": "ta",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-na",
+      "character": "ナ",
+      "japanese": "ナ",
+      "furigana": [
+        {
+          "b": "ナ"
+        }
+      ],
+      "readings": [
+        "ナ"
+      ],
+      "romaji": "na",
+      "english": null,
+      "audio": "audio/ja/chars/kata-na.mp3",
+      "audioHint": "ナ",
+      "row": "na",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-ni",
+      "character": "ニ",
+      "japanese": "ニ",
+      "furigana": [
+        {
+          "b": "ニ"
+        }
+      ],
+      "readings": [
+        "ニ"
+      ],
+      "romaji": "ni",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ni.mp3",
+      "audioHint": "ニ",
+      "row": "na",
+      "column": "i",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-nu",
+      "character": "ヌ",
+      "japanese": "ヌ",
+      "furigana": [
+        {
+          "b": "ヌ"
+        }
+      ],
+      "readings": [
+        "ヌ"
+      ],
+      "romaji": "nu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-nu.mp3",
+      "audioHint": "ヌ",
+      "row": "na",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-ne",
+      "character": "ネ",
+      "japanese": "ネ",
+      "furigana": [
+        {
+          "b": "ネ"
+        }
+      ],
+      "readings": [
+        "ネ"
+      ],
+      "romaji": "ne",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ne.mp3",
+      "audioHint": "ネ",
+      "row": "na",
+      "column": "e",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-no",
+      "character": "ノ",
+      "japanese": "ノ",
+      "furigana": [
+        {
+          "b": "ノ"
+        }
+      ],
+      "readings": [
+        "ノ"
+      ],
+      "romaji": "no",
+      "english": null,
+      "audio": "audio/ja/chars/kata-no.mp3",
+      "audioHint": "ノ",
+      "row": "na",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-ha",
+      "character": "ハ",
+      "japanese": "ハ",
+      "furigana": [
+        {
+          "b": "ハ"
+        }
+      ],
+      "readings": [
+        "ハ"
+      ],
+      "romaji": "ha",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ha.mp3",
+      "audioHint": "ハ",
+      "row": "ha",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1,
+      "note": "As the topic particle it is pronounced \"wa\", not \"ha\" — 私は = watashi wa."
+    },
+    {
+      "id": "kata-hi",
+      "character": "ヒ",
+      "japanese": "ヒ",
+      "furigana": [
+        {
+          "b": "ヒ"
+        }
+      ],
+      "readings": [
+        "ヒ"
+      ],
+      "romaji": "hi",
+      "english": null,
+      "audio": "audio/ja/chars/kata-hi.mp3",
+      "audioHint": "ヒ",
+      "row": "ha",
+      "column": "i",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-fu",
+      "character": "フ",
+      "japanese": "フ",
+      "furigana": [
+        {
+          "b": "フ"
+        }
+      ],
+      "readings": [
+        "フ"
+      ],
+      "romaji": "fu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-fu.mp3",
+      "audioHint": "フ",
+      "row": "ha",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1,
+      "note": "Between \"fu\" and \"hu\" — the lips barely touch. ふ is the one Westerners over-pronounce."
+    },
+    {
+      "id": "kata-he",
+      "character": "ヘ",
+      "japanese": "ヘ",
+      "furigana": [
+        {
+          "b": "ヘ"
+        }
+      ],
+      "readings": [
+        "ヘ"
+      ],
+      "romaji": "he",
+      "english": null,
+      "audio": "audio/ja/chars/kata-he.mp3",
+      "audioHint": "ヘ",
+      "row": "ha",
+      "column": "e",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1,
+      "note": "As the direction particle it is pronounced \"e\", not \"he\"."
+    },
+    {
+      "id": "kata-ho",
+      "character": "ホ",
+      "japanese": "ホ",
+      "furigana": [
+        {
+          "b": "ホ"
+        }
+      ],
+      "readings": [
+        "ホ"
+      ],
+      "romaji": "ho",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ho.mp3",
+      "audioHint": "ホ",
+      "row": "ha",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-ma",
+      "character": "マ",
+      "japanese": "マ",
+      "furigana": [
+        {
+          "b": "マ"
+        }
+      ],
+      "readings": [
+        "マ"
+      ],
+      "romaji": "ma",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ma.mp3",
+      "audioHint": "マ",
+      "row": "ma",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-mi",
+      "character": "ミ",
+      "japanese": "ミ",
+      "furigana": [
+        {
+          "b": "ミ"
+        }
+      ],
+      "readings": [
+        "ミ"
+      ],
+      "romaji": "mi",
+      "english": null,
+      "audio": "audio/ja/chars/kata-mi.mp3",
+      "audioHint": "ミ",
+      "row": "ma",
+      "column": "i",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-mu",
+      "character": "ム",
+      "japanese": "ム",
+      "furigana": [
+        {
+          "b": "ム"
+        }
+      ],
+      "readings": [
+        "ム"
+      ],
+      "romaji": "mu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-mu.mp3",
+      "audioHint": "ム",
+      "row": "ma",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-me",
+      "character": "メ",
+      "japanese": "メ",
+      "furigana": [
+        {
+          "b": "メ"
+        }
+      ],
+      "readings": [
+        "メ"
+      ],
+      "romaji": "me",
+      "english": null,
+      "audio": "audio/ja/chars/kata-me.mp3",
+      "audioHint": "メ",
+      "row": "ma",
+      "column": "e",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-mo",
+      "character": "モ",
+      "japanese": "モ",
+      "furigana": [
+        {
+          "b": "モ"
+        }
+      ],
+      "readings": [
+        "モ"
+      ],
+      "romaji": "mo",
+      "english": null,
+      "audio": "audio/ja/chars/kata-mo.mp3",
+      "audioHint": "モ",
+      "row": "ma",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-ya",
+      "character": "ヤ",
+      "japanese": "ヤ",
+      "furigana": [
+        {
+          "b": "ヤ"
+        }
+      ],
+      "readings": [
+        "ヤ"
+      ],
+      "romaji": "ya",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ya.mp3",
+      "audioHint": "ヤ",
+      "row": "ya",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-yu",
+      "character": "ユ",
+      "japanese": "ユ",
+      "furigana": [
+        {
+          "b": "ユ"
+        }
+      ],
+      "readings": [
+        "ユ"
+      ],
+      "romaji": "yu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-yu.mp3",
+      "audioHint": "ユ",
+      "row": "ya",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-yo",
+      "character": "ヨ",
+      "japanese": "ヨ",
+      "furigana": [
+        {
+          "b": "ヨ"
+        }
+      ],
+      "readings": [
+        "ヨ"
+      ],
+      "romaji": "yo",
+      "english": null,
+      "audio": "audio/ja/chars/kata-yo.mp3",
+      "audioHint": "ヨ",
+      "row": "ya",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-ra",
+      "character": "ラ",
+      "japanese": "ラ",
+      "furigana": [
+        {
+          "b": "ラ"
+        }
+      ],
+      "readings": [
+        "ラ"
+      ],
+      "romaji": "ra",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ra.mp3",
+      "audioHint": "ラ",
+      "row": "ra",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-ri",
+      "character": "リ",
+      "japanese": "リ",
+      "furigana": [
+        {
+          "b": "リ"
+        }
+      ],
+      "readings": [
+        "リ"
+      ],
+      "romaji": "ri",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ri.mp3",
+      "audioHint": "リ",
+      "row": "ra",
+      "column": "i",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-ru",
+      "character": "ル",
+      "japanese": "ル",
+      "furigana": [
+        {
+          "b": "ル"
+        }
+      ],
+      "readings": [
+        "ル"
+      ],
+      "romaji": "ru",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ru.mp3",
+      "audioHint": "ル",
+      "row": "ra",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-re",
+      "character": "レ",
+      "japanese": "レ",
+      "furigana": [
+        {
+          "b": "レ"
+        }
+      ],
+      "readings": [
+        "レ"
+      ],
+      "romaji": "re",
+      "english": null,
+      "audio": "audio/ja/chars/kata-re.mp3",
+      "audioHint": "レ",
+      "row": "ra",
+      "column": "e",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-ro",
+      "character": "ロ",
+      "japanese": "ロ",
+      "furigana": [
+        {
+          "b": "ロ"
+        }
+      ],
+      "readings": [
+        "ロ"
+      ],
+      "romaji": "ro",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ro.mp3",
+      "audioHint": "ロ",
+      "row": "ra",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-wa",
+      "character": "ワ",
+      "japanese": "ワ",
+      "furigana": [
+        {
+          "b": "ワ"
+        }
+      ],
+      "readings": [
+        "ワ"
+      ],
+      "romaji": "wa",
+      "english": null,
+      "audio": "audio/ja/chars/kata-wa.mp3",
+      "audioHint": "ワ",
+      "row": "wa",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kata-wo",
+      "character": "ヲ",
+      "japanese": "ヲ",
+      "furigana": [
+        {
+          "b": "ヲ"
+        }
+      ],
+      "readings": [
+        "ヲ"
+      ],
+      "romaji": "wo",
+      "english": null,
+      "audio": "audio/ja/chars/kata-wo.mp3",
+      "audioHint": "ヲ",
+      "row": "wa",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1,
+      "note": "Pronounced \"o\". Only ever used as the object particle, never inside a word."
+    },
+    {
+      "id": "kata-n",
+      "character": "ン",
+      "japanese": "ン",
+      "furigana": [
+        {
+          "b": "ン"
+        }
+      ],
+      "readings": [
+        "ン"
+      ],
+      "romaji": "n",
+      "english": null,
+      "audio": "audio/ja/chars/kata-n.mp3",
+      "audioHint": "ン",
+      "row": "n",
+      "column": "n",
+      "group": "base",
+      "tags": [
+        "katakana",
+        "base"
+      ],
+      "difficulty": 1,
+      "note": "Easily confused with ソ (so). ン ends low-left to high-right; ソ strokes downward."
+    },
+    {
+      "id": "kata-ga",
+      "character": "ガ",
+      "japanese": "ガ",
+      "furigana": [
+        {
+          "b": "ガ"
+        }
+      ],
+      "readings": [
+        "ガ"
+      ],
+      "romaji": "ga",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ga.mp3",
+      "audioHint": "ガ",
+      "row": "ga",
+      "column": "a",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-gi",
+      "character": "ギ",
+      "japanese": "ギ",
+      "furigana": [
+        {
+          "b": "ギ"
+        }
+      ],
+      "readings": [
+        "ギ"
+      ],
+      "romaji": "gi",
+      "english": null,
+      "audio": "audio/ja/chars/kata-gi.mp3",
+      "audioHint": "ギ",
+      "row": "ga",
+      "column": "i",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-gu",
+      "character": "グ",
+      "japanese": "グ",
+      "furigana": [
+        {
+          "b": "グ"
+        }
+      ],
+      "readings": [
+        "グ"
+      ],
+      "romaji": "gu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-gu.mp3",
+      "audioHint": "グ",
+      "row": "ga",
+      "column": "u",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-ge",
+      "character": "ゲ",
+      "japanese": "ゲ",
+      "furigana": [
+        {
+          "b": "ゲ"
+        }
+      ],
+      "readings": [
+        "ゲ"
+      ],
+      "romaji": "ge",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ge.mp3",
+      "audioHint": "ゲ",
+      "row": "ga",
+      "column": "e",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-go",
+      "character": "ゴ",
+      "japanese": "ゴ",
+      "furigana": [
+        {
+          "b": "ゴ"
+        }
+      ],
+      "readings": [
+        "ゴ"
+      ],
+      "romaji": "go",
+      "english": null,
+      "audio": "audio/ja/chars/kata-go.mp3",
+      "audioHint": "ゴ",
+      "row": "ga",
+      "column": "o",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-za",
+      "character": "ザ",
+      "japanese": "ザ",
+      "furigana": [
+        {
+          "b": "ザ"
+        }
+      ],
+      "readings": [
+        "ザ"
+      ],
+      "romaji": "za",
+      "english": null,
+      "audio": "audio/ja/chars/kata-za.mp3",
+      "audioHint": "ザ",
+      "row": "za",
+      "column": "a",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-ji",
+      "character": "ジ",
+      "japanese": "ジ",
+      "furigana": [
+        {
+          "b": "ジ"
+        }
+      ],
+      "readings": [
+        "ジ"
+      ],
+      "romaji": "ji",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ji.mp3",
+      "audioHint": "ジ",
+      "row": "za",
+      "column": "i",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2,
+      "note": "じ and ぢ are both \"ji\"; じ is the one you will almost always want."
+    },
+    {
+      "id": "kata-zu",
+      "character": "ズ",
+      "japanese": "ズ",
+      "furigana": [
+        {
+          "b": "ズ"
+        }
+      ],
+      "readings": [
+        "ズ"
+      ],
+      "romaji": "zu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-zu.mp3",
+      "audioHint": "ズ",
+      "row": "za",
+      "column": "u",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2,
+      "note": "ず and づ are both \"zu\"; ず is the common one."
+    },
+    {
+      "id": "kata-ze",
+      "character": "ゼ",
+      "japanese": "ゼ",
+      "furigana": [
+        {
+          "b": "ゼ"
+        }
+      ],
+      "readings": [
+        "ゼ"
+      ],
+      "romaji": "ze",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ze.mp3",
+      "audioHint": "ゼ",
+      "row": "za",
+      "column": "e",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-zo",
+      "character": "ゾ",
+      "japanese": "ゾ",
+      "furigana": [
+        {
+          "b": "ゾ"
+        }
+      ],
+      "readings": [
+        "ゾ"
+      ],
+      "romaji": "zo",
+      "english": null,
+      "audio": "audio/ja/chars/kata-zo.mp3",
+      "audioHint": "ゾ",
+      "row": "za",
+      "column": "o",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-da",
+      "character": "ダ",
+      "japanese": "ダ",
+      "furigana": [
+        {
+          "b": "ダ"
+        }
+      ],
+      "readings": [
+        "ダ"
+      ],
+      "romaji": "da",
+      "english": null,
+      "audio": "audio/ja/chars/kata-da.mp3",
+      "audioHint": "ダ",
+      "row": "da",
+      "column": "a",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-di",
+      "character": "ヂ",
+      "japanese": "ヂ",
+      "furigana": [
+        {
+          "b": "ヂ"
+        }
+      ],
+      "readings": [
+        "ヂ"
+      ],
+      "romaji": "ji",
+      "english": null,
+      "audio": "audio/ja/chars/kata-di.mp3",
+      "audioHint": "ヂ",
+      "row": "da",
+      "column": "i",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2,
+      "note": "じ and ぢ are both \"ji\"; じ is the one you will almost always want."
+    },
+    {
+      "id": "kata-du",
+      "character": "ヅ",
+      "japanese": "ヅ",
+      "furigana": [
+        {
+          "b": "ヅ"
+        }
+      ],
+      "readings": [
+        "ヅ"
+      ],
+      "romaji": "zu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-du.mp3",
+      "audioHint": "ヅ",
+      "row": "da",
+      "column": "u",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2,
+      "note": "ず and づ are both \"zu\"; ず is the common one."
+    },
+    {
+      "id": "kata-de",
+      "character": "デ",
+      "japanese": "デ",
+      "furigana": [
+        {
+          "b": "デ"
+        }
+      ],
+      "readings": [
+        "デ"
+      ],
+      "romaji": "de",
+      "english": null,
+      "audio": "audio/ja/chars/kata-de.mp3",
+      "audioHint": "デ",
+      "row": "da",
+      "column": "e",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-do",
+      "character": "ド",
+      "japanese": "ド",
+      "furigana": [
+        {
+          "b": "ド"
+        }
+      ],
+      "readings": [
+        "ド"
+      ],
+      "romaji": "do",
+      "english": null,
+      "audio": "audio/ja/chars/kata-do.mp3",
+      "audioHint": "ド",
+      "row": "da",
+      "column": "o",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-ba",
+      "character": "バ",
+      "japanese": "バ",
+      "furigana": [
+        {
+          "b": "バ"
+        }
+      ],
+      "readings": [
+        "バ"
+      ],
+      "romaji": "ba",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ba.mp3",
+      "audioHint": "バ",
+      "row": "ba",
+      "column": "a",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-bi",
+      "character": "ビ",
+      "japanese": "ビ",
+      "furigana": [
+        {
+          "b": "ビ"
+        }
+      ],
+      "readings": [
+        "ビ"
+      ],
+      "romaji": "bi",
+      "english": null,
+      "audio": "audio/ja/chars/kata-bi.mp3",
+      "audioHint": "ビ",
+      "row": "ba",
+      "column": "i",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-bu",
+      "character": "ブ",
+      "japanese": "ブ",
+      "furigana": [
+        {
+          "b": "ブ"
+        }
+      ],
+      "readings": [
+        "ブ"
+      ],
+      "romaji": "bu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-bu.mp3",
+      "audioHint": "ブ",
+      "row": "ba",
+      "column": "u",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-be",
+      "character": "ベ",
+      "japanese": "ベ",
+      "furigana": [
+        {
+          "b": "ベ"
+        }
+      ],
+      "readings": [
+        "ベ"
+      ],
+      "romaji": "be",
+      "english": null,
+      "audio": "audio/ja/chars/kata-be.mp3",
+      "audioHint": "ベ",
+      "row": "ba",
+      "column": "e",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-bo",
+      "character": "ボ",
+      "japanese": "ボ",
+      "furigana": [
+        {
+          "b": "ボ"
+        }
+      ],
+      "readings": [
+        "ボ"
+      ],
+      "romaji": "bo",
+      "english": null,
+      "audio": "audio/ja/chars/kata-bo.mp3",
+      "audioHint": "ボ",
+      "row": "ba",
+      "column": "o",
+      "group": "dakuten",
+      "tags": [
+        "katakana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-pa",
+      "character": "パ",
+      "japanese": "パ",
+      "furigana": [
+        {
+          "b": "パ"
+        }
+      ],
+      "readings": [
+        "パ"
+      ],
+      "romaji": "pa",
+      "english": null,
+      "audio": "audio/ja/chars/kata-pa.mp3",
+      "audioHint": "パ",
+      "row": "pa",
+      "column": "a",
+      "group": "handakuten",
+      "tags": [
+        "katakana",
+        "handakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-pi",
+      "character": "ピ",
+      "japanese": "ピ",
+      "furigana": [
+        {
+          "b": "ピ"
+        }
+      ],
+      "readings": [
+        "ピ"
+      ],
+      "romaji": "pi",
+      "english": null,
+      "audio": "audio/ja/chars/kata-pi.mp3",
+      "audioHint": "ピ",
+      "row": "pa",
+      "column": "i",
+      "group": "handakuten",
+      "tags": [
+        "katakana",
+        "handakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-pu",
+      "character": "プ",
+      "japanese": "プ",
+      "furigana": [
+        {
+          "b": "プ"
+        }
+      ],
+      "readings": [
+        "プ"
+      ],
+      "romaji": "pu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-pu.mp3",
+      "audioHint": "プ",
+      "row": "pa",
+      "column": "u",
+      "group": "handakuten",
+      "tags": [
+        "katakana",
+        "handakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-pe",
+      "character": "ペ",
+      "japanese": "ペ",
+      "furigana": [
+        {
+          "b": "ペ"
+        }
+      ],
+      "readings": [
+        "ペ"
+      ],
+      "romaji": "pe",
+      "english": null,
+      "audio": "audio/ja/chars/kata-pe.mp3",
+      "audioHint": "ペ",
+      "row": "pa",
+      "column": "e",
+      "group": "handakuten",
+      "tags": [
+        "katakana",
+        "handakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-po",
+      "character": "ポ",
+      "japanese": "ポ",
+      "furigana": [
+        {
+          "b": "ポ"
+        }
+      ],
+      "readings": [
+        "ポ"
+      ],
+      "romaji": "po",
+      "english": null,
+      "audio": "audio/ja/chars/kata-po.mp3",
+      "audioHint": "ポ",
+      "row": "pa",
+      "column": "o",
+      "group": "handakuten",
+      "tags": [
+        "katakana",
+        "handakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kata-kya",
+      "character": "キャ",
+      "japanese": "キャ",
+      "furigana": [
+        {
+          "b": "キャ"
+        }
+      ],
+      "readings": [
+        "キャ"
+      ],
+      "romaji": "kya",
+      "english": null,
+      "audio": "audio/ja/chars/kata-kya.mp3",
+      "audioHint": "キャ",
+      "row": "ki",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3,
+      "note": "Written small, read as a single beat: きゃ is one mora, not two."
+    },
+    {
+      "id": "kata-kyu",
+      "character": "キュ",
+      "japanese": "キュ",
+      "furigana": [
+        {
+          "b": "キュ"
+        }
+      ],
+      "readings": [
+        "キュ"
+      ],
+      "romaji": "kyu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-kyu.mp3",
+      "audioHint": "キュ",
+      "row": "ki",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-kyo",
+      "character": "キョ",
+      "japanese": "キョ",
+      "furigana": [
+        {
+          "b": "キョ"
+        }
+      ],
+      "readings": [
+        "キョ"
+      ],
+      "romaji": "kyo",
+      "english": null,
+      "audio": "audio/ja/chars/kata-kyo.mp3",
+      "audioHint": "キョ",
+      "row": "ki",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-sha",
+      "character": "シャ",
+      "japanese": "シャ",
+      "furigana": [
+        {
+          "b": "シャ"
+        }
+      ],
+      "readings": [
+        "シャ"
+      ],
+      "romaji": "sha",
+      "english": null,
+      "audio": "audio/ja/chars/kata-sha.mp3",
+      "audioHint": "シャ",
+      "row": "shi",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-shu",
+      "character": "シュ",
+      "japanese": "シュ",
+      "furigana": [
+        {
+          "b": "シュ"
+        }
+      ],
+      "readings": [
+        "シュ"
+      ],
+      "romaji": "shu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-shu.mp3",
+      "audioHint": "シュ",
+      "row": "shi",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-sho",
+      "character": "ショ",
+      "japanese": "ショ",
+      "furigana": [
+        {
+          "b": "ショ"
+        }
+      ],
+      "readings": [
+        "ショ"
+      ],
+      "romaji": "sho",
+      "english": null,
+      "audio": "audio/ja/chars/kata-sho.mp3",
+      "audioHint": "ショ",
+      "row": "shi",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-cha",
+      "character": "チャ",
+      "japanese": "チャ",
+      "furigana": [
+        {
+          "b": "チャ"
+        }
+      ],
+      "readings": [
+        "チャ"
+      ],
+      "romaji": "cha",
+      "english": null,
+      "audio": "audio/ja/chars/kata-cha.mp3",
+      "audioHint": "チャ",
+      "row": "chi",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-chu",
+      "character": "チュ",
+      "japanese": "チュ",
+      "furigana": [
+        {
+          "b": "チュ"
+        }
+      ],
+      "readings": [
+        "チュ"
+      ],
+      "romaji": "chu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-chu.mp3",
+      "audioHint": "チュ",
+      "row": "chi",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-cho",
+      "character": "チョ",
+      "japanese": "チョ",
+      "furigana": [
+        {
+          "b": "チョ"
+        }
+      ],
+      "readings": [
+        "チョ"
+      ],
+      "romaji": "cho",
+      "english": null,
+      "audio": "audio/ja/chars/kata-cho.mp3",
+      "audioHint": "チョ",
+      "row": "chi",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-nya",
+      "character": "ニャ",
+      "japanese": "ニャ",
+      "furigana": [
+        {
+          "b": "ニャ"
+        }
+      ],
+      "readings": [
+        "ニャ"
+      ],
+      "romaji": "nya",
+      "english": null,
+      "audio": "audio/ja/chars/kata-nya.mp3",
+      "audioHint": "ニャ",
+      "row": "ni",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-nyu",
+      "character": "ニュ",
+      "japanese": "ニュ",
+      "furigana": [
+        {
+          "b": "ニュ"
+        }
+      ],
+      "readings": [
+        "ニュ"
+      ],
+      "romaji": "nyu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-nyu.mp3",
+      "audioHint": "ニュ",
+      "row": "ni",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-nyo",
+      "character": "ニョ",
+      "japanese": "ニョ",
+      "furigana": [
+        {
+          "b": "ニョ"
+        }
+      ],
+      "readings": [
+        "ニョ"
+      ],
+      "romaji": "nyo",
+      "english": null,
+      "audio": "audio/ja/chars/kata-nyo.mp3",
+      "audioHint": "ニョ",
+      "row": "ni",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-hya",
+      "character": "ヒャ",
+      "japanese": "ヒャ",
+      "furigana": [
+        {
+          "b": "ヒャ"
+        }
+      ],
+      "readings": [
+        "ヒャ"
+      ],
+      "romaji": "hya",
+      "english": null,
+      "audio": "audio/ja/chars/kata-hya.mp3",
+      "audioHint": "ヒャ",
+      "row": "hi",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-hyu",
+      "character": "ヒュ",
+      "japanese": "ヒュ",
+      "furigana": [
+        {
+          "b": "ヒュ"
+        }
+      ],
+      "readings": [
+        "ヒュ"
+      ],
+      "romaji": "hyu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-hyu.mp3",
+      "audioHint": "ヒュ",
+      "row": "hi",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-hyo",
+      "character": "ヒョ",
+      "japanese": "ヒョ",
+      "furigana": [
+        {
+          "b": "ヒョ"
+        }
+      ],
+      "readings": [
+        "ヒョ"
+      ],
+      "romaji": "hyo",
+      "english": null,
+      "audio": "audio/ja/chars/kata-hyo.mp3",
+      "audioHint": "ヒョ",
+      "row": "hi",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-mya",
+      "character": "ミャ",
+      "japanese": "ミャ",
+      "furigana": [
+        {
+          "b": "ミャ"
+        }
+      ],
+      "readings": [
+        "ミャ"
+      ],
+      "romaji": "mya",
+      "english": null,
+      "audio": "audio/ja/chars/kata-mya.mp3",
+      "audioHint": "ミャ",
+      "row": "mi",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-myu",
+      "character": "ミュ",
+      "japanese": "ミュ",
+      "furigana": [
+        {
+          "b": "ミュ"
+        }
+      ],
+      "readings": [
+        "ミュ"
+      ],
+      "romaji": "myu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-myu.mp3",
+      "audioHint": "ミュ",
+      "row": "mi",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-myo",
+      "character": "ミョ",
+      "japanese": "ミョ",
+      "furigana": [
+        {
+          "b": "ミョ"
+        }
+      ],
+      "readings": [
+        "ミョ"
+      ],
+      "romaji": "myo",
+      "english": null,
+      "audio": "audio/ja/chars/kata-myo.mp3",
+      "audioHint": "ミョ",
+      "row": "mi",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-rya",
+      "character": "リャ",
+      "japanese": "リャ",
+      "furigana": [
+        {
+          "b": "リャ"
+        }
+      ],
+      "readings": [
+        "リャ"
+      ],
+      "romaji": "rya",
+      "english": null,
+      "audio": "audio/ja/chars/kata-rya.mp3",
+      "audioHint": "リャ",
+      "row": "ri",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-ryu",
+      "character": "リュ",
+      "japanese": "リュ",
+      "furigana": [
+        {
+          "b": "リュ"
+        }
+      ],
+      "readings": [
+        "リュ"
+      ],
+      "romaji": "ryu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ryu.mp3",
+      "audioHint": "リュ",
+      "row": "ri",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-ryo",
+      "character": "リョ",
+      "japanese": "リョ",
+      "furigana": [
+        {
+          "b": "リョ"
+        }
+      ],
+      "readings": [
+        "リョ"
+      ],
+      "romaji": "ryo",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ryo.mp3",
+      "audioHint": "リョ",
+      "row": "ri",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-gya",
+      "character": "ギャ",
+      "japanese": "ギャ",
+      "furigana": [
+        {
+          "b": "ギャ"
+        }
+      ],
+      "readings": [
+        "ギャ"
+      ],
+      "romaji": "gya",
+      "english": null,
+      "audio": "audio/ja/chars/kata-gya.mp3",
+      "audioHint": "ギャ",
+      "row": "gi",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-gyu",
+      "character": "ギュ",
+      "japanese": "ギュ",
+      "furigana": [
+        {
+          "b": "ギュ"
+        }
+      ],
+      "readings": [
+        "ギュ"
+      ],
+      "romaji": "gyu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-gyu.mp3",
+      "audioHint": "ギュ",
+      "row": "gi",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-gyo",
+      "character": "ギョ",
+      "japanese": "ギョ",
+      "furigana": [
+        {
+          "b": "ギョ"
+        }
+      ],
+      "readings": [
+        "ギョ"
+      ],
+      "romaji": "gyo",
+      "english": null,
+      "audio": "audio/ja/chars/kata-gyo.mp3",
+      "audioHint": "ギョ",
+      "row": "gi",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-ja",
+      "character": "ジャ",
+      "japanese": "ジャ",
+      "furigana": [
+        {
+          "b": "ジャ"
+        }
+      ],
+      "readings": [
+        "ジャ"
+      ],
+      "romaji": "ja",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ja.mp3",
+      "audioHint": "ジャ",
+      "row": "ji",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-ju",
+      "character": "ジュ",
+      "japanese": "ジュ",
+      "furigana": [
+        {
+          "b": "ジュ"
+        }
+      ],
+      "readings": [
+        "ジュ"
+      ],
+      "romaji": "ju",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ju.mp3",
+      "audioHint": "ジュ",
+      "row": "ji",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-jo",
+      "character": "ジョ",
+      "japanese": "ジョ",
+      "furigana": [
+        {
+          "b": "ジョ"
+        }
+      ],
+      "readings": [
+        "ジョ"
+      ],
+      "romaji": "jo",
+      "english": null,
+      "audio": "audio/ja/chars/kata-jo.mp3",
+      "audioHint": "ジョ",
+      "row": "ji",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-bya",
+      "character": "ビャ",
+      "japanese": "ビャ",
+      "furigana": [
+        {
+          "b": "ビャ"
+        }
+      ],
+      "readings": [
+        "ビャ"
+      ],
+      "romaji": "bya",
+      "english": null,
+      "audio": "audio/ja/chars/kata-bya.mp3",
+      "audioHint": "ビャ",
+      "row": "bi",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-byu",
+      "character": "ビュ",
+      "japanese": "ビュ",
+      "furigana": [
+        {
+          "b": "ビュ"
+        }
+      ],
+      "readings": [
+        "ビュ"
+      ],
+      "romaji": "byu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-byu.mp3",
+      "audioHint": "ビュ",
+      "row": "bi",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-byo",
+      "character": "ビョ",
+      "japanese": "ビョ",
+      "furigana": [
+        {
+          "b": "ビョ"
+        }
+      ],
+      "readings": [
+        "ビョ"
+      ],
+      "romaji": "byo",
+      "english": null,
+      "audio": "audio/ja/chars/kata-byo.mp3",
+      "audioHint": "ビョ",
+      "row": "bi",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-pya",
+      "character": "ピャ",
+      "japanese": "ピャ",
+      "furigana": [
+        {
+          "b": "ピャ"
+        }
+      ],
+      "readings": [
+        "ピャ"
+      ],
+      "romaji": "pya",
+      "english": null,
+      "audio": "audio/ja/chars/kata-pya.mp3",
+      "audioHint": "ピャ",
+      "row": "pi",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-pyu",
+      "character": "ピュ",
+      "japanese": "ピュ",
+      "furigana": [
+        {
+          "b": "ピュ"
+        }
+      ],
+      "readings": [
+        "ピュ"
+      ],
+      "romaji": "pyu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-pyu.mp3",
+      "audioHint": "ピュ",
+      "row": "pi",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-pyo",
+      "character": "ピョ",
+      "japanese": "ピョ",
+      "furigana": [
+        {
+          "b": "ピョ"
+        }
+      ],
+      "readings": [
+        "ピョ"
+      ],
+      "romaji": "pyo",
+      "english": null,
+      "audio": "audio/ja/chars/kata-pyo.mp3",
+      "audioHint": "ピョ",
+      "row": "pi",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "katakana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kata-ext-fa",
+      "character": "ファ",
+      "japanese": "ファ",
+      "furigana": [
+        {
+          "b": "ファ"
+        }
+      ],
+      "readings": [
+        "ファ"
+      ],
+      "romaji": "fa",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ext-fa.mp3",
+      "audioHint": "ファ",
+      "row": "extended",
+      "column": "fa",
+      "group": "extended",
+      "tags": [
+        "katakana",
+        "extended"
+      ],
+      "difficulty": 3,
+      "note": "Katakana-only combination for a sound Japanese does not natively have."
+    },
+    {
+      "id": "kata-ext-fi",
+      "character": "フィ",
+      "japanese": "フィ",
+      "furigana": [
+        {
+          "b": "フィ"
+        }
+      ],
+      "readings": [
+        "フィ"
+      ],
+      "romaji": "fi",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ext-fi.mp3",
+      "audioHint": "フィ",
+      "row": "extended",
+      "column": "fi",
+      "group": "extended",
+      "tags": [
+        "katakana",
+        "extended"
+      ],
+      "difficulty": 3,
+      "note": "Katakana-only combination for a sound Japanese does not natively have."
+    },
+    {
+      "id": "kata-ext-fe",
+      "character": "フェ",
+      "japanese": "フェ",
+      "furigana": [
+        {
+          "b": "フェ"
+        }
+      ],
+      "readings": [
+        "フェ"
+      ],
+      "romaji": "fe",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ext-fe.mp3",
+      "audioHint": "フェ",
+      "row": "extended",
+      "column": "fe",
+      "group": "extended",
+      "tags": [
+        "katakana",
+        "extended"
+      ],
+      "difficulty": 3,
+      "note": "Katakana-only combination for a sound Japanese does not natively have."
+    },
+    {
+      "id": "kata-ext-fo",
+      "character": "フォ",
+      "japanese": "フォ",
+      "furigana": [
+        {
+          "b": "フォ"
+        }
+      ],
+      "readings": [
+        "フォ"
+      ],
+      "romaji": "fo",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ext-fo.mp3",
+      "audioHint": "フォ",
+      "row": "extended",
+      "column": "fo",
+      "group": "extended",
+      "tags": [
+        "katakana",
+        "extended"
+      ],
+      "difficulty": 3,
+      "note": "Katakana-only combination for a sound Japanese does not natively have."
+    },
+    {
+      "id": "kata-ext-ti",
+      "character": "ティ",
+      "japanese": "ティ",
+      "furigana": [
+        {
+          "b": "ティ"
+        }
+      ],
+      "readings": [
+        "ティ"
+      ],
+      "romaji": "ti",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ext-ti.mp3",
+      "audioHint": "ティ",
+      "row": "extended",
+      "column": "ti",
+      "group": "extended",
+      "tags": [
+        "katakana",
+        "extended"
+      ],
+      "difficulty": 3,
+      "note": "Katakana-only combination for a sound Japanese does not natively have."
+    },
+    {
+      "id": "kata-ext-di",
+      "character": "ディ",
+      "japanese": "ディ",
+      "furigana": [
+        {
+          "b": "ディ"
+        }
+      ],
+      "readings": [
+        "ディ"
+      ],
+      "romaji": "di",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ext-di.mp3",
+      "audioHint": "ディ",
+      "row": "extended",
+      "column": "di",
+      "group": "extended",
+      "tags": [
+        "katakana",
+        "extended"
+      ],
+      "difficulty": 3,
+      "note": "Katakana-only combination for a sound Japanese does not natively have."
+    },
+    {
+      "id": "kata-ext-wi",
+      "character": "ウィ",
+      "japanese": "ウィ",
+      "furigana": [
+        {
+          "b": "ウィ"
+        }
+      ],
+      "readings": [
+        "ウィ"
+      ],
+      "romaji": "wi",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ext-wi.mp3",
+      "audioHint": "ウィ",
+      "row": "extended",
+      "column": "wi",
+      "group": "extended",
+      "tags": [
+        "katakana",
+        "extended"
+      ],
+      "difficulty": 3,
+      "note": "Katakana-only combination for a sound Japanese does not natively have."
+    },
+    {
+      "id": "kata-ext-we",
+      "character": "ウェ",
+      "japanese": "ウェ",
+      "furigana": [
+        {
+          "b": "ウェ"
+        }
+      ],
+      "readings": [
+        "ウェ"
+      ],
+      "romaji": "we",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ext-we.mp3",
+      "audioHint": "ウェ",
+      "row": "extended",
+      "column": "we",
+      "group": "extended",
+      "tags": [
+        "katakana",
+        "extended"
+      ],
+      "difficulty": 3,
+      "note": "Katakana-only combination for a sound Japanese does not natively have."
+    },
+    {
+      "id": "kata-ext-je",
+      "character": "ジェ",
+      "japanese": "ジェ",
+      "furigana": [
+        {
+          "b": "ジェ"
+        }
+      ],
+      "readings": [
+        "ジェ"
+      ],
+      "romaji": "je",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ext-je.mp3",
+      "audioHint": "ジェ",
+      "row": "extended",
+      "column": "je",
+      "group": "extended",
+      "tags": [
+        "katakana",
+        "extended"
+      ],
+      "difficulty": 3,
+      "note": "Katakana-only combination for a sound Japanese does not natively have."
+    },
+    {
+      "id": "kata-ext-che",
+      "character": "チェ",
+      "japanese": "チェ",
+      "furigana": [
+        {
+          "b": "チェ"
+        }
+      ],
+      "readings": [
+        "チェ"
+      ],
+      "romaji": "che",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ext-che.mp3",
+      "audioHint": "チェ",
+      "row": "extended",
+      "column": "che",
+      "group": "extended",
+      "tags": [
+        "katakana",
+        "extended"
+      ],
+      "difficulty": 3,
+      "note": "Katakana-only combination for a sound Japanese does not natively have."
+    },
+    {
+      "id": "kata-ext-she",
+      "character": "シェ",
+      "japanese": "シェ",
+      "furigana": [
+        {
+          "b": "シェ"
+        }
+      ],
+      "readings": [
+        "シェ"
+      ],
+      "romaji": "she",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ext-she.mp3",
+      "audioHint": "シェ",
+      "row": "extended",
+      "column": "she",
+      "group": "extended",
+      "tags": [
+        "katakana",
+        "extended"
+      ],
+      "difficulty": 3,
+      "note": "Katakana-only combination for a sound Japanese does not natively have."
+    },
+    {
+      "id": "kata-ext-vu",
+      "character": "ヴ",
+      "japanese": "ヴ",
+      "furigana": [
+        {
+          "b": "ヴ"
+        }
+      ],
+      "readings": [
+        "ヴ"
+      ],
+      "romaji": "vu",
+      "english": null,
+      "audio": "audio/ja/chars/kata-ext-vu.mp3",
+      "audioHint": "ヴ",
+      "row": "extended",
+      "column": "vu",
+      "group": "extended",
+      "tags": [
+        "katakana",
+        "extended"
+      ],
+      "difficulty": 3,
+      "note": "Katakana-only combination for a sound Japanese does not natively have."
+    }
+  ]
+}

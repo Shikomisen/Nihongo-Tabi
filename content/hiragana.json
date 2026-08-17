@@ -1,0 +1,2644 @@
+{
+  "schemaVersion": 1,
+  "id": "hiragana",
+  "kind": "characters",
+  "title": "Hiragana",
+  "script": "hiragana",
+  "description": "The core syllabary — grammar, particles and any Japanese word without kanji. Learn this first: it unlocks the furigana readings used everywhere else in the app.",
+  "groups": [
+    {
+      "id": "base",
+      "title": "Base",
+      "description": "The 46 core characters."
+    },
+    {
+      "id": "dakuten",
+      "title": "Dakuten ゛",
+      "description": "Voiced: k→g, s→z, t→d, h→b."
+    },
+    {
+      "id": "handakuten",
+      "title": "Handakuten ゜",
+      "description": "h→p."
+    },
+    {
+      "id": "yoon",
+      "title": "Yōon",
+      "description": "Contracted sounds — consonant + small ya/yu/yo, one beat."
+    }
+  ],
+  "characters": [
+    {
+      "id": "hira-a",
+      "character": "あ",
+      "japanese": "あ",
+      "furigana": [
+        {
+          "b": "あ"
+        }
+      ],
+      "readings": [
+        "あ"
+      ],
+      "romaji": "a",
+      "english": null,
+      "audio": "audio/ja/chars/hira-a.mp3",
+      "audioHint": "あ",
+      "row": "a",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-i",
+      "character": "い",
+      "japanese": "い",
+      "furigana": [
+        {
+          "b": "い"
+        }
+      ],
+      "readings": [
+        "い"
+      ],
+      "romaji": "i",
+      "english": null,
+      "audio": "audio/ja/chars/hira-i.mp3",
+      "audioHint": "い",
+      "row": "a",
+      "column": "i",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-u",
+      "character": "う",
+      "japanese": "う",
+      "furigana": [
+        {
+          "b": "う"
+        }
+      ],
+      "readings": [
+        "う"
+      ],
+      "romaji": "u",
+      "english": null,
+      "audio": "audio/ja/chars/hira-u.mp3",
+      "audioHint": "う",
+      "row": "a",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-e",
+      "character": "え",
+      "japanese": "え",
+      "furigana": [
+        {
+          "b": "え"
+        }
+      ],
+      "readings": [
+        "え"
+      ],
+      "romaji": "e",
+      "english": null,
+      "audio": "audio/ja/chars/hira-e.mp3",
+      "audioHint": "え",
+      "row": "a",
+      "column": "e",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-o",
+      "character": "お",
+      "japanese": "お",
+      "furigana": [
+        {
+          "b": "お"
+        }
+      ],
+      "readings": [
+        "お"
+      ],
+      "romaji": "o",
+      "english": null,
+      "audio": "audio/ja/chars/hira-o.mp3",
+      "audioHint": "お",
+      "row": "a",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-ka",
+      "character": "か",
+      "japanese": "か",
+      "furigana": [
+        {
+          "b": "か"
+        }
+      ],
+      "readings": [
+        "か"
+      ],
+      "romaji": "ka",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ka.mp3",
+      "audioHint": "か",
+      "row": "ka",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-ki",
+      "character": "き",
+      "japanese": "き",
+      "furigana": [
+        {
+          "b": "き"
+        }
+      ],
+      "readings": [
+        "き"
+      ],
+      "romaji": "ki",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ki.mp3",
+      "audioHint": "き",
+      "row": "ka",
+      "column": "i",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-ku",
+      "character": "く",
+      "japanese": "く",
+      "furigana": [
+        {
+          "b": "く"
+        }
+      ],
+      "readings": [
+        "く"
+      ],
+      "romaji": "ku",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ku.mp3",
+      "audioHint": "く",
+      "row": "ka",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-ke",
+      "character": "け",
+      "japanese": "け",
+      "furigana": [
+        {
+          "b": "け"
+        }
+      ],
+      "readings": [
+        "け"
+      ],
+      "romaji": "ke",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ke.mp3",
+      "audioHint": "け",
+      "row": "ka",
+      "column": "e",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-ko",
+      "character": "こ",
+      "japanese": "こ",
+      "furigana": [
+        {
+          "b": "こ"
+        }
+      ],
+      "readings": [
+        "こ"
+      ],
+      "romaji": "ko",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ko.mp3",
+      "audioHint": "こ",
+      "row": "ka",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-sa",
+      "character": "さ",
+      "japanese": "さ",
+      "furigana": [
+        {
+          "b": "さ"
+        }
+      ],
+      "readings": [
+        "さ"
+      ],
+      "romaji": "sa",
+      "english": null,
+      "audio": "audio/ja/chars/hira-sa.mp3",
+      "audioHint": "さ",
+      "row": "sa",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-shi",
+      "character": "し",
+      "japanese": "し",
+      "furigana": [
+        {
+          "b": "し"
+        }
+      ],
+      "readings": [
+        "し"
+      ],
+      "romaji": "shi",
+      "english": null,
+      "audio": "audio/ja/chars/hira-shi.mp3",
+      "audioHint": "し",
+      "row": "sa",
+      "column": "i",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1,
+      "note": "Written \"shi\", never \"si\" — Hepburn romanisation is what road signs and station names use."
+    },
+    {
+      "id": "hira-su",
+      "character": "す",
+      "japanese": "す",
+      "furigana": [
+        {
+          "b": "す"
+        }
+      ],
+      "readings": [
+        "す"
+      ],
+      "romaji": "su",
+      "english": null,
+      "audio": "audio/ja/chars/hira-su.mp3",
+      "audioHint": "す",
+      "row": "sa",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-se",
+      "character": "せ",
+      "japanese": "せ",
+      "furigana": [
+        {
+          "b": "せ"
+        }
+      ],
+      "readings": [
+        "せ"
+      ],
+      "romaji": "se",
+      "english": null,
+      "audio": "audio/ja/chars/hira-se.mp3",
+      "audioHint": "せ",
+      "row": "sa",
+      "column": "e",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-so",
+      "character": "そ",
+      "japanese": "そ",
+      "furigana": [
+        {
+          "b": "そ"
+        }
+      ],
+      "readings": [
+        "そ"
+      ],
+      "romaji": "so",
+      "english": null,
+      "audio": "audio/ja/chars/hira-so.mp3",
+      "audioHint": "そ",
+      "row": "sa",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-ta",
+      "character": "た",
+      "japanese": "た",
+      "furigana": [
+        {
+          "b": "た"
+        }
+      ],
+      "readings": [
+        "た"
+      ],
+      "romaji": "ta",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ta.mp3",
+      "audioHint": "た",
+      "row": "ta",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-chi",
+      "character": "ち",
+      "japanese": "ち",
+      "furigana": [
+        {
+          "b": "ち"
+        }
+      ],
+      "readings": [
+        "ち"
+      ],
+      "romaji": "chi",
+      "english": null,
+      "audio": "audio/ja/chars/hira-chi.mp3",
+      "audioHint": "ち",
+      "row": "ta",
+      "column": "i",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-tsu",
+      "character": "つ",
+      "japanese": "つ",
+      "furigana": [
+        {
+          "b": "つ"
+        }
+      ],
+      "readings": [
+        "つ"
+      ],
+      "romaji": "tsu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-tsu.mp3",
+      "audioHint": "つ",
+      "row": "ta",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1,
+      "note": "The small version っ/ッ doubles the next consonant instead: きって = kitte."
+    },
+    {
+      "id": "hira-te",
+      "character": "て",
+      "japanese": "て",
+      "furigana": [
+        {
+          "b": "て"
+        }
+      ],
+      "readings": [
+        "て"
+      ],
+      "romaji": "te",
+      "english": null,
+      "audio": "audio/ja/chars/hira-te.mp3",
+      "audioHint": "て",
+      "row": "ta",
+      "column": "e",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-to",
+      "character": "と",
+      "japanese": "と",
+      "furigana": [
+        {
+          "b": "と"
+        }
+      ],
+      "readings": [
+        "と"
+      ],
+      "romaji": "to",
+      "english": null,
+      "audio": "audio/ja/chars/hira-to.mp3",
+      "audioHint": "と",
+      "row": "ta",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-na",
+      "character": "な",
+      "japanese": "な",
+      "furigana": [
+        {
+          "b": "な"
+        }
+      ],
+      "readings": [
+        "な"
+      ],
+      "romaji": "na",
+      "english": null,
+      "audio": "audio/ja/chars/hira-na.mp3",
+      "audioHint": "な",
+      "row": "na",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-ni",
+      "character": "に",
+      "japanese": "に",
+      "furigana": [
+        {
+          "b": "に"
+        }
+      ],
+      "readings": [
+        "に"
+      ],
+      "romaji": "ni",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ni.mp3",
+      "audioHint": "に",
+      "row": "na",
+      "column": "i",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-nu",
+      "character": "ぬ",
+      "japanese": "ぬ",
+      "furigana": [
+        {
+          "b": "ぬ"
+        }
+      ],
+      "readings": [
+        "ぬ"
+      ],
+      "romaji": "nu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-nu.mp3",
+      "audioHint": "ぬ",
+      "row": "na",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-ne",
+      "character": "ね",
+      "japanese": "ね",
+      "furigana": [
+        {
+          "b": "ね"
+        }
+      ],
+      "readings": [
+        "ね"
+      ],
+      "romaji": "ne",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ne.mp3",
+      "audioHint": "ね",
+      "row": "na",
+      "column": "e",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-no",
+      "character": "の",
+      "japanese": "の",
+      "furigana": [
+        {
+          "b": "の"
+        }
+      ],
+      "readings": [
+        "の"
+      ],
+      "romaji": "no",
+      "english": null,
+      "audio": "audio/ja/chars/hira-no.mp3",
+      "audioHint": "の",
+      "row": "na",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-ha",
+      "character": "は",
+      "japanese": "は",
+      "furigana": [
+        {
+          "b": "は"
+        }
+      ],
+      "readings": [
+        "は"
+      ],
+      "romaji": "ha",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ha.mp3",
+      "audioHint": "は",
+      "row": "ha",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1,
+      "note": "As the topic particle it is pronounced \"wa\", not \"ha\" — 私は = watashi wa."
+    },
+    {
+      "id": "hira-hi",
+      "character": "ひ",
+      "japanese": "ひ",
+      "furigana": [
+        {
+          "b": "ひ"
+        }
+      ],
+      "readings": [
+        "ひ"
+      ],
+      "romaji": "hi",
+      "english": null,
+      "audio": "audio/ja/chars/hira-hi.mp3",
+      "audioHint": "ひ",
+      "row": "ha",
+      "column": "i",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-fu",
+      "character": "ふ",
+      "japanese": "ふ",
+      "furigana": [
+        {
+          "b": "ふ"
+        }
+      ],
+      "readings": [
+        "ふ"
+      ],
+      "romaji": "fu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-fu.mp3",
+      "audioHint": "ふ",
+      "row": "ha",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1,
+      "note": "Between \"fu\" and \"hu\" — the lips barely touch. ふ is the one Westerners over-pronounce."
+    },
+    {
+      "id": "hira-he",
+      "character": "へ",
+      "japanese": "へ",
+      "furigana": [
+        {
+          "b": "へ"
+        }
+      ],
+      "readings": [
+        "へ"
+      ],
+      "romaji": "he",
+      "english": null,
+      "audio": "audio/ja/chars/hira-he.mp3",
+      "audioHint": "へ",
+      "row": "ha",
+      "column": "e",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1,
+      "note": "As the direction particle it is pronounced \"e\", not \"he\"."
+    },
+    {
+      "id": "hira-ho",
+      "character": "ほ",
+      "japanese": "ほ",
+      "furigana": [
+        {
+          "b": "ほ"
+        }
+      ],
+      "readings": [
+        "ほ"
+      ],
+      "romaji": "ho",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ho.mp3",
+      "audioHint": "ほ",
+      "row": "ha",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-ma",
+      "character": "ま",
+      "japanese": "ま",
+      "furigana": [
+        {
+          "b": "ま"
+        }
+      ],
+      "readings": [
+        "ま"
+      ],
+      "romaji": "ma",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ma.mp3",
+      "audioHint": "ま",
+      "row": "ma",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-mi",
+      "character": "み",
+      "japanese": "み",
+      "furigana": [
+        {
+          "b": "み"
+        }
+      ],
+      "readings": [
+        "み"
+      ],
+      "romaji": "mi",
+      "english": null,
+      "audio": "audio/ja/chars/hira-mi.mp3",
+      "audioHint": "み",
+      "row": "ma",
+      "column": "i",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-mu",
+      "character": "む",
+      "japanese": "む",
+      "furigana": [
+        {
+          "b": "む"
+        }
+      ],
+      "readings": [
+        "む"
+      ],
+      "romaji": "mu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-mu.mp3",
+      "audioHint": "む",
+      "row": "ma",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-me",
+      "character": "め",
+      "japanese": "め",
+      "furigana": [
+        {
+          "b": "め"
+        }
+      ],
+      "readings": [
+        "め"
+      ],
+      "romaji": "me",
+      "english": null,
+      "audio": "audio/ja/chars/hira-me.mp3",
+      "audioHint": "め",
+      "row": "ma",
+      "column": "e",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-mo",
+      "character": "も",
+      "japanese": "も",
+      "furigana": [
+        {
+          "b": "も"
+        }
+      ],
+      "readings": [
+        "も"
+      ],
+      "romaji": "mo",
+      "english": null,
+      "audio": "audio/ja/chars/hira-mo.mp3",
+      "audioHint": "も",
+      "row": "ma",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-ya",
+      "character": "や",
+      "japanese": "や",
+      "furigana": [
+        {
+          "b": "や"
+        }
+      ],
+      "readings": [
+        "や"
+      ],
+      "romaji": "ya",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ya.mp3",
+      "audioHint": "や",
+      "row": "ya",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-yu",
+      "character": "ゆ",
+      "japanese": "ゆ",
+      "furigana": [
+        {
+          "b": "ゆ"
+        }
+      ],
+      "readings": [
+        "ゆ"
+      ],
+      "romaji": "yu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-yu.mp3",
+      "audioHint": "ゆ",
+      "row": "ya",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-yo",
+      "character": "よ",
+      "japanese": "よ",
+      "furigana": [
+        {
+          "b": "よ"
+        }
+      ],
+      "readings": [
+        "よ"
+      ],
+      "romaji": "yo",
+      "english": null,
+      "audio": "audio/ja/chars/hira-yo.mp3",
+      "audioHint": "よ",
+      "row": "ya",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-ra",
+      "character": "ら",
+      "japanese": "ら",
+      "furigana": [
+        {
+          "b": "ら"
+        }
+      ],
+      "readings": [
+        "ら"
+      ],
+      "romaji": "ra",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ra.mp3",
+      "audioHint": "ら",
+      "row": "ra",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-ri",
+      "character": "り",
+      "japanese": "り",
+      "furigana": [
+        {
+          "b": "り"
+        }
+      ],
+      "readings": [
+        "り"
+      ],
+      "romaji": "ri",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ri.mp3",
+      "audioHint": "り",
+      "row": "ra",
+      "column": "i",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-ru",
+      "character": "る",
+      "japanese": "る",
+      "furigana": [
+        {
+          "b": "る"
+        }
+      ],
+      "readings": [
+        "る"
+      ],
+      "romaji": "ru",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ru.mp3",
+      "audioHint": "る",
+      "row": "ra",
+      "column": "u",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-re",
+      "character": "れ",
+      "japanese": "れ",
+      "furigana": [
+        {
+          "b": "れ"
+        }
+      ],
+      "readings": [
+        "れ"
+      ],
+      "romaji": "re",
+      "english": null,
+      "audio": "audio/ja/chars/hira-re.mp3",
+      "audioHint": "れ",
+      "row": "ra",
+      "column": "e",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-ro",
+      "character": "ろ",
+      "japanese": "ろ",
+      "furigana": [
+        {
+          "b": "ろ"
+        }
+      ],
+      "readings": [
+        "ろ"
+      ],
+      "romaji": "ro",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ro.mp3",
+      "audioHint": "ろ",
+      "row": "ra",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-wa",
+      "character": "わ",
+      "japanese": "わ",
+      "furigana": [
+        {
+          "b": "わ"
+        }
+      ],
+      "readings": [
+        "わ"
+      ],
+      "romaji": "wa",
+      "english": null,
+      "audio": "audio/ja/chars/hira-wa.mp3",
+      "audioHint": "わ",
+      "row": "wa",
+      "column": "a",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "hira-wo",
+      "character": "を",
+      "japanese": "を",
+      "furigana": [
+        {
+          "b": "を"
+        }
+      ],
+      "readings": [
+        "を"
+      ],
+      "romaji": "wo",
+      "english": null,
+      "audio": "audio/ja/chars/hira-wo.mp3",
+      "audioHint": "を",
+      "row": "wa",
+      "column": "o",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1,
+      "note": "Pronounced \"o\". Only ever used as the object particle, never inside a word."
+    },
+    {
+      "id": "hira-n",
+      "character": "ん",
+      "japanese": "ん",
+      "furigana": [
+        {
+          "b": "ん"
+        }
+      ],
+      "readings": [
+        "ん"
+      ],
+      "romaji": "n",
+      "english": null,
+      "audio": "audio/ja/chars/hira-n.mp3",
+      "audioHint": "ん",
+      "row": "n",
+      "column": "n",
+      "group": "base",
+      "tags": [
+        "hiragana",
+        "base"
+      ],
+      "difficulty": 1,
+      "note": "The only kana that is a consonant on its own, and the only one that can end a word."
+    },
+    {
+      "id": "hira-ga",
+      "character": "が",
+      "japanese": "が",
+      "furigana": [
+        {
+          "b": "が"
+        }
+      ],
+      "readings": [
+        "が"
+      ],
+      "romaji": "ga",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ga.mp3",
+      "audioHint": "が",
+      "row": "ga",
+      "column": "a",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-gi",
+      "character": "ぎ",
+      "japanese": "ぎ",
+      "furigana": [
+        {
+          "b": "ぎ"
+        }
+      ],
+      "readings": [
+        "ぎ"
+      ],
+      "romaji": "gi",
+      "english": null,
+      "audio": "audio/ja/chars/hira-gi.mp3",
+      "audioHint": "ぎ",
+      "row": "ga",
+      "column": "i",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-gu",
+      "character": "ぐ",
+      "japanese": "ぐ",
+      "furigana": [
+        {
+          "b": "ぐ"
+        }
+      ],
+      "readings": [
+        "ぐ"
+      ],
+      "romaji": "gu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-gu.mp3",
+      "audioHint": "ぐ",
+      "row": "ga",
+      "column": "u",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-ge",
+      "character": "げ",
+      "japanese": "げ",
+      "furigana": [
+        {
+          "b": "げ"
+        }
+      ],
+      "readings": [
+        "げ"
+      ],
+      "romaji": "ge",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ge.mp3",
+      "audioHint": "げ",
+      "row": "ga",
+      "column": "e",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-go",
+      "character": "ご",
+      "japanese": "ご",
+      "furigana": [
+        {
+          "b": "ご"
+        }
+      ],
+      "readings": [
+        "ご"
+      ],
+      "romaji": "go",
+      "english": null,
+      "audio": "audio/ja/chars/hira-go.mp3",
+      "audioHint": "ご",
+      "row": "ga",
+      "column": "o",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-za",
+      "character": "ざ",
+      "japanese": "ざ",
+      "furigana": [
+        {
+          "b": "ざ"
+        }
+      ],
+      "readings": [
+        "ざ"
+      ],
+      "romaji": "za",
+      "english": null,
+      "audio": "audio/ja/chars/hira-za.mp3",
+      "audioHint": "ざ",
+      "row": "za",
+      "column": "a",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-ji",
+      "character": "じ",
+      "japanese": "じ",
+      "furigana": [
+        {
+          "b": "じ"
+        }
+      ],
+      "readings": [
+        "じ"
+      ],
+      "romaji": "ji",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ji.mp3",
+      "audioHint": "じ",
+      "row": "za",
+      "column": "i",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2,
+      "note": "じ and ぢ are both \"ji\"; じ is the one you will almost always want."
+    },
+    {
+      "id": "hira-zu",
+      "character": "ず",
+      "japanese": "ず",
+      "furigana": [
+        {
+          "b": "ず"
+        }
+      ],
+      "readings": [
+        "ず"
+      ],
+      "romaji": "zu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-zu.mp3",
+      "audioHint": "ず",
+      "row": "za",
+      "column": "u",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2,
+      "note": "ず and づ are both \"zu\"; ず is the common one."
+    },
+    {
+      "id": "hira-ze",
+      "character": "ぜ",
+      "japanese": "ぜ",
+      "furigana": [
+        {
+          "b": "ぜ"
+        }
+      ],
+      "readings": [
+        "ぜ"
+      ],
+      "romaji": "ze",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ze.mp3",
+      "audioHint": "ぜ",
+      "row": "za",
+      "column": "e",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-zo",
+      "character": "ぞ",
+      "japanese": "ぞ",
+      "furigana": [
+        {
+          "b": "ぞ"
+        }
+      ],
+      "readings": [
+        "ぞ"
+      ],
+      "romaji": "zo",
+      "english": null,
+      "audio": "audio/ja/chars/hira-zo.mp3",
+      "audioHint": "ぞ",
+      "row": "za",
+      "column": "o",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-da",
+      "character": "だ",
+      "japanese": "だ",
+      "furigana": [
+        {
+          "b": "だ"
+        }
+      ],
+      "readings": [
+        "だ"
+      ],
+      "romaji": "da",
+      "english": null,
+      "audio": "audio/ja/chars/hira-da.mp3",
+      "audioHint": "だ",
+      "row": "da",
+      "column": "a",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-di",
+      "character": "ぢ",
+      "japanese": "ぢ",
+      "furigana": [
+        {
+          "b": "ぢ"
+        }
+      ],
+      "readings": [
+        "ぢ"
+      ],
+      "romaji": "ji",
+      "english": null,
+      "audio": "audio/ja/chars/hira-di.mp3",
+      "audioHint": "ぢ",
+      "row": "da",
+      "column": "i",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2,
+      "note": "じ and ぢ are both \"ji\"; じ is the one you will almost always want."
+    },
+    {
+      "id": "hira-du",
+      "character": "づ",
+      "japanese": "づ",
+      "furigana": [
+        {
+          "b": "づ"
+        }
+      ],
+      "readings": [
+        "づ"
+      ],
+      "romaji": "zu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-du.mp3",
+      "audioHint": "づ",
+      "row": "da",
+      "column": "u",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2,
+      "note": "ず and づ are both \"zu\"; ず is the common one."
+    },
+    {
+      "id": "hira-de",
+      "character": "で",
+      "japanese": "で",
+      "furigana": [
+        {
+          "b": "で"
+        }
+      ],
+      "readings": [
+        "で"
+      ],
+      "romaji": "de",
+      "english": null,
+      "audio": "audio/ja/chars/hira-de.mp3",
+      "audioHint": "で",
+      "row": "da",
+      "column": "e",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-do",
+      "character": "ど",
+      "japanese": "ど",
+      "furigana": [
+        {
+          "b": "ど"
+        }
+      ],
+      "readings": [
+        "ど"
+      ],
+      "romaji": "do",
+      "english": null,
+      "audio": "audio/ja/chars/hira-do.mp3",
+      "audioHint": "ど",
+      "row": "da",
+      "column": "o",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-ba",
+      "character": "ば",
+      "japanese": "ば",
+      "furigana": [
+        {
+          "b": "ば"
+        }
+      ],
+      "readings": [
+        "ば"
+      ],
+      "romaji": "ba",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ba.mp3",
+      "audioHint": "ば",
+      "row": "ba",
+      "column": "a",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-bi",
+      "character": "び",
+      "japanese": "び",
+      "furigana": [
+        {
+          "b": "び"
+        }
+      ],
+      "readings": [
+        "び"
+      ],
+      "romaji": "bi",
+      "english": null,
+      "audio": "audio/ja/chars/hira-bi.mp3",
+      "audioHint": "び",
+      "row": "ba",
+      "column": "i",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-bu",
+      "character": "ぶ",
+      "japanese": "ぶ",
+      "furigana": [
+        {
+          "b": "ぶ"
+        }
+      ],
+      "readings": [
+        "ぶ"
+      ],
+      "romaji": "bu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-bu.mp3",
+      "audioHint": "ぶ",
+      "row": "ba",
+      "column": "u",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-be",
+      "character": "べ",
+      "japanese": "べ",
+      "furigana": [
+        {
+          "b": "べ"
+        }
+      ],
+      "readings": [
+        "べ"
+      ],
+      "romaji": "be",
+      "english": null,
+      "audio": "audio/ja/chars/hira-be.mp3",
+      "audioHint": "べ",
+      "row": "ba",
+      "column": "e",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-bo",
+      "character": "ぼ",
+      "japanese": "ぼ",
+      "furigana": [
+        {
+          "b": "ぼ"
+        }
+      ],
+      "readings": [
+        "ぼ"
+      ],
+      "romaji": "bo",
+      "english": null,
+      "audio": "audio/ja/chars/hira-bo.mp3",
+      "audioHint": "ぼ",
+      "row": "ba",
+      "column": "o",
+      "group": "dakuten",
+      "tags": [
+        "hiragana",
+        "dakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-pa",
+      "character": "ぱ",
+      "japanese": "ぱ",
+      "furigana": [
+        {
+          "b": "ぱ"
+        }
+      ],
+      "readings": [
+        "ぱ"
+      ],
+      "romaji": "pa",
+      "english": null,
+      "audio": "audio/ja/chars/hira-pa.mp3",
+      "audioHint": "ぱ",
+      "row": "pa",
+      "column": "a",
+      "group": "handakuten",
+      "tags": [
+        "hiragana",
+        "handakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-pi",
+      "character": "ぴ",
+      "japanese": "ぴ",
+      "furigana": [
+        {
+          "b": "ぴ"
+        }
+      ],
+      "readings": [
+        "ぴ"
+      ],
+      "romaji": "pi",
+      "english": null,
+      "audio": "audio/ja/chars/hira-pi.mp3",
+      "audioHint": "ぴ",
+      "row": "pa",
+      "column": "i",
+      "group": "handakuten",
+      "tags": [
+        "hiragana",
+        "handakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-pu",
+      "character": "ぷ",
+      "japanese": "ぷ",
+      "furigana": [
+        {
+          "b": "ぷ"
+        }
+      ],
+      "readings": [
+        "ぷ"
+      ],
+      "romaji": "pu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-pu.mp3",
+      "audioHint": "ぷ",
+      "row": "pa",
+      "column": "u",
+      "group": "handakuten",
+      "tags": [
+        "hiragana",
+        "handakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-pe",
+      "character": "ぺ",
+      "japanese": "ぺ",
+      "furigana": [
+        {
+          "b": "ぺ"
+        }
+      ],
+      "readings": [
+        "ぺ"
+      ],
+      "romaji": "pe",
+      "english": null,
+      "audio": "audio/ja/chars/hira-pe.mp3",
+      "audioHint": "ぺ",
+      "row": "pa",
+      "column": "e",
+      "group": "handakuten",
+      "tags": [
+        "hiragana",
+        "handakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-po",
+      "character": "ぽ",
+      "japanese": "ぽ",
+      "furigana": [
+        {
+          "b": "ぽ"
+        }
+      ],
+      "readings": [
+        "ぽ"
+      ],
+      "romaji": "po",
+      "english": null,
+      "audio": "audio/ja/chars/hira-po.mp3",
+      "audioHint": "ぽ",
+      "row": "pa",
+      "column": "o",
+      "group": "handakuten",
+      "tags": [
+        "hiragana",
+        "handakuten"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "hira-kya",
+      "character": "きゃ",
+      "japanese": "きゃ",
+      "furigana": [
+        {
+          "b": "きゃ"
+        }
+      ],
+      "readings": [
+        "きゃ"
+      ],
+      "romaji": "kya",
+      "english": null,
+      "audio": "audio/ja/chars/hira-kya.mp3",
+      "audioHint": "きゃ",
+      "row": "ki",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3,
+      "note": "Written small, read as a single beat: きゃ is one mora, not two."
+    },
+    {
+      "id": "hira-kyu",
+      "character": "きゅ",
+      "japanese": "きゅ",
+      "furigana": [
+        {
+          "b": "きゅ"
+        }
+      ],
+      "readings": [
+        "きゅ"
+      ],
+      "romaji": "kyu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-kyu.mp3",
+      "audioHint": "きゅ",
+      "row": "ki",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-kyo",
+      "character": "きょ",
+      "japanese": "きょ",
+      "furigana": [
+        {
+          "b": "きょ"
+        }
+      ],
+      "readings": [
+        "きょ"
+      ],
+      "romaji": "kyo",
+      "english": null,
+      "audio": "audio/ja/chars/hira-kyo.mp3",
+      "audioHint": "きょ",
+      "row": "ki",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-sha",
+      "character": "しゃ",
+      "japanese": "しゃ",
+      "furigana": [
+        {
+          "b": "しゃ"
+        }
+      ],
+      "readings": [
+        "しゃ"
+      ],
+      "romaji": "sha",
+      "english": null,
+      "audio": "audio/ja/chars/hira-sha.mp3",
+      "audioHint": "しゃ",
+      "row": "shi",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-shu",
+      "character": "しゅ",
+      "japanese": "しゅ",
+      "furigana": [
+        {
+          "b": "しゅ"
+        }
+      ],
+      "readings": [
+        "しゅ"
+      ],
+      "romaji": "shu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-shu.mp3",
+      "audioHint": "しゅ",
+      "row": "shi",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-sho",
+      "character": "しょ",
+      "japanese": "しょ",
+      "furigana": [
+        {
+          "b": "しょ"
+        }
+      ],
+      "readings": [
+        "しょ"
+      ],
+      "romaji": "sho",
+      "english": null,
+      "audio": "audio/ja/chars/hira-sho.mp3",
+      "audioHint": "しょ",
+      "row": "shi",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-cha",
+      "character": "ちゃ",
+      "japanese": "ちゃ",
+      "furigana": [
+        {
+          "b": "ちゃ"
+        }
+      ],
+      "readings": [
+        "ちゃ"
+      ],
+      "romaji": "cha",
+      "english": null,
+      "audio": "audio/ja/chars/hira-cha.mp3",
+      "audioHint": "ちゃ",
+      "row": "chi",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-chu",
+      "character": "ちゅ",
+      "japanese": "ちゅ",
+      "furigana": [
+        {
+          "b": "ちゅ"
+        }
+      ],
+      "readings": [
+        "ちゅ"
+      ],
+      "romaji": "chu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-chu.mp3",
+      "audioHint": "ちゅ",
+      "row": "chi",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-cho",
+      "character": "ちょ",
+      "japanese": "ちょ",
+      "furigana": [
+        {
+          "b": "ちょ"
+        }
+      ],
+      "readings": [
+        "ちょ"
+      ],
+      "romaji": "cho",
+      "english": null,
+      "audio": "audio/ja/chars/hira-cho.mp3",
+      "audioHint": "ちょ",
+      "row": "chi",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-nya",
+      "character": "にゃ",
+      "japanese": "にゃ",
+      "furigana": [
+        {
+          "b": "にゃ"
+        }
+      ],
+      "readings": [
+        "にゃ"
+      ],
+      "romaji": "nya",
+      "english": null,
+      "audio": "audio/ja/chars/hira-nya.mp3",
+      "audioHint": "にゃ",
+      "row": "ni",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-nyu",
+      "character": "にゅ",
+      "japanese": "にゅ",
+      "furigana": [
+        {
+          "b": "にゅ"
+        }
+      ],
+      "readings": [
+        "にゅ"
+      ],
+      "romaji": "nyu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-nyu.mp3",
+      "audioHint": "にゅ",
+      "row": "ni",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-nyo",
+      "character": "にょ",
+      "japanese": "にょ",
+      "furigana": [
+        {
+          "b": "にょ"
+        }
+      ],
+      "readings": [
+        "にょ"
+      ],
+      "romaji": "nyo",
+      "english": null,
+      "audio": "audio/ja/chars/hira-nyo.mp3",
+      "audioHint": "にょ",
+      "row": "ni",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-hya",
+      "character": "ひゃ",
+      "japanese": "ひゃ",
+      "furigana": [
+        {
+          "b": "ひゃ"
+        }
+      ],
+      "readings": [
+        "ひゃ"
+      ],
+      "romaji": "hya",
+      "english": null,
+      "audio": "audio/ja/chars/hira-hya.mp3",
+      "audioHint": "ひゃ",
+      "row": "hi",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-hyu",
+      "character": "ひゅ",
+      "japanese": "ひゅ",
+      "furigana": [
+        {
+          "b": "ひゅ"
+        }
+      ],
+      "readings": [
+        "ひゅ"
+      ],
+      "romaji": "hyu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-hyu.mp3",
+      "audioHint": "ひゅ",
+      "row": "hi",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-hyo",
+      "character": "ひょ",
+      "japanese": "ひょ",
+      "furigana": [
+        {
+          "b": "ひょ"
+        }
+      ],
+      "readings": [
+        "ひょ"
+      ],
+      "romaji": "hyo",
+      "english": null,
+      "audio": "audio/ja/chars/hira-hyo.mp3",
+      "audioHint": "ひょ",
+      "row": "hi",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-mya",
+      "character": "みゃ",
+      "japanese": "みゃ",
+      "furigana": [
+        {
+          "b": "みゃ"
+        }
+      ],
+      "readings": [
+        "みゃ"
+      ],
+      "romaji": "mya",
+      "english": null,
+      "audio": "audio/ja/chars/hira-mya.mp3",
+      "audioHint": "みゃ",
+      "row": "mi",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-myu",
+      "character": "みゅ",
+      "japanese": "みゅ",
+      "furigana": [
+        {
+          "b": "みゅ"
+        }
+      ],
+      "readings": [
+        "みゅ"
+      ],
+      "romaji": "myu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-myu.mp3",
+      "audioHint": "みゅ",
+      "row": "mi",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-myo",
+      "character": "みょ",
+      "japanese": "みょ",
+      "furigana": [
+        {
+          "b": "みょ"
+        }
+      ],
+      "readings": [
+        "みょ"
+      ],
+      "romaji": "myo",
+      "english": null,
+      "audio": "audio/ja/chars/hira-myo.mp3",
+      "audioHint": "みょ",
+      "row": "mi",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-rya",
+      "character": "りゃ",
+      "japanese": "りゃ",
+      "furigana": [
+        {
+          "b": "りゃ"
+        }
+      ],
+      "readings": [
+        "りゃ"
+      ],
+      "romaji": "rya",
+      "english": null,
+      "audio": "audio/ja/chars/hira-rya.mp3",
+      "audioHint": "りゃ",
+      "row": "ri",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-ryu",
+      "character": "りゅ",
+      "japanese": "りゅ",
+      "furigana": [
+        {
+          "b": "りゅ"
+        }
+      ],
+      "readings": [
+        "りゅ"
+      ],
+      "romaji": "ryu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ryu.mp3",
+      "audioHint": "りゅ",
+      "row": "ri",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-ryo",
+      "character": "りょ",
+      "japanese": "りょ",
+      "furigana": [
+        {
+          "b": "りょ"
+        }
+      ],
+      "readings": [
+        "りょ"
+      ],
+      "romaji": "ryo",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ryo.mp3",
+      "audioHint": "りょ",
+      "row": "ri",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-gya",
+      "character": "ぎゃ",
+      "japanese": "ぎゃ",
+      "furigana": [
+        {
+          "b": "ぎゃ"
+        }
+      ],
+      "readings": [
+        "ぎゃ"
+      ],
+      "romaji": "gya",
+      "english": null,
+      "audio": "audio/ja/chars/hira-gya.mp3",
+      "audioHint": "ぎゃ",
+      "row": "gi",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-gyu",
+      "character": "ぎゅ",
+      "japanese": "ぎゅ",
+      "furigana": [
+        {
+          "b": "ぎゅ"
+        }
+      ],
+      "readings": [
+        "ぎゅ"
+      ],
+      "romaji": "gyu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-gyu.mp3",
+      "audioHint": "ぎゅ",
+      "row": "gi",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-gyo",
+      "character": "ぎょ",
+      "japanese": "ぎょ",
+      "furigana": [
+        {
+          "b": "ぎょ"
+        }
+      ],
+      "readings": [
+        "ぎょ"
+      ],
+      "romaji": "gyo",
+      "english": null,
+      "audio": "audio/ja/chars/hira-gyo.mp3",
+      "audioHint": "ぎょ",
+      "row": "gi",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-ja",
+      "character": "じゃ",
+      "japanese": "じゃ",
+      "furigana": [
+        {
+          "b": "じゃ"
+        }
+      ],
+      "readings": [
+        "じゃ"
+      ],
+      "romaji": "ja",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ja.mp3",
+      "audioHint": "じゃ",
+      "row": "ji",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-ju",
+      "character": "じゅ",
+      "japanese": "じゅ",
+      "furigana": [
+        {
+          "b": "じゅ"
+        }
+      ],
+      "readings": [
+        "じゅ"
+      ],
+      "romaji": "ju",
+      "english": null,
+      "audio": "audio/ja/chars/hira-ju.mp3",
+      "audioHint": "じゅ",
+      "row": "ji",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-jo",
+      "character": "じょ",
+      "japanese": "じょ",
+      "furigana": [
+        {
+          "b": "じょ"
+        }
+      ],
+      "readings": [
+        "じょ"
+      ],
+      "romaji": "jo",
+      "english": null,
+      "audio": "audio/ja/chars/hira-jo.mp3",
+      "audioHint": "じょ",
+      "row": "ji",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-bya",
+      "character": "びゃ",
+      "japanese": "びゃ",
+      "furigana": [
+        {
+          "b": "びゃ"
+        }
+      ],
+      "readings": [
+        "びゃ"
+      ],
+      "romaji": "bya",
+      "english": null,
+      "audio": "audio/ja/chars/hira-bya.mp3",
+      "audioHint": "びゃ",
+      "row": "bi",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-byu",
+      "character": "びゅ",
+      "japanese": "びゅ",
+      "furigana": [
+        {
+          "b": "びゅ"
+        }
+      ],
+      "readings": [
+        "びゅ"
+      ],
+      "romaji": "byu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-byu.mp3",
+      "audioHint": "びゅ",
+      "row": "bi",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-byo",
+      "character": "びょ",
+      "japanese": "びょ",
+      "furigana": [
+        {
+          "b": "びょ"
+        }
+      ],
+      "readings": [
+        "びょ"
+      ],
+      "romaji": "byo",
+      "english": null,
+      "audio": "audio/ja/chars/hira-byo.mp3",
+      "audioHint": "びょ",
+      "row": "bi",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-pya",
+      "character": "ぴゃ",
+      "japanese": "ぴゃ",
+      "furigana": [
+        {
+          "b": "ぴゃ"
+        }
+      ],
+      "readings": [
+        "ぴゃ"
+      ],
+      "romaji": "pya",
+      "english": null,
+      "audio": "audio/ja/chars/hira-pya.mp3",
+      "audioHint": "ぴゃ",
+      "row": "pi",
+      "column": "ya",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-pyu",
+      "character": "ぴゅ",
+      "japanese": "ぴゅ",
+      "furigana": [
+        {
+          "b": "ぴゅ"
+        }
+      ],
+      "readings": [
+        "ぴゅ"
+      ],
+      "romaji": "pyu",
+      "english": null,
+      "audio": "audio/ja/chars/hira-pyu.mp3",
+      "audioHint": "ぴゅ",
+      "row": "pi",
+      "column": "yu",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "hira-pyo",
+      "character": "ぴょ",
+      "japanese": "ぴょ",
+      "furigana": [
+        {
+          "b": "ぴょ"
+        }
+      ],
+      "readings": [
+        "ぴょ"
+      ],
+      "romaji": "pyo",
+      "english": null,
+      "audio": "audio/ja/chars/hira-pyo.mp3",
+      "audioHint": "ぴょ",
+      "row": "pi",
+      "column": "yo",
+      "group": "yoon",
+      "tags": [
+        "hiragana",
+        "yoon"
+      ],
+      "difficulty": 3
+    }
+  ]
+}

@@ -73,13 +73,28 @@ check('categories are in trip-relevance order',
 console.log('\n2. Placement quiz (§6a)');
 
 const items = await quiz.buildPlacementSet();
-check('quiz pulls ~15-20 cards', items.length >= 15 && items.length <= 20, `${items.length} cards`);
+const phraseItems = items.filter((i) => i.kind !== 'character');
+const charItems = items.filter((i) => i.kind === 'character');
 
-const covered = new Set(items.map((i) => i.categoryId));
-check('quiz spans all 10 categories', covered.size === 10, `${covered.size} covered`);
+check('quiz pulls ~15-20 phrase cards (§6a)',
+  phraseItems.length >= 15 && phraseItems.length <= 20, `${phraseItems.length} phrase cards`);
+check('quiz also samples a few characters',
+  charItems.length >= 4 && charItems.length <= 8, `${charItems.length} character cards`);
+
+const covered = new Set(phraseItems.map((i) => i.categoryId));
+check('quiz spans all 10 phrase categories', covered.size === 10, `${covered.size} covered`);
+
+const charCovered = new Set(charItems.map((i) => i.categoryId));
+check('quiz spans all 3 character sets', charCovered.size === 3, [...charCovered].join(', '));
+
 check('quiz samples both ends of each category',
   content.categories.every((cat) => {
     const picks = items.filter((i) => i.categoryId === cat.id);
+    return picks.length === 2 && picks[0].difficulty <= picks[1].difficulty;
+  }));
+check('quiz samples both ends of each character set',
+  content.characterSets.every((set) => {
+    const picks = items.filter((i) => i.categoryId === set.id);
     return picks.length === 2 && picks[0].difficulty <= picks[1].difficulty;
   }));
 
@@ -95,7 +110,8 @@ for (const item of items) {
 
 const result = await quiz.applyPlacement(items, answers);
 check('placement is recorded as done', result.done === true);
-check('per-category scores computed', Object.keys(result.perCategory).length === 10);
+check('scores computed for every category and character set',
+  Object.keys(result.perCategory).length === 13, `${Object.keys(result.perCategory).length} buckets`);
 check('strong category scores high', result.perCategory.greetings.score === 1, String(result.perCategory.greetings.score));
 check('weak category scores low', result.perCategory.airport.score < 0.5, String(result.perCategory.airport.score));
 check('onboarding gate now passes', await deck.isOnboarded());
@@ -217,11 +233,100 @@ for (const entry of content.manifest.scenarios || []) {
 const shoppingScenarios = await scenariosFor('shopping');
 check('scenarios resolve by category', shoppingScenarios.length === 1 && shoppingScenarios[0].id === 'conbini');
 
+/* ---------- 8. characters ---------- */
+
+console.log('\n8. Characters — separate deck');
+
+check('three character sets load', content.characterSets.length === 3,
+  content.characterSets.map((s) => `${s.id}:${s.characters.length}`).join(' '));
+
+const hira = content.bySet.get('hiragana');
+const kata = content.bySet.get('katakana');
+const kanji = content.bySet.get('kanji-common');
+
+check('hiragana has the full functional set', hira.characters.length === 104, `${hira.characters.length}`);
+check('katakana has the full functional set', kata.characters.length === 116, `${kata.characters.length}`);
+check('kanji set is curated, not exhaustive',
+  kanji.characters.length >= 60 && kanji.characters.length <= 120, `${kanji.characters.length} kanji`);
+
+check('hiragana covers the 46 base characters',
+  hira.characters.filter((c) => c.group === 'base').length === 46);
+check('hiragana includes dakuten/handakuten',
+  hira.characters.filter((c) => c.group === 'dakuten' || c.group === 'handakuten').length === 25);
+check('hiragana includes yōon combinations',
+  hira.characters.filter((c) => c.group === 'yoon').length === 33);
+
+check('characters are phrase-shaped so the flashcard UI needs no branching',
+  hira.characters.every((c) => c.japanese && c.romaji && c.english && Array.isArray(c.furigana)));
+check('characters are indexed alongside phrases for card lookup',
+  content.phrases.has('hira-a') && content.phrases.has('kan-deguchi'));
+
+// Cross-referencing is the point: reinforcement, not a second vocab list.
+const withRefs = kanji.characters.filter((c) => (c.seenIn || []).length);
+check('kanji cross-reference existing phrase content', withRefs.length >= 25,
+  `${withRefs.length}/${kanji.characters.length} kanji appear in phrases`);
+check('every cross-reference resolves to a real phrase',
+  withRefs.every((c) => c.seenIn.every((id) => content.phrases.has(id))));
+check('cross-references are accurate — the phrase really contains the character',
+  withRefs.every((c) => c.seenIn.every((id) => content.phrases.get(id).japanese.includes(c.character))));
+
+// Deck separation.
+const phraseQueueBefore = (await deck.queue()).length;
+const charsAdded = await deck.activateCharacterSet('hiragana');
+check('activating a set adds its characters', charsAdded.added > 100, `+${charsAdded.added}`);
+check('character set is now active', await deck.isSetActive('hiragana'));
+
+const charQueue = await deck.characterQueue();
+check('character queue is non-empty', charQueue.length > 0, `${charQueue.length} cards`);
+check('character queue contains only characters',
+  charQueue.every((c) => c.kind === 'character'));
+check('character queue respects its own daily cap',
+  charQueue.length <= (await deck.getSettings()).newCharsPerDay + 5, `${charQueue.length} cards`);
+check('new characters arrive easiest-first — base kana before yōon',
+  charQueue.every((c) => (c.difficulty ?? 3) === 1),
+  `difficulties: ${[...new Set(charQueue.map((c) => c.difficulty))].join(',')}`);
+
+check('phrase queue is unchanged by adding characters',
+  (await deck.queue()).length === phraseQueueBefore, `${phraseQueueBefore} before and after`);
+check('phrase queue contains no characters',
+  (await deck.queue()).every((c) => (c.kind ?? 'phrase') === 'phrase'));
+
+const phraseSummaryAfter = await deck.deckSummary();
+const charSummary = await deck.characterSummary();
+check('deck summary excludes characters', phraseSummaryAfter.total === summary.total,
+  `phrases still ${phraseSummaryAfter.total}`);
+check('character summary counts only characters', charSummary.total >= 104, `${charSummary.total}`);
+
+// Review counts must not bleed across decks.
+const statsBefore = await deck.todayStats();
+await deck.grade(charQueue[0].id, srs.GRADE.GOOD);
+const statsAfter = await deck.todayStats();
+check('grading a character bumps the character counter',
+  statsAfter.charReviews === statsBefore.charReviews + 1,
+  `${statsBefore.charReviews} → ${statsAfter.charReviews}`);
+check('grading a character does NOT bump the phrase counter',
+  statsAfter.reviews === statsBefore.reviews, `phrase reviews still ${statsAfter.reviews}`);
+
+// Per-set scoping. Katakana is NOT active, but the placement quiz sampled
+// two of its characters, so cards for it exist in storage.
+const parkedKatakana = (await deck.getDeck()).filter((c) => c.categoryId === 'katakana');
+check('placement-sampled cards exist for an inactive set', parkedKatakana.length > 0,
+  `${parkedKatakana.length} parked`);
+check('an inactive set stays out of the aggregate character queue',
+  (await deck.characterQueue()).every((c) => c.categoryId !== 'katakana'));
+check('asking for an inactive set explicitly still scopes to it',
+  (await deck.characterQueue('katakana')).every((c) => c.categoryId === 'katakana'));
+await deck.activateCharacterSet('kanji-common');
+const kanjiQueue = await deck.characterQueue('kanji-common');
+check('a second set queues independently',
+  kanjiQueue.length > 0 && kanjiQueue.every((c) => c.categoryId === 'kanji-common'),
+  `${kanjiQueue.length} kanji cards`);
+
 /* ---------- result ---------- */
 
 console.log(
   failures
     ? `\n✗ ${failures} of ${checks} integration checks failed\n`
-    : `\n✓ all ${checks} integration checks passed — browse → quiz → study → review → scenarios loop is intact\n`
+    : `\n✓ all ${checks} integration checks passed — browse → quiz → study → review → scenarios → characters loop is intact\n`
 );
 process.exit(failures ? 1 : 0);

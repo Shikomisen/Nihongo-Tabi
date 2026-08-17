@@ -8,6 +8,8 @@
  * A card record looks like:
  *   {
  *     id, categoryId,
+ *     kind,       // 'phrase' | 'character' — keeps the two decks separate
+ *     difficulty, // 1-5, copied from content so the queue can order new cards
  *     ease,       // SM-2 easiness factor, floor 1.3
  *     interval,   // days
  *     reps,       // consecutive successful reviews
@@ -18,6 +20,9 @@
  *     lastReview, // epoch ms
  *     seededBy,   // 'placement' | 'study' | null — provenance, for debugging
  *   }
+ *
+ * `kind` defaults to 'phrase' so records written before the Characters
+ * section existed keep working untouched.
  */
 
 export const DAY = 86400000;
@@ -32,10 +37,15 @@ export const GRADE = {
 
 const LEARNING_STEP = 10 * MIN;
 
-export function newCard(id, categoryId, now = Date.now()) {
+export const KIND = { PHRASE: 'phrase', CHARACTER: 'character' };
+
+export function newCard(id, categoryId, now = Date.now(), opts = {}) {
+  const { kind = KIND.PHRASE, difficulty = 3 } = opts;
   return {
     id,
     categoryId,
+    kind,
+    difficulty,
     ease: 2.5,
     interval: 0,
     reps: 0,
@@ -55,9 +65,9 @@ export function newCard(id, categoryId, now = Date.now()) {
  *
  * @param {number} intervalDays starting interval
  */
-export function seedKnown(id, categoryId, intervalDays, ease = 2.6, now = Date.now()) {
+export function seedKnown(id, categoryId, intervalDays, ease = 2.6, now = Date.now(), opts = {}) {
   return {
-    ...newCard(id, categoryId, now),
+    ...newCard(id, categoryId, now, opts),
     ease,
     interval: intervalDays,
     reps: 2,
@@ -123,10 +133,18 @@ export function newCards(cards) {
  */
 export function buildQueue(cards, { newLimit = 10, now = Date.now() } = {}) {
   const due = dueCards(cards, now).sort((a, b) => a.due - b.due);
+  // New cards come easiest-first. This matters most for the kana sets:
+  // adding hiragana introduces 104 cards at once, and the 46 base
+  // characters have to arrive before the yōon combinations built from them.
   const fresh = newCards(cards)
-    .sort((a, b) => a.introduced - b.introduced)
+    .sort((a, b) => (a.difficulty ?? 3) - (b.difficulty ?? 3) || a.introduced - b.introduced)
     .slice(0, newLimit);
   return [...due, ...fresh];
+}
+
+/** Split a mixed deck by kind — phrases and characters never share a queue. */
+export function ofKind(cards, kind) {
+  return cards.filter((c) => (c.kind ?? KIND.PHRASE) === kind);
 }
 
 /** Human-readable "next review in …" for the UI. */

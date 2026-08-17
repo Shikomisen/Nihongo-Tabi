@@ -6,7 +6,7 @@
  * at this scale and removes a whole class of stale-state bugs.
  */
 
-import { loadContent, getCategory, scenariosFor } from './content.js';
+import { loadContent, getCategory, getCharacterSet, scenariosFor } from './content.js';
 import * as deck from './deck.js';
 import * as srs from './srs.js';
 import * as audio from './audio.js';
@@ -14,6 +14,7 @@ import * as store from './store.js';
 import { el, clear, phraseBlock, japaneseNode, notesBlock, tagRow, audioButton, toast } from './render.js';
 import { renderPlacement } from './quiz.js';
 import { renderScenarioList, renderScenario } from './scenario.js';
+import { renderCharacterList, renderCharacterSet } from './characters.js';
 
 const app = () => document.getElementById('app');
 
@@ -27,6 +28,11 @@ const routes = [
   [/^\/review$/, review],
   [/^\/scenarios$/, (root) => renderScenarioList(root)],
   [/^\/scenario\/([\w-]+)$/, (root, id) => renderScenario(root, id)],
+  // Order matters: /characters/review must match before /characters/:id.
+  [/^\/characters$/, (root) => renderCharacterList(root)],
+  [/^\/characters\/review$/, reviewCharacters],
+  [/^\/characters\/([\w-]+)\/study$/, studyCharacterSet],
+  [/^\/characters\/([\w-]+)$/, (root, id) => renderCharacterSet(root, id)],
   [/^\/settings$/, settings],
 ];
 
@@ -76,7 +82,12 @@ async function router() {
 function highlightNav(path) {
   document.querySelectorAll('.tabbar a').forEach((a) => {
     const target = a.getAttribute('href').slice(1);
-    a.classList.toggle('active', target === path || (target === '/' && path === '/'));
+    // Sub-routes keep their section lit: /characters/hiragana is still
+    // "Characters", /category/airport is still "Browse".
+    const owns = target === '/'
+      ? path === '/'
+      : path === target || path.startsWith(`${target}/`);
+    a.classList.toggle('active', owns);
   });
 }
 
@@ -159,11 +170,49 @@ async function home(root) {
           ? await Promise.all(activeCats.map(categoryRow))
           : el('p', { class: 'muted' }, 'No categories active yet.')),
 
+      await charactersBlock(),
       await forecastBlock(),
 
       el('button', { class: 'btn btn-ghost full', onclick: () => go('/browse') }, 'Add more categories →')
     )
   );
+}
+
+/**
+ * Characters get their own row rather than being folded into the counts
+ * above — the whole point of the separate deck is that 40 kana drills
+ * don't disguise themselves as phrase progress.
+ */
+async function charactersBlock() {
+  const summary = await deck.characterSummary();
+  if (!summary.total) {
+    return el('section', {},
+      el('h2', { class: 'section-title' }, 'Reading'),
+      el('a', { class: 'row-card', href: '#/characters' },
+        el('span', { class: 'row-icon char-icon' }, 'あ'),
+        el('span', { class: 'row-body' },
+          el('span', { class: 'row-title' }, 'Characters'),
+          el('span', { class: 'row-sub' }, 'Hiragana, katakana and traveller kanji — not added yet')),
+        el('span', { class: 'row-chev' }, '›')));
+  }
+
+  const pending = summary.due + Math.min(summary.new, 15);
+  return el('section', {},
+    el('h2', { class: 'section-title' }, 'Reading'),
+    el('a', { class: 'row-card', href: pending ? '#/characters/review' : '#/characters' },
+      el('span', { class: 'row-icon char-icon' }, 'あ'),
+      el('span', { class: 'row-body' },
+        el('span', { class: 'row-title' }, 'Characters'),
+        el('span', { class: 'row-sub' },
+          pending
+            ? `${summary.due} due · ${summary.new} unseen · counted separately`
+            : `All caught up · ${summary.mature} mature`),
+        el('span', { class: 'bar' },
+          el('span', {
+            class: 'bar-fill',
+            style: `width:${summary.total ? Math.round(((summary.total - summary.new) / summary.total) * 100) : 0}%`,
+          }))),
+      el('span', { class: 'row-chev' }, '›')));
 }
 
 /** What's actually in today's queue, split by why it's there. */
@@ -375,6 +424,42 @@ async function review(root) {
 }
 
 /**
+ * Character review. Same flashcard loop as phrases — character content is
+ * phrase-shaped, so runSession needs no branching — but fed from the
+ * separate character queue so the two decks never mix.
+ */
+async function reviewCharacters(root) {
+  const queue = await deck.characterQueue();
+  if (!queue.length) {
+    root.append(emptyStudy('Nothing due in your character sets.', '#/characters'));
+    return;
+  }
+  await runSession(root, queue, { title: 'Characters', exitTo: '#/characters' });
+}
+
+async function studyCharacterSet(root, setId) {
+  const set = await getCharacterSet(setId);
+  if (!set) { go('/characters'); return; }
+  if (!(await deck.isSetActive(setId))) await deck.activateCharacterSet(setId);
+
+  const queue = await deck.characterQueue(setId);
+  if (!queue.length) {
+    root.append(emptyStudy(`Nothing due in ${set.title}.`, `#/characters/${setId}`));
+    return;
+  }
+  await runSession(root, queue, { title: set.title, exitTo: `#/characters/${setId}` });
+}
+
+function emptyStudy(message, backTo) {
+  return el('div', { class: 'screen' },
+    el('a', { class: 'back-link', href: backTo }, '← Back'),
+    el('div', { class: 'empty-state' },
+      el('p', {}, message),
+      el('p', { class: 'muted' }, 'Everything here is scheduled further out. That is the system working.'),
+      el('button', { class: 'btn btn-primary', onclick: () => go('/') }, 'Back to today')));
+}
+
+/**
  * The core study loop. Front = Japanese; flip reveals meaning and notes;
  * grading feeds SM-2. Failed cards are pushed back into the same session
  * rather than disappearing for ten minutes.
@@ -481,6 +566,7 @@ async function runSession(root, queue, { title, exitTo }) {
 async function settings(root) {
   const s = await deck.getSettings();
   const summary = await deck.deckSummary();
+  const chars = await deck.characterSummary();
 
   const toggle = (key, label, help) =>
     el('label', { class: 'setting' },
@@ -506,6 +592,15 @@ async function settings(root) {
           })),
 
         el('label', { class: 'setting' },
+          el('span', {},
+            el('strong', {}, 'New characters per day'),
+            el('span', { class: 'muted small' }, 'Kana and kanji, capped separately from phrases')),
+          el('input', {
+            type: 'number', min: '0', max: '60', value: String(s.newCharsPerDay), class: 'num-input',
+            onchange: (e) => deck.saveSettings({ newCharsPerDay: Math.max(0, Number(e.target.value) || 0) }),
+          })),
+
+        el('label', { class: 'setting' },
           el('span', {}, el('strong', {}, 'Text size'), el('span', { class: 'muted small' }, 'Doubles as an accessibility control')),
           el('input', {
             type: 'range', min: '0.85', max: '1.6', step: '0.05', value: String(s.textScale),
@@ -514,7 +609,10 @@ async function settings(root) {
 
       el('h2', { class: 'section-title' }, 'Deck'),
       el('p', { class: 'muted' },
-        `${summary.total} cards · ${summary.review} in review · ${summary.mature} mature · storage: ${store.backend()}`),
+        `Phrases: ${summary.total} cards · ${summary.review} in review · ${summary.mature} mature`),
+      el('p', { class: 'muted' },
+        `Characters: ${chars.total} cards · ${chars.review} in review · ${chars.mature} mature`),
+      el('p', { class: 'muted small' }, `Storage: ${store.backend()}`),
 
       el('button', {
         class: 'btn btn-danger',

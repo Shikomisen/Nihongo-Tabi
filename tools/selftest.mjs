@@ -81,6 +81,64 @@ for (const entry of manifest.categories) {
   }
 }
 
+/* ---------- character sets ---------- */
+
+const CHAR_REQUIRED = ['id', 'character', 'japanese', 'romaji', 'audio', 'tags', 'difficulty', 'group'];
+let charCount = 0;
+let charAudioPresent = 0;
+
+for (const entry of manifest.characterSets || []) {
+  if (!check(`character set file exists: ${entry.file}`, existsSync(resolve(ROOT, entry.file)))) continue;
+
+  const set = readJSON(entry.file);
+  check(`${entry.id}: schemaVersion matches`, set.schemaVersion === manifest.schemaVersion);
+  check(`${entry.id}: id matches manifest`, set.id === entry.id, `${set.id} vs ${entry.id}`);
+  check(`${entry.id}: has characters`, Array.isArray(set.characters) && set.characters.length > 0);
+  check(`${entry.id}: declares groups`, Array.isArray(set.groups) && set.groups.length > 0);
+
+  const groupIds = new Set((set.groups || []).map((g) => g.id));
+
+  for (const c of set.characters || []) {
+    charCount++;
+    for (const field of CHAR_REQUIRED) {
+      check(`${c.id}: has ${field}`, c[field] !== undefined && c[field] !== '');
+    }
+    check(`${c.id}: unique id across all content`, !seenIds.has(c.id));
+    seenIds.add(c.id);
+
+    check(`${c.id}: group is declared`, groupIds.has(c.group), c.group);
+    check(`${c.id}: difficulty in 1-5`, c.difficulty >= 1 && c.difficulty <= 5, String(c.difficulty));
+    check(`${c.id}: japanese mirrors character`, c.japanese === c.character);
+    check(`${c.id}: readings is a non-empty array`, Array.isArray(c.readings) && c.readings.length > 0);
+
+    if (Array.isArray(c.furigana)) {
+      const rebuilt = c.furigana.map((s) => s.b).join('');
+      check(`${c.id}: furigana segments reconstruct the character`, rebuilt === c.character);
+    }
+
+    // Kanji carry a meaning; kana legitimately do not (README §12).
+    if (set.script === 'kanji') {
+      check(`${c.id}: kanji has an English meaning`, Boolean(c.english));
+      for (const ref of c.seenIn || []) {
+        check(`${c.id}: cross-ref ${ref} is a real phrase`, seenIds.has(ref));
+      }
+    } else {
+      check(`${c.id}: kana leaves english null`, c.english === null);
+    }
+
+    check(`${c.id}: audio path is unique`, !seenAudio.has(c.audio));
+    seenAudio.add(c.audio);
+
+    const audioPath = resolve(ROOT, c.audio);
+    if (existsSync(audioPath)) {
+      charAudioPresent++;
+      check(`${c.id}: audio clip is non-trivial`, statSync(audioPath).size > 800);
+    }
+  }
+}
+
+console.log(`  ${charCount} characters, ${charAudioPresent} with generated audio (${charCount - charAudioPresent} pending)`);
+
 for (const s of manifest.scenarios || []) {
   if (!check(`scenario file exists: ${s.file}`, existsSync(resolve(ROOT, s.file)))) continue;
   const sc = readJSON(s.file);
@@ -191,6 +249,34 @@ const queue = srs.buildQueue(
 );
 check('queue puts due cards before new ones', queue[0].id === 'd1', queue.map((q) => q.id).join(','));
 check('queue respects the new-card limit', queue.length === 2, String(queue.length));
+
+// Character deck separation.
+check('cards default to kind "phrase"', srs.newCard('p1', 'c').kind === 'phrase');
+check('character cards carry their kind',
+  srs.newCard('c1', 'hiragana', Date.now(), { kind: srs.KIND.CHARACTER }).kind === 'character');
+check('seedKnown preserves kind',
+  srs.seedKnown('c2', 'hiragana', 6, 2.6, Date.now(), { kind: srs.KIND.CHARACTER }).kind === 'character');
+check('ofKind splits a mixed deck', (() => {
+  const mixed = [
+    srs.newCard('p', 'greetings'),
+    srs.newCard('c', 'hiragana', Date.now(), { kind: srs.KIND.CHARACTER }),
+  ];
+  return srs.ofKind(mixed, srs.KIND.PHRASE).length === 1 && srs.ofKind(mixed, srs.KIND.CHARACTER).length === 1;
+})());
+check('ofKind treats untagged legacy records as phrases', (() => {
+  const legacy = { id: 'old', categoryId: 'greetings', state: 'new' }; // written before `kind` existed
+  return srs.ofKind([legacy], srs.KIND.PHRASE).length === 1;
+})());
+
+check('new cards are introduced easiest-first', (() => {
+  const now = Date.now();
+  const cards = [
+    srs.newCard('hard', 'hiragana', now, { difficulty: 3 }),
+    srs.newCard('easy', 'hiragana', now, { difficulty: 1 }),
+    srs.newCard('mid', 'hiragana', now, { difficulty: 2 }),
+  ];
+  return srs.buildQueue(cards, { newLimit: 3 }).map((c) => c.id).join(',') === 'easy,mid,hard';
+})());
 
 /* ---------- result ---------- */
 

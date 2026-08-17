@@ -15,6 +15,9 @@
     "audio:check": "node tools/generate-audio.mjs --check",
     "audio:force": "node tools/generate-audio.mjs --force",
     "icons": "node tools/make-icons.mjs",
+    "kana": "node tools/make-kana.mjs",
+    "crossref": "node tools/crossref-kanji.mjs",
+    "crossref:check": "node tools/crossref-kanji.mjs --check",
     "deploy": "node tools/deploy.mjs"
   },
   "engines": {

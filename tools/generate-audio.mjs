@@ -102,6 +102,25 @@ for (const entry of manifest.categories) {
   }
 }
 
+// Character sets (kana / kanji) use the same declared-path convention as
+// phrases, so they need no special handling beyond reading a different key.
+for (const entry of manifest.characterSets || []) {
+  if (ONLY && !ONLY.has(entry.id)) continue;
+  const path = resolve(ROOT, entry.file);
+  if (!existsSync(path)) {
+    problems.push(`missing character set file: ${entry.file}`);
+    continue;
+  }
+  const set = JSON.parse(readFileSync(path, 'utf8'));
+  for (const c of set.characters || []) {
+    if (!c.audio) { problems.push(`${c.id}: no audio path declared`); continue; }
+    // For kanji the hint is the kana reading — synthesising the bare kanji
+    // gives whichever reading the engine guesses, which is often the wrong one.
+    const text = c.audioHint || c.character;
+    jobs.push({ id: c.id, category: entry.id, text, out: resolve(ROOT, c.audio) });
+  }
+}
+
 // Scenario NPC lines are content in their own right and aren't present in
 // the category files, so they get their own clips (ASSUMPTIONS A15).
 // Player options reuse the referenced phrase's existing clip.

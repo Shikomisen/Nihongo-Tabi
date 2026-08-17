@@ -248,16 +248,77 @@ Don't front-load all 10 categories into the SRS deck at once — introduce
 
 ---
 
-## 11. Running It (added during build)
+## 11. Characters — Reading (added after the MVP)
+
+A top-level section alongside the category browser, covering the writing
+system itself. Reading unlocks the rest of the app: furigana, signage, and
+menus all stop being opaque.
+
+**Sets** (one JSON file each, listed in `manifest.json → characterSets`,
+same versioned-schema rules as §3a):
+
+| Set | File | Count | Scope |
+|---|---|---|---|
+| Hiragana | `content/hiragana.json` | 104 | 46 base + 25 dakuten/handakuten + 33 yōon |
+| Katakana | `content/katakana.json` | 116 | same structure, plus 12 extended combos (ファ, ティ, ジェ…) for loanwords |
+| Common Kanji | `content/kanji-common.json` | 82 | curated for travel, not exhaustive |
+
+Kanji covers numbers and money, the seven day kanji and time, wayfinding
+(出口, 入口, 男, 女, お手洗い, compass points), stations and tickets, shops and
+payment, warnings (危険, 禁止, 非常口), and everyday signage (押, 引, 空, 満).
+Multi-character compounds are included where that is how a traveller actually
+reads them off a sign.
+
+**Per-character schema:** `character`, `readings[]`, `romaji`, `english`
+(kanji only — kana carries `null`), `audio`, plus `group`, `row`/`column` for
+grid placement, `difficulty` and `tags`. Kanji additionally carry `seenIn`,
+a generated list of phrase IDs containing that character.
+
+**Cross-reinforcement.** `tools/crossref-kanji.mjs` scans the phrase content
+and links each kanji to the phrases it appears in — 38 of 82 currently. The
+kanji list shows those phrases as tappable chips, so the Characters section
+reinforces the phrase deck rather than sitting beside it as a second
+disconnected vocabulary list.
+
+**Reuse, not a parallel system:**
+- Audio comes from the same build-time pass as §3-audio — 302 bundled clips,
+  no live TTS. Kanji clips are synthesised from the kana reading, not the glyph.
+- Review is the same SM-2 scheduler and the same flashcard UI as phrases.
+  Character content is stored phrase-shaped, so the review screen needed no
+  changes at all.
+- The furigana/romaji toggles work throughout, including on the charts.
+
+**Separate deck.** Character cards are tagged `kind: 'character'` and have
+their own queue, their own daily new-card cap, and their own review counter.
+Character reviews never appear in phrase review counts, in either direction.
+
+**Onboarding.** The placement quiz (§6a) samples two characters from each set
+alongside the phrase cards — 26 items total. Prior exposure to written Japanese
+is credited exactly the way phrase knowledge is: known characters seed forward
+instead of starting from あ.
+
+**UI.** A reference chart per set (kana as the traditional grid by row, kanji
+as a browsable list grouped by usage), tap any character to hear it; plus
+flashcard review per set or across all sets.
+
+**Deliberately out of scope:** handwriting practice, stroke-order diagrams and
+stroke-order animations. This app is for reading signs on a trip, not learning
+to write. See `ASSUMPTIONS.md` A24.
+
+---
+
+## 12. Running It (added during build)
 
 Zero dependencies, no build step. Node 18+ only.
 
 ```bash
 npm start                 # dev server on :5173, also prints your LAN URL for phone testing
-npm test                  # content validation + SRS + end-to-end logic (2797 checks)
+npm test                  # content validation + SRS + end-to-end logic (8054 checks)
 npm run test:render       # renders every screen in jsdom (needs: npm install --no-save jsdom)
 npm run audio             # generate any missing TTS clips
 npm run audio:check       # report audio coverage without generating
+npm run kana              # regenerate the hiragana/katakana content files
+npm run crossref          # relink kanji to the phrases they appear in
 npm run icons             # regenerate the PWA icons
 npm run deploy            # publish to the gh-pages branch
 ```

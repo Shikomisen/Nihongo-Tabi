@@ -165,3 +165,91 @@ advance its interval. Choosing from a list of three is much weaker evidence of
 recall than producing an answer to a flashcard, so treating it as a real
 review would inflate intervals and quietly damage retention. Flashcards remain
 the only thing that moves the schedule.
+
+---
+
+## Characters section
+
+### A20 — Character content reuses the phrase schema verbatim
+Kana and kanji entries carry `japanese`, `furigana`, `romaji` and `english`
+alongside their own `character` / `readings` / `group` fields. That is not
+redundancy — it means the existing flashcard session, the `<ruby>` furigana
+renderer, the furigana/romaji toggles and the audio button all render a
+character with **zero branching**. `runSession()` was not modified at all to
+support character review.
+
+The only synthesised field is a display `english` for kana, which genuinely
+has no meaning to show: the JSON keeps `english: null` (per the brief — English
+meaning is kanji-only) and the loader substitutes `reads “a”` at read time.
+The original value stays available as `meaning`.
+
+### A21 — Separate deck implemented as a `kind` tag, not a second store
+Cards carry `kind: 'phrase' | 'character'`. One IndexedDB store, one SM-2
+scheduler, two queues — `deck.queue()` and `deck.characterQueue()` filter on
+it, as do `deckSummary()` and `characterSummary()`. `kind` defaults to
+`'phrase'` everywhere it is read, so SRS records written before this section
+existed keep working untouched.
+
+Daily stats gained `charReviews` / `charAgain` next to `reviews` / `again`, so
+the "done today" figure on the home screen stays a *phrase* figure. Forty kana
+drills should not make it look like the phrase reviews are done. The streak
+counts either kind — studying is studying.
+
+### A22 — Character sets are opt-in, with their own daily cap
+Adding hiragana introduces 104 cards at once. Auto-activating that at placement
+would swamp week 1 and directly contradict §7's "don't front-load". So character
+sets are added from the Characters screen exactly like categories 5-10 are added
+from Browse. Placement still samples and scores them, and those results seed the
+set forward when it *is* added.
+
+New characters have their own cap (`newCharsPerDay`, default 15, separate from
+the phrase `newPerDay` of 10) because a kana card takes about two seconds and a
+phrase card takes about ten.
+
+### A23 — New cards are introduced easiest-first
+`buildQueue` now orders new cards by `difficulty` before `introduced`, and cards
+store their content difficulty. This exists for kana: the 46 base characters
+have to arrive before the yōon combinations built out of them, and all 104 are
+introduced on the same timestamp so `introduced` alone could not order them.
+Phrases benefit incidentally.
+
+### A24 — Handwriting and stroke order deliberately deferred, not forgotten
+No stroke-order diagrams, no animations, no handwriting or drawing practice.
+Explicitly out of scope for this pass.
+
+Beyond the instruction, it is also the right call for this app: the goal is
+reading signs, menus and tickets on a 28-day trip, and recognition is what
+serves that. Handwriting is a much larger investment that pays off over months.
+If it is ever added, the natural shape is a `strokes` field on the existing
+character schema plus a new view — no change to the SRS or deck layer.
+
+A note to this effect is shown at the bottom of the Characters screen so it
+reads as a deliberate scope decision rather than an oversight.
+
+### A25 — Kana content is generated; kanji is hand-curated
+`tools/make-kana.mjs` generates both kana files from a compact table. Writing
+220 near-identical JSON entries by hand invites typos no test would catch — a
+wrong romaji on ぬ still validates as JSON. The romaji convention (Hepburn:
+shi/chi/tsu/fu/ji, matching Japanese road signage) is stated once in that table.
+
+Kanji is hand-written because the selection, the meanings and the traveller
+notes are judgement calls, not derivable from a rule. Note that ぢ/づ and
+ヂ/ディ collide under Hepburn, so machine-facing ids are disambiguated
+(`hira-di`, `kata-ext-di`) while the displayed romaji stays honest.
+
+### A26 — Kanji set includes multi-character compounds
+Strictly, 出口 is two kanji, not one. But a traveller reads 出口, 非常口 and
+両替 as units off a sign, and splitting them into single characters would make
+the set less useful for its actual purpose. The set therefore contains 82
+entries mixing single kanji (円, 駅, 右) with high-value signage compounds
+(出口, 立入禁止, 営業中).
+
+### A27 — Cross-references match exact written forms only
+`tools/crossref-kanji.mjs` links each kanji to phrases containing it — 38 of 82
+currently. An earlier version fell back to component matching when a compound
+had no exact hit, which claimed 曜日 appeared in 日本語が少しわかります merely
+because 日 does. That is a lie that sends the learner to a phrase not containing
+the word, so the fallback was removed. The 44 unmatched entries are genuinely
+signage-only (押, 引, 危険, 準備中) and are simply shown without cross-references.
+
+Re-run `npm run crossref` after adding phrase content to refresh the links.

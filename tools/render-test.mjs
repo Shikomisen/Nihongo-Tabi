@@ -110,12 +110,16 @@ $$('button').find((b) => b.textContent === 'Start')?.click();
 await tick(); await tick();
 
 check('quiz shows a card with Japanese', Boolean($('.placement-card .jp')), $('.placement-card .jp')?.textContent);
-check('quiz shows progress', /1 of 20/.test(text()), text().match(/\d+ of \d+ · [^\n]*/)?.[0]);
+const quizTotal = Number(text().match(/1 of (\d+)/)?.[1] ?? 0);
+check('quiz shows progress', quizTotal > 0, `${quizTotal} cards total`);
+check('quiz covers phrases and characters', quizTotal >= 24 && quizTotal <= 30, `${quizTotal} cards`);
 check('quiz offers three self-grade answers', $$('.btn-answer').length === 3);
 check('furigana renders as ruby', $$('.placement-card ruby, .placement-card').length > 0);
 
-// Answer all 20 cards, alternating so the result screen has a mix.
-for (let i = 0; i < 20; i++) {
+// Answer every card, alternating so the result screen has a mix. Driven by
+// the button being present rather than a hardcoded count, so adding
+// content to the quiz never silently breaks the rest of this walkthrough.
+for (let i = 0; i < quizTotal + 5; i++) {
   const buttons = $$('.btn-answer');
   if (!buttons.length) break;
   buttons[i % 3].click();
@@ -124,7 +128,9 @@ for (let i = 0; i < 20; i++) {
 await tick(); await tick(); await tick();
 
 check('quiz produces a results screen', text().includes('Deck built'), 'placement complete');
-check('results break down all 10 categories', $$('.result-row').length === 10);
+check('results break down all 10 categories and 3 character sets',
+  $$('.result-row').length === 13, `${$$('.result-row').length} rows`);
+check('results separate phrases from reading', text().includes('Reading'));
 
 $$('button').find((b) => b.textContent === 'Start studying')?.click();
 await tick(); await tick(); await tick();
@@ -235,17 +241,86 @@ check('a wrong answer continues the scenario with feedback',
   $$('.btn-option').length > 0 && Boolean($('.feedback-wrong')),
   $('.feedback-wrong')?.textContent.slice(0, 50) + '…');
 
-console.log('\n7. Settings');
+console.log('\n7. Characters');
+
+await goTo('#/characters');
+check('characters screen renders', text().includes('Characters'));
+check('all three sets listed', $$('.row-card').length === 3,
+  $$('.row-title').map((t) => t.textContent).join(', '));
+check('sets are addable', $$('button').filter((b) => b.textContent === 'Add').length === 3);
+check('stroke-order deferral is disclosed', text().includes('stroke-order'));
+
+// Add hiragana, then confirm it lands in the character deck only.
+$$('button').find((b) => b.textContent === 'Add')?.click();
+await tick(); await tick(); await tick(); await tick();
+check('adding a set marks it in-deck', $$('.pill-on').length === 1);
+check('character review becomes available', text().includes('Review characters'));
+
+await goTo('#/characters/hiragana');
+check('hiragana chart renders', text().includes('Hiragana'));
+check('kana grid renders as rows', $$('.kana-row').length >= 11, `${$$('.kana-row').length} rows`);
+check('all 104 hiragana render as cells', $$('.kana-cell:not(.kana-empty)').length === 104,
+  `${$$('.kana-cell:not(.kana-empty)').length} cells`);
+// Exactly five holes, all real: や_ゆ_よ (2) and わ___を (3). ん, yōon and
+// extended rows are packed rather than gridded, so they add none.
+check('grid leaves gaps only where kana genuinely do not exist',
+  $$('.kana-empty').length === 5, `${$$('.kana-empty').length} gaps`);
+check('groups are labelled', text().includes('Dakuten') && text().includes('Yōon'));
+
+const playedBefore = played.length;
+$$('.kana-cell:not(.kana-empty)')[0].click();
+await tick(); await tick();
+check('tapping a character plays its audio', played.length > playedBefore, played.at(-1));
+
+await goTo('#/characters/kanji-common');
+check('kanji screen renders', text().includes('Common Kanji'));
+check('kanji render as a list, not a grid', $$('.kanji-row').length === 82 && $$('.kana-row').length === 0,
+  `${$$('.kanji-row').length} kanji rows`);
+check('kanji show English meanings', $$('.kanji-meaning').length === 82);
+check('kanji cross-reference existing phrases', $$('.ref-chip').length > 20,
+  `${$$('.ref-chip').length} phrase cross-references shown`);
+check('cross-reference chips link into the phrase content',
+  $$('.ref-chip').every((a) => a.getAttribute('href').startsWith('#/category/')));
+
+const kanjiPlayed = played.length;
+$$('.kanji-glyph')[0].click();
+await tick(); await tick();
+check('tapping a kanji plays its reading', played.length > kanjiPlayed, played.at(-1));
+
+await goTo('#/characters/hiragana/study');
+check('character study reuses the phrase flashcard UI', Boolean($('.study-card .jp')),
+  $('.study-card .jp')?.textContent);
+check('study screen shows which set the card came from',
+  $('.card-cat')?.textContent === 'Hiragana', $('.card-cat')?.textContent);
+
+$$('button').find((b) => b.textContent === 'Show answer')?.click();
+await tick(); await tick();
+check('character card reveals its reading', Boolean($('.study-back')), $('.english')?.textContent);
+check('same four grade buttons as phrases', $$('.btn-grade').length === 4);
+
+$$('.btn-grade').find((b) => b.textContent.startsWith('Got it'))?.click();
+await tick(); await tick(); await tick();
+check('grading a character advances the session', Boolean($('.study-card')));
+
+await goTo('#/');
+check('home shows a separate reading row', text().includes('Reading'));
+check('character counts stay out of the phrase stats',
+  !$$('.stat-label').some((l) => l.textContent === 'characters'));
+
+console.log('\n8. Settings');
 
 await goTo('#/settings');
 check('settings renders', text().includes('Settings'));
 check('toggles present', $$('input[type="checkbox"]').length === 3);
 check('new-cards-per-day control present', Boolean($('input[type="number"]')));
 check('text size control present', Boolean($('input[type="range"]')));
-check('storage backend reported', /storage: (IndexedDB|localStorage)/.test(text()),
-  text().match(/storage: \w+/)?.[0]);
+check('storage backend reported', /Storage: (IndexedDB|localStorage)/.test(text()),
+  text().match(/Storage: \w+/)?.[0]);
+check('phrase and character decks are reported separately',
+  text().includes('Phrases:') && text().includes('Characters:'),
+  text().match(/Characters: [^S]*/)?.[0]?.trim());
 
-console.log('\n8. Console health');
+console.log('\n9. Console health');
 
 const realErrors = errors.filter((e) => !/Not implemented|Could not parse CSS/i.test(e));
 check('no unexpected console errors during the walkthrough',

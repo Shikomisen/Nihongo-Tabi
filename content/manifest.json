@@ -16,6 +16,11 @@
     { "id": "emergency",      "order": 9,  "file": "content/emergency.json",      "title": "Emergencies & Health",   "icon": "🏥", "week": 4, "tier": "core" },
     { "id": "smalltalk",      "order": 10, "file": "content/smalltalk.json",      "title": "Small Talk",             "icon": "💬", "week": 4, "tier": "core" }
   ],
+  "characterSets": [
+    { "id": "hiragana",     "order": 1, "file": "content/hiragana.json",     "title": "Hiragana",     "icon": "あ", "script": "hiragana", "layout": "grid" },
+    { "id": "katakana",     "order": 2, "file": "content/katakana.json",     "title": "Katakana",     "icon": "ア", "script": "katakana", "layout": "grid" },
+    { "id": "kanji-common", "order": 3, "file": "content/kanji-common.json", "title": "Common Kanji", "icon": "漢", "script": "kanji",    "layout": "list" }
+  ],
   "scenarios": [
     { "id": "conbini",     "file": "content/scenarios/conbini.json",     "title": "Convenience store checkout", "icon": "🏪", "category": "shopping"   },
     { "id": "ticket",      "file": "content/scenarios/ticket.json",      "title": "Buying a train ticket",      "icon": "🎫", "category": "transport"  },

@@ -12,7 +12,7 @@
  *                         under a given cache version)
  */
 
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const CACHE = `nihongo-tabi-${CACHE_VERSION}`;
 
 const SHELL = [
@@ -25,6 +25,7 @@ const SHELL = [
   './js/content.js',
   './js/deck.js',
   './js/quiz.js',
+  './js/characters.js',
   './js/render.js',
   './js/scenario.js',
   './js/srs.js',
@@ -43,8 +44,13 @@ async function contentAssets() {
     const manifest = await res.json();
 
     const categoryFiles = (manifest.categories || []).map((c) => c.file);
+    const characterFiles = (manifest.characterSets || []).map((s) => s.file);
     const scenarioFiles = (manifest.scenarios || []).map((s) => s.file);
-    assets.push(...categoryFiles.map((f) => `./${f}`), ...scenarioFiles.map((f) => `./${f}`));
+    assets.push(
+      ...categoryFiles.map((f) => `./${f}`),
+      ...characterFiles.map((f) => `./${f}`),
+      ...scenarioFiles.map((f) => `./${f}`)
+    );
 
     const fetchJSON = (f) =>
       fetch(`./${f}`).then((r) => (r.ok ? r.json() : null)).catch(() => null);
@@ -52,6 +58,11 @@ async function contentAssets() {
     // Phrase clips live inside each category file...
     for (const cat of await Promise.all(categoryFiles.map(fetchJSON))) {
       for (const p of cat?.phrases || []) if (p.audio) assets.push(`./${p.audio}`);
+    }
+
+    // ...character clips inside each character set...
+    for (const set of await Promise.all(characterFiles.map(fetchJSON))) {
+      for (const c of set?.characters || []) if (c.audio) assets.push(`./${c.audio}`);
     }
 
     // ...and NPC-line clips inside each scenario file.

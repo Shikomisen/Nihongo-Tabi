@@ -1,0 +1,2321 @@
+{
+  "schemaVersion": 1,
+  "id": "kanji-common",
+  "kind": "characters",
+  "title": "Common Kanji",
+  "script": "kanji",
+  "description": "A curated traveller's set, not a JLPT list. Everything here is something you will read off a sign, a menu, a ticket or a price tag — chosen for recognition, not production.",
+  "groups": [
+    {
+      "id": "numbers",
+      "title": "Numbers & money",
+      "description": "Prices, platforms, floors, quantities."
+    },
+    {
+      "id": "time",
+      "title": "Days & time",
+      "description": "The seven day kanji double as the elements — that is how they are remembered."
+    },
+    {
+      "id": "wayfinding",
+      "title": "Wayfinding",
+      "description": "Exits, toilets, directions. The highest-value group on this list."
+    },
+    {
+      "id": "transport",
+      "title": "Stations & tickets",
+      "description": "What is printed on your ticket and hung above the platform."
+    },
+    {
+      "id": "commerce",
+      "title": "Shops & payment",
+      "description": "Whether a place is open, and what it will cost."
+    },
+    {
+      "id": "safety",
+      "title": "Warnings & help",
+      "description": "Low frequency, high stakes. Recognise instantly or not at all."
+    },
+    {
+      "id": "signage",
+      "title": "Everyday signage",
+      "description": "Doors, sizes, availability."
+    }
+  ],
+  "characters": [
+    {
+      "id": "kan-ichi",
+      "character": "一",
+      "japanese": "一",
+      "furigana": [
+        {
+          "b": "一",
+          "r": "いち"
+        }
+      ],
+      "readings": [
+        "いち",
+        "ひと"
+      ],
+      "romaji": "ichi",
+      "english": "one",
+      "audio": "audio/ja/chars/kan-ichi.mp3",
+      "audioHint": "いち",
+      "group": "numbers",
+      "tags": [
+        "kanji",
+        "numbers"
+      ],
+      "difficulty": 1,
+      "seenIn": [
+        "gre-16",
+        "num-15",
+        "num-17",
+        "tra-17",
+        "hot-09",
+        "hot-10"
+      ]
+    },
+    {
+      "id": "kan-ni",
+      "character": "二",
+      "japanese": "二",
+      "furigana": [
+        {
+          "b": "二",
+          "r": "に"
+        }
+      ],
+      "readings": [
+        "に",
+        "ふた"
+      ],
+      "romaji": "ni",
+      "english": "two",
+      "audio": "audio/ja/chars/kan-ni.mp3",
+      "audioHint": "に",
+      "group": "numbers",
+      "tags": [
+        "kanji",
+        "numbers"
+      ],
+      "difficulty": 1,
+      "seenIn": [
+        "num-16",
+        "num-17",
+        "num-18"
+      ]
+    },
+    {
+      "id": "kan-san",
+      "character": "三",
+      "japanese": "三",
+      "furigana": [
+        {
+          "b": "三",
+          "r": "さん"
+        }
+      ],
+      "readings": [
+        "さん",
+        "みっ"
+      ],
+      "romaji": "san",
+      "english": "three",
+      "audio": "audio/ja/chars/kan-san.mp3",
+      "audioHint": "さん",
+      "group": "numbers",
+      "tags": [
+        "kanji",
+        "numbers"
+      ],
+      "difficulty": 1,
+      "seenIn": [
+        "num-07",
+        "num-11",
+        "num-17",
+        "num-20"
+      ]
+    },
+    {
+      "id": "kan-yon",
+      "character": "四",
+      "japanese": "四",
+      "furigana": [
+        {
+          "b": "四",
+          "r": "よん"
+        }
+      ],
+      "readings": [
+        "よん",
+        "し",
+        "よっ"
+      ],
+      "romaji": "yon / shi",
+      "english": "four",
+      "audio": "audio/ja/chars/kan-yon.mp3",
+      "audioHint": "よん",
+      "group": "numbers",
+      "tags": [
+        "kanji",
+        "numbers"
+      ],
+      "difficulty": 2,
+      "note": "Read よん in most everyday counting; し is avoided because it also means 'death'."
+    },
+    {
+      "id": "kan-go",
+      "character": "五",
+      "japanese": "五",
+      "furigana": [
+        {
+          "b": "五",
+          "r": "ご"
+        }
+      ],
+      "readings": [
+        "ご",
+        "いつ"
+      ],
+      "romaji": "go",
+      "english": "five",
+      "audio": "audio/ja/chars/kan-go.mp3",
+      "audioHint": "ご",
+      "group": "numbers",
+      "tags": [
+        "kanji",
+        "numbers"
+      ],
+      "difficulty": 1,
+      "seenIn": [
+        "num-07",
+        "num-21"
+      ]
+    },
+    {
+      "id": "kan-roku",
+      "character": "六",
+      "japanese": "六",
+      "furigana": [
+        {
+          "b": "六",
+          "r": "ろく"
+        }
+      ],
+      "readings": [
+        "ろく",
+        "むっ"
+      ],
+      "romaji": "roku",
+      "english": "six",
+      "audio": "audio/ja/chars/kan-roku.mp3",
+      "audioHint": "ろく",
+      "group": "numbers",
+      "tags": [
+        "kanji",
+        "numbers"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kan-nana",
+      "character": "七",
+      "japanese": "七",
+      "furigana": [
+        {
+          "b": "七",
+          "r": "なな"
+        }
+      ],
+      "readings": [
+        "なな",
+        "しち"
+      ],
+      "romaji": "nana / shichi",
+      "english": "seven",
+      "audio": "audio/ja/chars/kan-nana.mp3",
+      "audioHint": "なな",
+      "group": "numbers",
+      "tags": [
+        "kanji",
+        "numbers"
+      ],
+      "difficulty": 2,
+      "note": "なな when spoken alone — しち is too easily confused with いち over background noise.",
+      "seenIn": [
+        "num-11"
+      ]
+    },
+    {
+      "id": "kan-hachi",
+      "character": "八",
+      "japanese": "八",
+      "furigana": [
+        {
+          "b": "八",
+          "r": "はち"
+        }
+      ],
+      "readings": [
+        "はち",
+        "やっ"
+      ],
+      "romaji": "hachi",
+      "english": "eight",
+      "audio": "audio/ja/chars/kan-hachi.mp3",
+      "audioHint": "はち",
+      "group": "numbers",
+      "tags": [
+        "kanji",
+        "numbers"
+      ],
+      "difficulty": 1
+    },
+    {
+      "id": "kan-kyuu",
+      "character": "九",
+      "japanese": "九",
+      "furigana": [
+        {
+          "b": "九",
+          "r": "きゅう"
+        }
+      ],
+      "readings": [
+        "きゅう",
+        "く"
+      ],
+      "romaji": "kyū / ku",
+      "english": "nine",
+      "audio": "audio/ja/chars/kan-kyuu.mp3",
+      "audioHint": "きゅう",
+      "group": "numbers",
+      "tags": [
+        "kanji",
+        "numbers"
+      ],
+      "difficulty": 2,
+      "note": "きゅう alone, but く in 九時 (くじ, nine o'clock)."
+    },
+    {
+      "id": "kan-juu",
+      "character": "十",
+      "japanese": "十",
+      "furigana": [
+        {
+          "b": "十",
+          "r": "じゅう"
+        }
+      ],
+      "readings": [
+        "じゅう",
+        "とお"
+      ],
+      "romaji": "jū",
+      "english": "ten",
+      "audio": "audio/ja/chars/kan-juu.mp3",
+      "audioHint": "じゅう",
+      "group": "numbers",
+      "tags": [
+        "kanji",
+        "numbers"
+      ],
+      "difficulty": 1,
+      "seenIn": [
+        "num-11",
+        "air-03"
+      ]
+    },
+    {
+      "id": "kan-hyaku",
+      "character": "百",
+      "japanese": "百",
+      "furigana": [
+        {
+          "b": "百",
+          "r": "ひゃく"
+        }
+      ],
+      "readings": [
+        "ひゃく"
+      ],
+      "romaji": "hyaku",
+      "english": "hundred",
+      "audio": "audio/ja/chars/kan-hyaku.mp3",
+      "audioHint": "ひゃく",
+      "group": "numbers",
+      "tags": [
+        "kanji",
+        "numbers",
+        "money"
+      ],
+      "difficulty": 2,
+      "seenIn": [
+        "num-07"
+      ]
+    },
+    {
+      "id": "kan-sen",
+      "character": "千",
+      "japanese": "千",
+      "furigana": [
+        {
+          "b": "千",
+          "r": "せん"
+        }
+      ],
+      "readings": [
+        "せん"
+      ],
+      "romaji": "sen",
+      "english": "thousand",
+      "audio": "audio/ja/chars/kan-sen.mp3",
+      "audioHint": "せん",
+      "group": "numbers",
+      "tags": [
+        "kanji",
+        "numbers",
+        "money"
+      ],
+      "difficulty": 2,
+      "note": "三千 is さんぜん, not さんせん — the sound shifts after 3.",
+      "seenIn": [
+        "num-07"
+      ]
+    },
+    {
+      "id": "kan-man",
+      "character": "万",
+      "japanese": "万",
+      "furigana": [
+        {
+          "b": "万",
+          "r": "まん"
+        }
+      ],
+      "readings": [
+        "まん"
+      ],
+      "romaji": "man",
+      "english": "ten thousand",
+      "audio": "audio/ja/chars/kan-man.mp3",
+      "audioHint": "まん",
+      "group": "numbers",
+      "tags": [
+        "kanji",
+        "numbers",
+        "money"
+      ],
+      "difficulty": 3,
+      "note": "Japanese groups digits in units of 10,000. ¥30,000 is 三万 — the hardest number habit to retrain."
+    },
+    {
+      "id": "kan-en",
+      "character": "円",
+      "japanese": "円",
+      "furigana": [
+        {
+          "b": "円",
+          "r": "えん"
+        }
+      ],
+      "readings": [
+        "えん"
+      ],
+      "romaji": "en",
+      "english": "yen",
+      "audio": "audio/ja/chars/kan-en.mp3",
+      "audioHint": "えん",
+      "group": "numbers",
+      "tags": [
+        "kanji",
+        "money",
+        "essential"
+      ],
+      "difficulty": 1,
+      "note": "On price tags you will see both 円 and ¥. Same thing.",
+      "seenIn": [
+        "num-07"
+      ]
+    },
+    {
+      "id": "kan-nichi",
+      "character": "日",
+      "japanese": "日",
+      "furigana": [
+        {
+          "b": "日",
+          "r": "にち"
+        }
+      ],
+      "readings": [
+        "にち",
+        "ひ",
+        "び"
+      ],
+      "romaji": "nichi / hi",
+      "english": "day, sun — Sunday",
+      "audio": "audio/ja/chars/kan-nichi.mp3",
+      "audioHint": "にち",
+      "group": "time",
+      "tags": [
+        "kanji",
+        "time",
+        "essential"
+      ],
+      "difficulty": 1,
+      "note": "Also the 日 in 日本 (Japan) — literally 'sun origin'.",
+      "seenIn": [
+        "gre-15",
+        "num-19",
+        "num-20",
+        "air-03",
+        "tra-17",
+        "sma-02"
+      ]
+    },
+    {
+      "id": "kan-getsu",
+      "character": "月",
+      "japanese": "月",
+      "furigana": [
+        {
+          "b": "月",
+          "r": "げつ"
+        }
+      ],
+      "readings": [
+        "げつ",
+        "つき",
+        "がつ"
+      ],
+      "romaji": "getsu / tsuki",
+      "english": "moon, month — Monday",
+      "audio": "audio/ja/chars/kan-getsu.mp3",
+      "audioHint": "げつ",
+      "group": "time",
+      "tags": [
+        "kanji",
+        "time"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kan-ka",
+      "character": "火",
+      "japanese": "火",
+      "furigana": [
+        {
+          "b": "火",
+          "r": "か"
+        }
+      ],
+      "readings": [
+        "か",
+        "ひ"
+      ],
+      "romaji": "ka / hi",
+      "english": "fire — Tuesday",
+      "audio": "audio/ja/chars/kan-ka.mp3",
+      "audioHint": "か",
+      "group": "time",
+      "tags": [
+        "kanji",
+        "time"
+      ],
+      "difficulty": 2,
+      "note": "Also appears on warnings: 火気厳禁 = no open flames."
+    },
+    {
+      "id": "kan-sui",
+      "character": "水",
+      "japanese": "水",
+      "furigana": [
+        {
+          "b": "水",
+          "r": "すい"
+        }
+      ],
+      "readings": [
+        "すい",
+        "みず"
+      ],
+      "romaji": "sui / mizu",
+      "english": "water — Wednesday",
+      "audio": "audio/ja/chars/kan-sui.mp3",
+      "audioHint": "すい",
+      "group": "time",
+      "tags": [
+        "kanji",
+        "time"
+      ],
+      "difficulty": 2,
+      "note": "お水 (おみず) on a menu is free tap water.",
+      "seenIn": [
+        "res-07"
+      ]
+    },
+    {
+      "id": "kan-moku",
+      "character": "木",
+      "japanese": "木",
+      "furigana": [
+        {
+          "b": "木",
+          "r": "もく"
+        }
+      ],
+      "readings": [
+        "もく",
+        "き"
+      ],
+      "romaji": "moku / ki",
+      "english": "tree, wood — Thursday",
+      "audio": "audio/ja/chars/kan-moku.mp3",
+      "audioHint": "もく",
+      "group": "time",
+      "tags": [
+        "kanji",
+        "time"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kan-kin",
+      "character": "金",
+      "japanese": "金",
+      "furigana": [
+        {
+          "b": "金",
+          "r": "きん"
+        }
+      ],
+      "readings": [
+        "きん",
+        "かね"
+      ],
+      "romaji": "kin / kane",
+      "english": "gold, money — Friday",
+      "audio": "audio/ja/chars/kan-kin.mp3",
+      "audioHint": "きん",
+      "group": "time",
+      "tags": [
+        "kanji",
+        "time",
+        "money"
+      ],
+      "difficulty": 2,
+      "note": "お金 (おかね) is money. 金曜日 is Friday. Same kanji.",
+      "seenIn": [
+        "num-09"
+      ]
+    },
+    {
+      "id": "kan-do",
+      "character": "土",
+      "japanese": "土",
+      "furigana": [
+        {
+          "b": "土",
+          "r": "ど"
+        }
+      ],
+      "readings": [
+        "ど",
+        "つち"
+      ],
+      "romaji": "do / tsuchi",
+      "english": "earth, soil — Saturday",
+      "audio": "audio/ja/chars/kan-do.mp3",
+      "audioHint": "ど",
+      "group": "time",
+      "tags": [
+        "kanji",
+        "time"
+      ],
+      "difficulty": 2,
+      "note": "土日 (どにち) means 'weekend' — you will see it on opening-hours signs."
+    },
+    {
+      "id": "kan-youbi",
+      "character": "曜日",
+      "japanese": "曜日",
+      "furigana": [
+        {
+          "b": "曜日",
+          "r": "ようび"
+        }
+      ],
+      "readings": [
+        "ようび"
+      ],
+      "romaji": "yōbi",
+      "english": "day of the week",
+      "audio": "audio/ja/chars/kan-youbi.mp3",
+      "audioHint": "ようび",
+      "group": "time",
+      "tags": [
+        "kanji",
+        "time"
+      ],
+      "difficulty": 3,
+      "note": "Attaches to the element kanji: 月曜日 Monday, 火曜日 Tuesday, and so on."
+    },
+    {
+      "id": "kan-ji",
+      "character": "時",
+      "japanese": "時",
+      "furigana": [
+        {
+          "b": "時",
+          "r": "じ"
+        }
+      ],
+      "readings": [
+        "じ",
+        "とき"
+      ],
+      "romaji": "ji",
+      "english": "hour, o'clock",
+      "audio": "audio/ja/chars/kan-ji.mp3",
+      "audioHint": "じ",
+      "group": "time",
+      "tags": [
+        "kanji",
+        "time",
+        "essential"
+      ],
+      "difficulty": 1,
+      "seenIn": [
+        "num-10",
+        "num-11",
+        "num-12",
+        "num-13",
+        "tra-12",
+        "hot-03"
+      ]
+    },
+    {
+      "id": "kan-fun",
+      "character": "分",
+      "japanese": "分",
+      "furigana": [
+        {
+          "b": "分",
+          "r": "ふん"
+        }
+      ],
+      "readings": [
+        "ふん",
+        "ぷん",
+        "わ"
+      ],
+      "romaji": "fun / pun",
+      "english": "minute",
+      "audio": "audio/ja/chars/kan-fun.mp3",
+      "audioHint": "ふん",
+      "group": "time",
+      "tags": [
+        "kanji",
+        "time",
+        "essential"
+      ],
+      "difficulty": 2,
+      "note": "Alternates ふん/ぷん depending on the number before it: 五分 ごふん, 十分 じゅっぷん.",
+      "seenIn": [
+        "num-11",
+        "num-21",
+        "eme-03"
+      ]
+    },
+    {
+      "id": "kan-han",
+      "character": "半",
+      "japanese": "半",
+      "furigana": [
+        {
+          "b": "半",
+          "r": "はん"
+        }
+      ],
+      "readings": [
+        "はん"
+      ],
+      "romaji": "han",
+      "english": "half, half past",
+      "audio": "audio/ja/chars/kan-han.mp3",
+      "audioHint": "はん",
+      "group": "time",
+      "tags": [
+        "kanji",
+        "time"
+      ],
+      "difficulty": 2,
+      "note": "六時半 = half past six."
+    },
+    {
+      "id": "kan-gozen",
+      "character": "午前",
+      "japanese": "午前",
+      "furigana": [
+        {
+          "b": "午前",
+          "r": "ごぜん"
+        }
+      ],
+      "readings": [
+        "ごぜん"
+      ],
+      "romaji": "gozen",
+      "english": "a.m., morning",
+      "audio": "audio/ja/chars/kan-gozen.mp3",
+      "audioHint": "ごぜん",
+      "group": "time",
+      "tags": [
+        "kanji",
+        "time"
+      ],
+      "difficulty": 3,
+      "seenIn": [
+        "num-14"
+      ]
+    },
+    {
+      "id": "kan-gogo",
+      "character": "午後",
+      "japanese": "午後",
+      "furigana": [
+        {
+          "b": "午後",
+          "r": "ごご"
+        }
+      ],
+      "readings": [
+        "ごご"
+      ],
+      "romaji": "gogo",
+      "english": "p.m., afternoon",
+      "audio": "audio/ja/chars/kan-gogo.mp3",
+      "audioHint": "ごご",
+      "group": "time",
+      "tags": [
+        "kanji",
+        "time"
+      ],
+      "difficulty": 3,
+      "seenIn": [
+        "num-14"
+      ]
+    },
+    {
+      "id": "kan-deguchi",
+      "character": "出口",
+      "japanese": "出口",
+      "furigana": [
+        {
+          "b": "出口",
+          "r": "でぐち"
+        }
+      ],
+      "readings": [
+        "でぐち"
+      ],
+      "romaji": "deguchi",
+      "english": "exit",
+      "audio": "audio/ja/chars/kan-deguchi.mp3",
+      "audioHint": "でぐち",
+      "group": "wayfinding",
+      "tags": [
+        "kanji",
+        "signage",
+        "essential"
+      ],
+      "difficulty": 1,
+      "note": "Arguably the single most valuable thing on this list to recognise on sight.",
+      "seenIn": [
+        "air-15"
+      ]
+    },
+    {
+      "id": "kan-iriguchi",
+      "character": "入口",
+      "japanese": "入口",
+      "furigana": [
+        {
+          "b": "入口",
+          "r": "いりぐち"
+        }
+      ],
+      "readings": [
+        "いりぐち"
+      ],
+      "romaji": "iriguchi",
+      "english": "entrance",
+      "audio": "audio/ja/chars/kan-iriguchi.mp3",
+      "audioHint": "いりぐち",
+      "group": "wayfinding",
+      "tags": [
+        "kanji",
+        "signage",
+        "essential"
+      ],
+      "difficulty": 1,
+      "note": "出 (out) and 入 (in) are a pair — learn them together, they look similar at a glance."
+    },
+    {
+      "id": "kan-hijouguchi",
+      "character": "非常口",
+      "japanese": "非常口",
+      "furigana": [
+        {
+          "b": "非常口",
+          "r": "ひじょうぐち"
+        }
+      ],
+      "readings": [
+        "ひじょうぐち"
+      ],
+      "romaji": "hijōguchi",
+      "english": "emergency exit",
+      "audio": "audio/ja/chars/kan-hijouguchi.mp3",
+      "audioHint": "ひじょうぐち",
+      "group": "wayfinding",
+      "tags": [
+        "kanji",
+        "signage",
+        "emergency"
+      ],
+      "difficulty": 3,
+      "note": "Always paired with the running-man pictogram, so context helps — but worth knowing in a smoke-filled corridor."
+    },
+    {
+      "id": "kan-otoko",
+      "character": "男",
+      "japanese": "男",
+      "furigana": [
+        {
+          "b": "男",
+          "r": "おとこ"
+        }
+      ],
+      "readings": [
+        "おとこ",
+        "だん"
+      ],
+      "romaji": "otoko",
+      "english": "man, men's",
+      "audio": "audio/ja/chars/kan-otoko.mp3",
+      "audioHint": "おとこ",
+      "group": "wayfinding",
+      "tags": [
+        "kanji",
+        "signage",
+        "essential"
+      ],
+      "difficulty": 1,
+      "note": "On toilet doors, sometimes with no pictogram and no colour coding at all."
+    },
+    {
+      "id": "kan-onna",
+      "character": "女",
+      "japanese": "女",
+      "furigana": [
+        {
+          "b": "女",
+          "r": "おんな"
+        }
+      ],
+      "readings": [
+        "おんな",
+        "じょ"
+      ],
+      "romaji": "onna",
+      "english": "woman, women's",
+      "audio": "audio/ja/chars/kan-onna.mp3",
+      "audioHint": "おんな",
+      "group": "wayfinding",
+      "tags": [
+        "kanji",
+        "signage",
+        "essential"
+      ],
+      "difficulty": 1,
+      "note": "Learn 男/女 as a pair. Getting this wrong at an onsen is a memorable mistake."
+    },
+    {
+      "id": "kan-otearai",
+      "character": "お手洗い",
+      "japanese": "お手洗い",
+      "furigana": [
+        {
+          "b": "お手洗い",
+          "r": "おてあらい"
+        }
+      ],
+      "readings": [
+        "おてあらい"
+      ],
+      "romaji": "otearai",
+      "english": "restroom, toilet",
+      "audio": "audio/ja/chars/kan-otearai.mp3",
+      "audioHint": "おてあらい",
+      "group": "wayfinding",
+      "tags": [
+        "kanji",
+        "signage",
+        "essential"
+      ],
+      "difficulty": 2,
+      "note": "The polite written form. トイレ and 化粧室 (けしょうしつ) appear on signs too."
+    },
+    {
+      "id": "kan-annai",
+      "character": "案内",
+      "japanese": "案内",
+      "furigana": [
+        {
+          "b": "案内",
+          "r": "あんない"
+        }
+      ],
+      "readings": [
+        "あんない"
+      ],
+      "romaji": "annai",
+      "english": "information, guidance",
+      "audio": "audio/ja/chars/kan-annai.mp3",
+      "audioHint": "あんない",
+      "group": "wayfinding",
+      "tags": [
+        "kanji",
+        "signage"
+      ],
+      "difficulty": 3,
+      "note": "案内所 is an information desk — where to go when everything else has failed."
+    },
+    {
+      "id": "kan-kaisatsu",
+      "character": "改札",
+      "japanese": "改札",
+      "furigana": [
+        {
+          "b": "改札",
+          "r": "かいさつ"
+        }
+      ],
+      "readings": [
+        "かいさつ"
+      ],
+      "romaji": "kaisatsu",
+      "english": "ticket gate",
+      "audio": "audio/ja/chars/kan-kaisatsu.mp3",
+      "audioHint": "かいさつ",
+      "group": "wayfinding",
+      "tags": [
+        "kanji",
+        "signage",
+        "transport"
+      ],
+      "difficulty": 3,
+      "note": "改札口 is the gate itself. Large stations have several — note which one you came in by."
+    },
+    {
+      "id": "kan-kita",
+      "character": "北",
+      "japanese": "北",
+      "furigana": [
+        {
+          "b": "北",
+          "r": "きた"
+        }
+      ],
+      "readings": [
+        "きた",
+        "ほく"
+      ],
+      "romaji": "kita",
+      "english": "north",
+      "audio": "audio/ja/chars/kan-kita.mp3",
+      "audioHint": "きた",
+      "group": "wayfinding",
+      "tags": [
+        "kanji",
+        "signage",
+        "directions"
+      ],
+      "difficulty": 2,
+      "note": "Station exits are named by compass point: 北口 = north exit."
+    },
+    {
+      "id": "kan-minami",
+      "character": "南",
+      "japanese": "南",
+      "furigana": [
+        {
+          "b": "南",
+          "r": "みなみ"
+        }
+      ],
+      "readings": [
+        "みなみ",
+        "なん"
+      ],
+      "romaji": "minami",
+      "english": "south",
+      "audio": "audio/ja/chars/kan-minami.mp3",
+      "audioHint": "みなみ",
+      "group": "wayfinding",
+      "tags": [
+        "kanji",
+        "signage",
+        "directions"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kan-higashi",
+      "character": "東",
+      "japanese": "東",
+      "furigana": [
+        {
+          "b": "東",
+          "r": "ひがし"
+        }
+      ],
+      "readings": [
+        "ひがし",
+        "とう"
+      ],
+      "romaji": "higashi",
+      "english": "east",
+      "audio": "audio/ja/chars/kan-higashi.mp3",
+      "audioHint": "ひがし",
+      "group": "wayfinding",
+      "tags": [
+        "kanji",
+        "signage",
+        "directions"
+      ],
+      "difficulty": 2,
+      "note": "The 東 in 東京 (Tokyo) — 'eastern capital'.",
+      "seenIn": [
+        "tra-01"
+      ]
+    },
+    {
+      "id": "kan-nishi",
+      "character": "西",
+      "japanese": "西",
+      "furigana": [
+        {
+          "b": "西",
+          "r": "にし"
+        }
+      ],
+      "readings": [
+        "にし",
+        "せい"
+      ],
+      "romaji": "nishi",
+      "english": "west",
+      "audio": "audio/ja/chars/kan-nishi.mp3",
+      "audioHint": "にし",
+      "group": "wayfinding",
+      "tags": [
+        "kanji",
+        "signage",
+        "directions"
+      ],
+      "difficulty": 2
+    },
+    {
+      "id": "kan-ue",
+      "character": "上",
+      "japanese": "上",
+      "furigana": [
+        {
+          "b": "上",
+          "r": "うえ"
+        }
+      ],
+      "readings": [
+        "うえ",
+        "じょう",
+        "のぼ"
+      ],
+      "romaji": "ue / jō",
+      "english": "up, above",
+      "audio": "audio/ja/chars/kan-ue.mp3",
+      "audioHint": "うえ",
+      "group": "wayfinding",
+      "tags": [
+        "kanji",
+        "signage",
+        "directions"
+      ],
+      "difficulty": 2,
+      "note": "上り (のぼり) on a timetable means trains heading toward Tokyo.",
+      "seenIn": [
+        "sma-08"
+      ]
+    },
+    {
+      "id": "kan-shita",
+      "character": "下",
+      "japanese": "下",
+      "furigana": [
+        {
+          "b": "下",
+          "r": "した"
+        }
+      ],
+      "readings": [
+        "した",
+        "か",
+        "くだ"
+      ],
+      "romaji": "shita / ka",
+      "english": "down, below",
+      "audio": "audio/ja/chars/kan-shita.mp3",
+      "audioHint": "した",
+      "group": "wayfinding",
+      "tags": [
+        "kanji",
+        "signage",
+        "directions"
+      ],
+      "difficulty": 2,
+      "note": "下り (くだり) is the opposite of 上り — away from Tokyo."
+    },
+    {
+      "id": "kan-migi",
+      "character": "右",
+      "japanese": "右",
+      "furigana": [
+        {
+          "b": "右",
+          "r": "みぎ"
+        }
+      ],
+      "readings": [
+        "みぎ",
+        "う"
+      ],
+      "romaji": "migi",
+      "english": "right",
+      "audio": "audio/ja/chars/kan-migi.mp3",
+      "audioHint": "みぎ",
+      "group": "wayfinding",
+      "tags": [
+        "kanji",
+        "directions",
+        "essential"
+      ],
+      "difficulty": 1,
+      "seenIn": [
+        "dir-03",
+        "dir-09"
+      ]
+    },
+    {
+      "id": "kan-hidari",
+      "character": "左",
+      "japanese": "左",
+      "furigana": [
+        {
+          "b": "左",
+          "r": "ひだり"
+        }
+      ],
+      "readings": [
+        "ひだり",
+        "さ"
+      ],
+      "romaji": "hidari",
+      "english": "left",
+      "audio": "audio/ja/chars/kan-hidari.mp3",
+      "audioHint": "ひだり",
+      "group": "wayfinding",
+      "tags": [
+        "kanji",
+        "directions",
+        "essential"
+      ],
+      "difficulty": 1,
+      "note": "右/左 differ by one stroke direction at the top. Drill them as a pair.",
+      "seenIn": [
+        "dir-05"
+      ]
+    },
+    {
+      "id": "kan-eki",
+      "character": "駅",
+      "japanese": "駅",
+      "furigana": [
+        {
+          "b": "駅",
+          "r": "えき"
+        }
+      ],
+      "readings": [
+        "えき"
+      ],
+      "romaji": "eki",
+      "english": "station",
+      "audio": "audio/ja/chars/kan-eki.mp3",
+      "audioHint": "えき",
+      "group": "transport",
+      "tags": [
+        "kanji",
+        "transport",
+        "essential"
+      ],
+      "difficulty": 1,
+      "note": "Suffixed to the name: 東京駅 = Tokyo Station.",
+      "seenIn": [
+        "tra-01",
+        "tra-07",
+        "tra-16"
+      ]
+    },
+    {
+      "id": "kan-sen-line",
+      "character": "線",
+      "japanese": "線",
+      "furigana": [
+        {
+          "b": "線",
+          "r": "せん"
+        }
+      ],
+      "readings": [
+        "せん"
+      ],
+      "romaji": "sen",
+      "english": "line (railway)",
+      "audio": "audio/ja/chars/kan-sen-line.mp3",
+      "audioHint": "せん",
+      "group": "transport",
+      "tags": [
+        "kanji",
+        "transport"
+      ],
+      "difficulty": 2,
+      "note": "山手線 = the Yamanote Line. Not the same 千 as 'thousand'.",
+      "seenIn": [
+        "tra-05"
+      ]
+    },
+    {
+      "id": "kan-bansen",
+      "character": "番線",
+      "japanese": "番線",
+      "furigana": [
+        {
+          "b": "番線",
+          "r": "ばんせん"
+        }
+      ],
+      "readings": [
+        "ばんせん"
+      ],
+      "romaji": "bansen",
+      "english": "platform number",
+      "audio": "audio/ja/chars/kan-bansen.mp3",
+      "audioHint": "ばんせん",
+      "group": "transport",
+      "tags": [
+        "kanji",
+        "transport",
+        "essential"
+      ],
+      "difficulty": 3,
+      "note": "三番線 = platform 3. The number comes first.",
+      "seenIn": [
+        "tra-05"
+      ]
+    },
+    {
+      "id": "kan-jousha",
+      "character": "乗車",
+      "japanese": "乗車",
+      "furigana": [
+        {
+          "b": "乗車",
+          "r": "じょうしゃ"
+        }
+      ],
+      "readings": [
+        "じょうしゃ"
+      ],
+      "romaji": "jōsha",
+      "english": "boarding, getting on",
+      "audio": "audio/ja/chars/kan-jousha.mp3",
+      "audioHint": "じょうしゃ",
+      "group": "transport",
+      "tags": [
+        "kanji",
+        "transport"
+      ],
+      "difficulty": 3,
+      "seenIn": [
+        "tra-20"
+      ]
+    },
+    {
+      "id": "kan-gesha",
+      "character": "下車",
+      "japanese": "下車",
+      "furigana": [
+        {
+          "b": "下車",
+          "r": "げしゃ"
+        }
+      ],
+      "readings": [
+        "げしゃ"
+      ],
+      "romaji": "gesha",
+      "english": "alighting, getting off",
+      "audio": "audio/ja/chars/kan-gesha.mp3",
+      "audioHint": "げしゃ",
+      "group": "transport",
+      "tags": [
+        "kanji",
+        "transport"
+      ],
+      "difficulty": 4
+    },
+    {
+      "id": "kan-norikae",
+      "character": "乗り換え",
+      "japanese": "乗り換え",
+      "furigana": [
+        {
+          "b": "乗り換え",
+          "r": "のりかえ"
+        }
+      ],
+      "readings": [
+        "のりかえ"
+      ],
+      "romaji": "norikae",
+      "english": "transfer, change trains",
+      "audio": "audio/ja/chars/kan-norikae.mp3",
+      "audioHint": "のりかえ",
+      "group": "transport",
+      "tags": [
+        "kanji",
+        "transport",
+        "essential"
+      ],
+      "difficulty": 3,
+      "note": "On every transfer sign and in every onboard announcement.",
+      "seenIn": [
+        "tra-06"
+      ]
+    },
+    {
+      "id": "kan-kippu",
+      "character": "切符",
+      "japanese": "切符",
+      "furigana": [
+        {
+          "b": "切符",
+          "r": "きっぷ"
+        }
+      ],
+      "readings": [
+        "きっぷ"
+      ],
+      "romaji": "kippu",
+      "english": "ticket",
+      "audio": "audio/ja/chars/kan-kippu.mp3",
+      "audioHint": "きっぷ",
+      "group": "transport",
+      "tags": [
+        "kanji",
+        "transport"
+      ],
+      "difficulty": 3,
+      "note": "券 (けん) also means ticket and shows up in 券売機 — the ticket machine.",
+      "seenIn": [
+        "tra-02"
+      ]
+    },
+    {
+      "id": "kan-shiteiseki",
+      "character": "指定席",
+      "japanese": "指定席",
+      "furigana": [
+        {
+          "b": "指定席",
+          "r": "していせき"
+        }
+      ],
+      "readings": [
+        "していせき"
+      ],
+      "romaji": "shiteiseki",
+      "english": "reserved seat",
+      "audio": "audio/ja/chars/kan-shiteiseki.mp3",
+      "audioHint": "していせき",
+      "group": "transport",
+      "tags": [
+        "kanji",
+        "transport"
+      ],
+      "difficulty": 4,
+      "note": "Printed on your shinkansen ticket and displayed above the carriage door.",
+      "seenIn": [
+        "tra-09"
+      ]
+    },
+    {
+      "id": "kan-jiyuuseki",
+      "character": "自由席",
+      "japanese": "自由席",
+      "furigana": [
+        {
+          "b": "自由席",
+          "r": "じゆうせき"
+        }
+      ],
+      "readings": [
+        "じゆうせき"
+      ],
+      "romaji": "jiyūseki",
+      "english": "unreserved seat",
+      "audio": "audio/ja/chars/kan-jiyuuseki.mp3",
+      "audioHint": "じゆうせき",
+      "group": "transport",
+      "tags": [
+        "kanji",
+        "transport"
+      ],
+      "difficulty": 4,
+      "note": "席 (seat) is the shared character — spot it and you know the sign is about seating.",
+      "seenIn": [
+        "tra-10"
+      ]
+    },
+    {
+      "id": "kan-yuki",
+      "character": "行",
+      "japanese": "行",
+      "furigana": [
+        {
+          "b": "行",
+          "r": "ゆき"
+        }
+      ],
+      "readings": [
+        "ゆき",
+        "い",
+        "こう"
+      ],
+      "romaji": "yuki / iki",
+      "english": "bound for",
+      "audio": "audio/ja/chars/kan-yuki.mp3",
+      "audioHint": "ゆき",
+      "group": "transport",
+      "tags": [
+        "kanji",
+        "transport",
+        "essential"
+      ],
+      "difficulty": 3,
+      "note": "京都行 = bound for Kyoto. On the front of every train and bus.",
+      "seenIn": [
+        "air-19",
+        "tra-04",
+        "tra-16"
+      ]
+    },
+    {
+      "id": "kan-ginkou",
+      "character": "銀行",
+      "japanese": "銀行",
+      "furigana": [
+        {
+          "b": "銀行",
+          "r": "ぎんこう"
+        }
+      ],
+      "readings": [
+        "ぎんこう"
+      ],
+      "romaji": "ginkō",
+      "english": "bank",
+      "audio": "audio/ja/chars/kan-ginkou.mp3",
+      "audioHint": "ぎんこう",
+      "group": "commerce",
+      "tags": [
+        "kanji",
+        "money",
+        "signage"
+      ],
+      "difficulty": 3
+    },
+    {
+      "id": "kan-ryougae",
+      "character": "両替",
+      "japanese": "両替",
+      "furigana": [
+        {
+          "b": "両替",
+          "r": "りょうがえ"
+        }
+      ],
+      "readings": [
+        "りょうがえ"
+      ],
+      "romaji": "ryōgae",
+      "english": "money exchange",
+      "audio": "audio/ja/chars/kan-ryougae.mp3",
+      "audioHint": "りょうがえ",
+      "group": "commerce",
+      "tags": [
+        "kanji",
+        "money",
+        "signage"
+      ],
+      "difficulty": 4,
+      "note": "Also on ticket machines, where it means 'break a note into coins'.",
+      "seenIn": [
+        "num-24",
+        "air-17"
+      ]
+    },
+    {
+      "id": "kan-genkin",
+      "character": "現金",
+      "japanese": "現金",
+      "furigana": [
+        {
+          "b": "現金",
+          "r": "げんきん"
+        }
+      ],
+      "readings": [
+        "げんきん"
+      ],
+      "romaji": "genkin",
+      "english": "cash",
+      "audio": "audio/ja/chars/kan-genkin.mp3",
+      "audioHint": "げんきん",
+      "group": "commerce",
+      "tags": [
+        "kanji",
+        "money",
+        "signage"
+      ],
+      "difficulty": 3,
+      "note": "現金のみ = cash only. Still common in small restaurants and at shrines.",
+      "seenIn": [
+        "num-09"
+      ]
+    },
+    {
+      "id": "kan-muryou",
+      "character": "無料",
+      "japanese": "無料",
+      "furigana": [
+        {
+          "b": "無料",
+          "r": "むりょう"
+        }
+      ],
+      "readings": [
+        "むりょう"
+      ],
+      "romaji": "muryō",
+      "english": "free of charge",
+      "audio": "audio/ja/chars/kan-muryou.mp3",
+      "audioHint": "むりょう",
+      "group": "commerce",
+      "tags": [
+        "kanji",
+        "money",
+        "signage"
+      ],
+      "difficulty": 3,
+      "note": "無 is the negating character — it turns up everywhere meaning 'without'."
+    },
+    {
+      "id": "kan-yuuryou",
+      "character": "有料",
+      "japanese": "有料",
+      "furigana": [
+        {
+          "b": "有料",
+          "r": "ゆうりょう"
+        }
+      ],
+      "readings": [
+        "ゆうりょう"
+      ],
+      "romaji": "yūryō",
+      "english": "paid, charged for",
+      "audio": "audio/ja/chars/kan-yuuryou.mp3",
+      "audioHint": "ゆうりょう",
+      "group": "commerce",
+      "tags": [
+        "kanji",
+        "money",
+        "signage"
+      ],
+      "difficulty": 3,
+      "note": "The opposite of 無料. Worth checking before you use that locker."
+    },
+    {
+      "id": "kan-zeikomi",
+      "character": "税込",
+      "japanese": "税込",
+      "furigana": [
+        {
+          "b": "税込",
+          "r": "ぜいこみ"
+        }
+      ],
+      "readings": [
+        "ぜいこみ"
+      ],
+      "romaji": "zeikomi",
+      "english": "tax included",
+      "audio": "audio/ja/chars/kan-zeikomi.mp3",
+      "audioHint": "ぜいこみ",
+      "group": "commerce",
+      "tags": [
+        "kanji",
+        "money",
+        "signage"
+      ],
+      "difficulty": 4,
+      "note": "税抜 (ぜいぬき) means tax NOT included — check which one the big number is."
+    },
+    {
+      "id": "kan-eigyouchuu",
+      "character": "営業中",
+      "japanese": "営業中",
+      "furigana": [
+        {
+          "b": "営業中",
+          "r": "えいぎょうちゅう"
+        }
+      ],
+      "readings": [
+        "えいぎょうちゅう"
+      ],
+      "romaji": "eigyōchū",
+      "english": "open for business",
+      "audio": "audio/ja/chars/kan-eigyouchuu.mp3",
+      "audioHint": "えいぎょうちゅう",
+      "group": "commerce",
+      "tags": [
+        "kanji",
+        "signage"
+      ],
+      "difficulty": 4,
+      "note": "中 = 'in the middle of'. Attach it to anything to mean 'currently doing it'."
+    },
+    {
+      "id": "kan-junbichuu",
+      "character": "準備中",
+      "japanese": "準備中",
+      "furigana": [
+        {
+          "b": "準備中",
+          "r": "じゅんびちゅう"
+        }
+      ],
+      "readings": [
+        "じゅんびちゅう"
+      ],
+      "romaji": "junbichū",
+      "english": "preparing — closed for now",
+      "audio": "audio/ja/chars/kan-junbichuu.mp3",
+      "audioHint": "じゅんびちゅう",
+      "group": "commerce",
+      "tags": [
+        "kanji",
+        "signage"
+      ],
+      "difficulty": 5,
+      "note": "Hung on restaurant doors between lunch and dinner service. Not permanently closed — come back at five."
+    },
+    {
+      "id": "kan-kaikei",
+      "character": "会計",
+      "japanese": "会計",
+      "furigana": [
+        {
+          "b": "会計",
+          "r": "かいけい"
+        }
+      ],
+      "readings": [
+        "かいけい"
+      ],
+      "romaji": "kaikei",
+      "english": "bill, checkout",
+      "audio": "audio/ja/chars/kan-kaikei.mp3",
+      "audioHint": "かいけい",
+      "group": "commerce",
+      "tags": [
+        "kanji",
+        "money",
+        "restaurant"
+      ],
+      "difficulty": 3,
+      "note": "レジ (register) is the other word you will see at the counter.",
+      "seenIn": [
+        "res-10"
+      ]
+    },
+    {
+      "id": "kan-menzei",
+      "character": "免税",
+      "japanese": "免税",
+      "furigana": [
+        {
+          "b": "免税",
+          "r": "めんぜい"
+        }
+      ],
+      "readings": [
+        "めんぜい"
+      ],
+      "romaji": "menzei",
+      "english": "tax-free, duty-free",
+      "audio": "audio/ja/chars/kan-menzei.mp3",
+      "audioHint": "めんぜい",
+      "group": "commerce",
+      "tags": [
+        "kanji",
+        "money",
+        "signage",
+        "shopping"
+      ],
+      "difficulty": 4,
+      "note": "In a shop window it means they can process a tax-free purchase — bring your passport.",
+      "seenIn": [
+        "sho-04"
+      ]
+    },
+    {
+      "id": "kan-kiken",
+      "character": "危険",
+      "japanese": "危険",
+      "furigana": [
+        {
+          "b": "危険",
+          "r": "きけん"
+        }
+      ],
+      "readings": [
+        "きけん"
+      ],
+      "romaji": "kiken",
+      "english": "danger",
+      "audio": "audio/ja/chars/kan-kiken.mp3",
+      "audioHint": "きけん",
+      "group": "safety",
+      "tags": [
+        "kanji",
+        "signage",
+        "emergency"
+      ],
+      "difficulty": 3,
+      "note": "Usually red or yellow. If you only learn two warning words, learn this and 禁止."
+    },
+    {
+      "id": "kan-kinshi",
+      "character": "禁止",
+      "japanese": "禁止",
+      "furigana": [
+        {
+          "b": "禁止",
+          "r": "きんし"
+        }
+      ],
+      "readings": [
+        "きんし"
+      ],
+      "romaji": "kinshi",
+      "english": "prohibited, forbidden",
+      "audio": "audio/ja/chars/kan-kinshi.mp3",
+      "audioHint": "きんし",
+      "group": "safety",
+      "tags": [
+        "kanji",
+        "signage"
+      ],
+      "difficulty": 3,
+      "note": "Suffixes onto whatever is banned: 撮影禁止 no photography, 喫煙禁止 no smoking."
+    },
+    {
+      "id": "kan-tachiirikinshi",
+      "character": "立入禁止",
+      "japanese": "立入禁止",
+      "furigana": [
+        {
+          "b": "立入禁止",
+          "r": "たちいりきんし"
+        }
+      ],
+      "readings": [
+        "たちいりきんし"
+      ],
+      "romaji": "tachiiri kinshi",
+      "english": "no entry, keep out",
+      "audio": "audio/ja/chars/kan-tachiirikinshi.mp3",
+      "audioHint": "たちいりきんし",
+      "group": "safety",
+      "tags": [
+        "kanji",
+        "signage"
+      ],
+      "difficulty": 4
+    },
+    {
+      "id": "kan-chuui",
+      "character": "注意",
+      "japanese": "注意",
+      "furigana": [
+        {
+          "b": "注意",
+          "r": "ちゅうい"
+        }
+      ],
+      "readings": [
+        "ちゅうい"
+      ],
+      "romaji": "chūi",
+      "english": "caution, attention",
+      "audio": "audio/ja/chars/kan-chuui.mp3",
+      "audioHint": "ちゅうい",
+      "group": "safety",
+      "tags": [
+        "kanji",
+        "signage"
+      ],
+      "difficulty": 3,
+      "note": "Milder than 危険 — 'watch out', not 'you may die'. 足元注意 = mind your step."
+    },
+    {
+      "id": "kan-hijou",
+      "character": "非常",
+      "japanese": "非常",
+      "furigana": [
+        {
+          "b": "非常",
+          "r": "ひじょう"
+        }
+      ],
+      "readings": [
+        "ひじょう"
+      ],
+      "romaji": "hijō",
+      "english": "emergency",
+      "audio": "audio/ja/chars/kan-hijou.mp3",
+      "audioHint": "ひじょう",
+      "group": "safety",
+      "tags": [
+        "kanji",
+        "signage",
+        "emergency"
+      ],
+      "difficulty": 3,
+      "note": "非常口 emergency exit, 非常ベル alarm bell, 非常電話 emergency phone."
+    },
+    {
+      "id": "kan-byouin",
+      "character": "病院",
+      "japanese": "病院",
+      "furigana": [
+        {
+          "b": "病院",
+          "r": "びょういん"
+        }
+      ],
+      "readings": [
+        "びょういん"
+      ],
+      "romaji": "byōin",
+      "english": "hospital",
+      "audio": "audio/ja/chars/kan-byouin.mp3",
+      "audioHint": "びょういん",
+      "group": "safety",
+      "tags": [
+        "kanji",
+        "signage",
+        "health"
+      ],
+      "difficulty": 3,
+      "note": "Don't confuse with 美容院 (びよういん) — that's a hair salon. One vowel apart.",
+      "seenIn": [
+        "eme-02"
+      ]
+    },
+    {
+      "id": "kan-keisatsu",
+      "character": "警察",
+      "japanese": "警察",
+      "furigana": [
+        {
+          "b": "警察",
+          "r": "けいさつ"
+        }
+      ],
+      "readings": [
+        "けいさつ"
+      ],
+      "romaji": "keisatsu",
+      "english": "police",
+      "audio": "audio/ja/chars/kan-keisatsu.mp3",
+      "audioHint": "けいさつ",
+      "group": "safety",
+      "tags": [
+        "kanji",
+        "signage",
+        "emergency"
+      ],
+      "difficulty": 3,
+      "seenIn": [
+        "eme-05"
+      ]
+    },
+    {
+      "id": "kan-kouban",
+      "character": "交番",
+      "japanese": "交番",
+      "furigana": [
+        {
+          "b": "交番",
+          "r": "こうばん"
+        }
+      ],
+      "readings": [
+        "こうばん"
+      ],
+      "romaji": "kōban",
+      "english": "police box",
+      "audio": "audio/ja/chars/kan-kouban.mp3",
+      "audioHint": "こうばん",
+      "group": "safety",
+      "tags": [
+        "kanji",
+        "signage",
+        "emergency"
+      ],
+      "difficulty": 3,
+      "note": "The small neighbourhood police post — there is one near most stations. Where you go about lost property."
+    },
+    {
+      "id": "kan-yakkyoku",
+      "character": "薬局",
+      "japanese": "薬局",
+      "furigana": [
+        {
+          "b": "薬局",
+          "r": "やっきょく"
+        }
+      ],
+      "readings": [
+        "やっきょく"
+      ],
+      "romaji": "yakkyoku",
+      "english": "pharmacy",
+      "audio": "audio/ja/chars/kan-yakkyoku.mp3",
+      "audioHint": "やっきょく",
+      "group": "safety",
+      "tags": [
+        "kanji",
+        "signage",
+        "health"
+      ],
+      "difficulty": 4,
+      "note": "薬 on its own is medicine. ドラッグストア is the larger chain equivalent."
+    },
+    {
+      "id": "kan-osu",
+      "character": "押",
+      "japanese": "押",
+      "furigana": [
+        {
+          "b": "押",
+          "r": "おす"
+        }
+      ],
+      "readings": [
+        "お",
+        "おう"
+      ],
+      "romaji": "osu",
+      "english": "push",
+      "audio": "audio/ja/chars/kan-osu.mp3",
+      "audioHint": "おす",
+      "group": "signage",
+      "tags": [
+        "kanji",
+        "signage",
+        "essential"
+      ],
+      "difficulty": 2,
+      "note": "On doors, and on the button you are meant to press."
+    },
+    {
+      "id": "kan-hiku",
+      "character": "引",
+      "japanese": "引",
+      "furigana": [
+        {
+          "b": "引",
+          "r": "ひく"
+        }
+      ],
+      "readings": [
+        "ひ",
+        "いん"
+      ],
+      "romaji": "hiku",
+      "english": "pull",
+      "audio": "audio/ja/chars/kan-hiku.mp3",
+      "audioHint": "ひく",
+      "group": "signage",
+      "tags": [
+        "kanji",
+        "signage",
+        "essential"
+      ],
+      "difficulty": 2,
+      "note": "押/引 is the door pair. Also 割引 (わりびき) = discount."
+    },
+    {
+      "id": "kan-aku",
+      "character": "開",
+      "japanese": "開",
+      "furigana": [
+        {
+          "b": "開",
+          "r": "あく"
+        }
+      ],
+      "readings": [
+        "あ",
+        "ひら",
+        "かい"
+      ],
+      "romaji": "aku / hiraku",
+      "english": "open",
+      "audio": "audio/ja/chars/kan-aku.mp3",
+      "audioHint": "あく",
+      "group": "signage",
+      "tags": [
+        "kanji",
+        "signage"
+      ],
+      "difficulty": 2,
+      "note": "The 開 button in a lift holds the doors open."
+    },
+    {
+      "id": "kan-shimaru",
+      "character": "閉",
+      "japanese": "閉",
+      "furigana": [
+        {
+          "b": "閉",
+          "r": "しまる"
+        }
+      ],
+      "readings": [
+        "し",
+        "と",
+        "へい"
+      ],
+      "romaji": "shimaru / tojiru",
+      "english": "close, shut",
+      "audio": "audio/ja/chars/kan-shimaru.mp3",
+      "audioHint": "しまる",
+      "group": "signage",
+      "tags": [
+        "kanji",
+        "signage"
+      ],
+      "difficulty": 2,
+      "note": "閉 closes the lift doors. Both characters have the 門 (gate) frame around them."
+    },
+    {
+      "id": "kan-tomaru",
+      "character": "止",
+      "japanese": "止",
+      "furigana": [
+        {
+          "b": "止",
+          "r": "とまる"
+        }
+      ],
+      "readings": [
+        "と",
+        "し"
+      ],
+      "romaji": "tomaru",
+      "english": "stop",
+      "audio": "audio/ja/chars/kan-tomaru.mp3",
+      "audioHint": "とまる",
+      "group": "signage",
+      "tags": [
+        "kanji",
+        "signage"
+      ],
+      "difficulty": 2,
+      "note": "The same 止 that ends 禁止 (prohibited) — 'stopped by rule'.",
+      "seenIn": [
+        "tra-14"
+      ]
+    },
+    {
+      "id": "kan-aki",
+      "character": "空",
+      "japanese": "空",
+      "furigana": [
+        {
+          "b": "空",
+          "r": "あき"
+        }
+      ],
+      "readings": [
+        "あ",
+        "から",
+        "くう",
+        "そら"
+      ],
+      "romaji": "aki / kū",
+      "english": "vacant, empty",
+      "audio": "audio/ja/chars/kan-aki.mp3",
+      "audioHint": "あき",
+      "group": "signage",
+      "tags": [
+        "kanji",
+        "signage"
+      ],
+      "difficulty": 3,
+      "note": "空車 on a taxi means it's free to hail. 空 also means sky, and 空港 is an airport."
+    },
+    {
+      "id": "kan-man-full",
+      "character": "満",
+      "japanese": "満",
+      "furigana": [
+        {
+          "b": "満",
+          "r": "まん"
+        }
+      ],
+      "readings": [
+        "まん",
+        "み"
+      ],
+      "romaji": "man",
+      "english": "full, occupied",
+      "audio": "audio/ja/chars/kan-man-full.mp3",
+      "audioHint": "まん",
+      "group": "signage",
+      "tags": [
+        "kanji",
+        "signage"
+      ],
+      "difficulty": 3,
+      "note": "満車 = car park full. 満席 = no seats left. Opposite of 空."
+    },
+    {
+      "id": "kan-dai",
+      "character": "大",
+      "japanese": "大",
+      "furigana": [
+        {
+          "b": "大",
+          "r": "だい"
+        }
+      ],
+      "readings": [
+        "だい",
+        "おお"
+      ],
+      "romaji": "dai / ō",
+      "english": "large",
+      "audio": "audio/ja/chars/kan-dai.mp3",
+      "audioHint": "だい",
+      "group": "signage",
+      "tags": [
+        "kanji",
+        "signage",
+        "food"
+      ],
+      "difficulty": 1,
+      "note": "大盛り (おおもり) on a menu is a large portion, usually for very little extra.",
+      "seenIn": [
+        "gre-09",
+        "gre-10",
+        "tra-03",
+        "sma-04"
+      ]
+    },
+    {
+      "id": "kan-chuu",
+      "character": "中",
+      "japanese": "中",
+      "furigana": [
+        {
+          "b": "中",
+          "r": "ちゅう"
+        }
+      ],
+      "readings": [
+        "ちゅう",
+        "なか"
+      ],
+      "romaji": "chū / naka",
+      "english": "medium, middle, inside",
+      "audio": "audio/ja/chars/kan-chuu.mp3",
+      "audioHint": "ちゅう",
+      "group": "signage",
+      "tags": [
+        "kanji",
+        "signage"
+      ],
+      "difficulty": 1,
+      "note": "Doubles as 'currently in progress' — 使用中 = in use, 工事中 = under construction."
+    },
+    {
+      "id": "kan-shou",
+      "character": "小",
+      "japanese": "小",
+      "furigana": [
+        {
+          "b": "小",
+          "r": "しょう"
+        }
+      ],
+      "readings": [
+        "しょう",
+        "ちい",
+        "こ"
+      ],
+      "romaji": "shō / chiisai",
+      "english": "small",
+      "audio": "audio/ja/chars/kan-shou.mp3",
+      "audioHint": "しょう",
+      "group": "signage",
+      "tags": [
+        "kanji",
+        "signage",
+        "food"
+      ],
+      "difficulty": 1,
+      "note": "大/中/小 is the standard size trio on menus and vending machines."
+    }
+  ]
+}
